@@ -31,7 +31,7 @@ sportSearchByCountry <- function(countries) {
     
     ggplot(data=all, aes(x=Sport,y=Interest,fill=factor(Country))) +
         geom_bar(position="dodge",stat="identity") +
-        ggtitle("Search Interest for Olympic Sport for Period 6-Aug-2016 to 21-Aug-2016\nData Source: Google News Lab") +
+        ggtitle("Search Interest for Olympic Sport for Period 6-Aug-2016 to 21-Aug-2016\nData Source: Google Trends") +
         coord_flip() +
         commonTheme()
         
@@ -52,7 +52,7 @@ indianSearchCompared <- function() {
     
     ggplot(data=all, aes(x=Sport, y=Interest, fill=factor(Code))) +
         geom_bar(position="dodge", stat="identity") +
-        ggtitle("Indian Search Interest for Olympic Sport for Period 6-Aug-2016 to 21-Aug-2016\nData Source: Google News Lab") +
+        ggtitle("Indian Search Interest for Olympic Sport for Period 6-Aug-2016 to 21-Aug-2016\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
         scale_fill_manual(values=c("orange","#eeeeee")) +
@@ -81,7 +81,7 @@ searchBasicStats <- function() {
     
     ggplot(data=mostSportsAll, aes(x=Country,y=NumOfSports)) +
         geom_bar(position="dodge", stat="identity", fill="lightblue") +
-        ggtitle("Countries Searching More Than a Dozen Sports\nData Source: Google News Lab") +
+        ggtitle("Countries Searching More Than a Dozen Sports\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
         geom_hline(yintercept = 12, linetype = "longdash")
@@ -94,7 +94,7 @@ searchBasicStats <- function() {
         # :factor(InterestCount) can be used to force legend to integers
         # :can simply use geom_count() instead
         geom_count() +
-        ggtitle("Interest Within Countries Searching More Than a Dozen Sports\nData Source: Google News Lab") +
+        ggtitle("Interest Within Countries Searching More Than a Dozen Sports\nData Source: Google Trends") +
         coord_flip() +
         commonTheme()
 
@@ -104,7 +104,7 @@ searchBasicStats <- function() {
     mostFollowers <- d[, .(Country,Interest,NumberOfCountries=.N), by=Sport][NumberOfCountries>50]
     ggplot(data=mostFollowers, aes(x=Sport,y=NumberOfCountries)) +
         geom_bar(position="dodge", stat="identity", fill="lightblue") +
-        ggtitle("Sports With More Than 50 Country Followers\nData Source: Google News Lab") +
+        ggtitle("Sports With More Than 50 Country Followers\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
         geom_hline(yintercept = 50, linetype = "longdash")
@@ -122,7 +122,7 @@ searchBasicStats <- function() {
     mostFollowers <- rbind(big, nonbig)
     ggplot(mostFollowers, aes(Sport, Interest)) + 
         geom_boxplot() +
-        ggtitle("Statistical Spread of Interest for Sports With More Than 50 Country Followers\nData Source: Google News Lab") +
+        ggtitle("Statistical Spread of Interest for Sports With More Than 50 Country Followers\nData Source: Google Trends") +
         commonTheme() +
         geom_text(aes(label = BigFollower), na.rm = TRUE, hjust = -0.1)
     
@@ -132,7 +132,7 @@ searchBasicStats <- function() {
     mostTotalInterest <- d[, .(Interest,NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
     ggplot(data=mostTotalInterest, aes(x=Sport,y=TotalInterest)) +
         geom_bar(position="dodge", stat="identity", fill="lightblue") +
-        ggtitle("Sports With Most Total Interest (>150)\nData Source: Google News Lab") +
+        ggtitle("Sports With Most Total Interest (>150)\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
         geom_hline(yintercept = 150, linetype = "longdash")
@@ -143,7 +143,7 @@ searchBasicStats <- function() {
     mostInterest <- d[, .(NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
     ggplot(data=mostInterest, aes(x=Sport,y=TotalInterest)) +
         geom_bar(position="dodge", stat="identity", fill="lightblue") +
-        ggtitle("Sports With Most Interest (>150)\nData Source: Google News Lab") +
+        ggtitle("Sports With Most Interest (>150)\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
         geom_hline(yintercept = 150, linetype = "longdash")

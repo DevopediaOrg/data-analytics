@@ -1,0 +1,975 @@
+country,countrycode,ts,type,sport,event,medalist
+Algeria,ALG,2016-08-21T00:04:00Z,Silver,Athletics,Men's 1500m,Taoufik Makhloufi
+Algeria,ALG,2016-08-16T01:47:00Z,Silver,Athletics,Men's 800m,Taoufik Makhloufi
+Argentina,ARG,2016-08-18T21:27:52Z,Gold,Hockey,Men,Men's team
+Argentina,ARG,2016-08-16T18:50:00Z,Gold,Sailing,Nacra 17 Mixed,Lange/Carranza Saroli
+Argentina,ARG,2016-08-14T19:30:00Z,Silver,Tennis,Men's Singles,Juan Martin Del Potro
+Argentina,ARG,2016-08-06T19:47:00Z,Gold,Judo,Women -48 kg,Paula Pareto
+Armenia,ARM,2016-08-16T23:40:00Z,Silver,Weightlifting,Men's +105kg,Gor Minasyan
+Armenia,ARM,2016-08-16T21:38:00Z,Gold,Wrestling,Men's Greco-Roman 98 kg,Artur Aleksanyan
+Armenia,ARM,2016-08-16T20:38:00Z,Silver,Wrestling,Men's Greco-Roman 66 kg,Migran Arutyunyan
+Armenia,ARM,2016-08-15T23:40:00Z,Silver,Weightlifting,Men's 105kg,Simon Martirosyan
+Australia,AUS,2016-08-19T21:20:00Z,Gold,Modern Pentathlon,Women's Individual,Chloe Esposito
+Australia,AUS,2016-08-19T15:20:00Z,Silver,Athletics,Men's 50km Walk,Jared Tallent
+Australia,AUS,2016-08-18T18:05:00Z,Silver,Sailing,49er Men,Outteridge/Jensen
+Australia,AUS,2016-08-18T17:50:00Z,Silver,Sailing,470 Men,Belcher/Ryan
+Australia,AUS,2016-08-18T12:15:00Z,Bronze,Canoe Sprint,Men's Kayak Double 1000m,Wallace/Tame
+Australia,AUS,2016-08-16T18:50:00Z,Silver,Sailing,Nacra 17 Mixed,Waterhouse/Darmanin
+Australia,AUS,2016-08-16T17:50:00Z,Gold,Sailing,Laser Men,Tom Burton
+Australia,AUS,2016-08-14T02:16:00Z,Bronze,Swimming,Men's 4 x 100m Medley Relay,Men's team
+Australia,AUS,2016-08-14T02:01:00Z,Silver,Swimming,Women's 4 x 100m Medley Relay,Women's team
+Australia,AUS,2016-08-13T20:39:00Z,Bronze,Cycling Track,Women's Keirin,Anna Meares
+Australia,AUS,2016-08-13T13:52:00Z,Gold,Rowing,Women's Single Sculls,Kimberley Brennan
+Australia,AUS,2016-08-12T21:50:00Z,Silver,Cycling Track,Men's Team Pursuit,Men's team
+Australia,AUS,2016-08-12T19:10:00Z,Bronze,Athletics,Men's 20km Walk,Dane Bird-Smith
+Australia,AUS,2016-08-12T14:34:00Z,Silver,Rowing,Men's Four,Men's team
+Australia,AUS,2016-08-12T01:32:00Z,Silver,Swimming,Men's 200m Backstroke,Mitchell Larkin
+Australia,AUS,2016-08-11T18:32:00Z,Bronze,Canoe Slalom,Kayak (K1) Women,Jessica Fox
+Australia,AUS,2016-08-11T13:19:00Z,Silver,Rowing,Men's Quadruple Sculls,Men's team
+Australia,AUS,2016-08-11T03:07:00Z,Silver,Swimming,Women's 4 x 200m Freestyle Relay,Women's team
+Australia,AUS,2016-08-11T02:08:00Z,Gold,Swimming,Men's 100m Freestyle,Kyle Chalmers
+Australia,AUS,2016-08-11T02:00:00Z,Silver,Swimming,Women's 200m Butterfly,Madeline Groves
+Australia,AUS,2016-08-10T01:25:00Z,Bronze,Swimming,Women's 200m Freestyle,Emma McKeon
+Australia,AUS,2016-08-09T15:32:00Z,Bronze,Equestrian,Eventing Team,Mixed team
+Australia,AUS,2016-08-08T22:31:59Z,Gold,Rugby Sevens,Women,Women's team
+Australia,AUS,2016-08-08T03:00:00Z,Bronze,Swimming,Men's 4 x 100m Freestyle Relay,Men's team
+Australia,AUS,2016-08-07T20:00:00Z,Bronze,Diving,Women's Synchronised 3m Springboard,Keeney/Smith
+Australia,AUS,2016-08-07T18:30:00Z,Gold,Shooting,Trap Women,Catherine Skinner
+Australia,AUS,2016-08-07T02:32:00Z,Gold,Swimming,Women's 4 x 100m Freestyle Relay,Women's team
+Australia,AUS,2016-08-07T01:38:00Z,Gold,Swimming,Men's 400m Freestyle,Mack Horton
+Australia,AUS,2016-08-06T20:04:00Z,Bronze,Archery,Men's Team,Men's team
+Austria,AUT,2016-08-16T18:50:00Z,Bronze,Sailing,Nacra 17 Mixed,Zajac/Frank
+Azerbaijan,AZE,2016-08-21T18:23:28Z,Silver,Boxing,Men's Light Welter (64kg),Lorenzo Sotomayor Collazo
+Azerbaijan,AZE,2016-08-21T18:23:00Z,Silver,Wrestling,Men's Freestyle 97 kg,Khetag Goziumov
+Azerbaijan,AZE,2016-08-21T17:23:00Z,Silver,Wrestling,Men's Freestyle 65 kg,Toghrul Asgarov
+Azerbaijan,AZE,2016-08-21T01:30:00Z,Gold,Taekwondo,Men +80kg,Radik Isaev
+Azerbaijan,AZE,2016-08-20T20:08:00Z,Bronze,Wrestling,Men's Freestyle 86 kg,Sharif Sharifov
+Azerbaijan,AZE,2016-08-20T01:00:00Z,Bronze,Taekwondo,Men -80kg,Milad Beigi Harchegani
+Azerbaijan,AZE,2016-08-19T21:15:00Z,Bronze,Wrestling,Men's Freestyle 74 kg,Jabrayil Hasanov
+Azerbaijan,AZE,2016-08-19T20:15:00Z,Bronze,Wrestling,Men's Freestyle 57 kg,Haji Aliyev
+Azerbaijan,AZE,2016-08-18T20:10:00Z,Bronze,Wrestling,Women's Freestyle 53 kg,Natalya Sinishin
+Azerbaijan,AZE,2016-08-18T18:03:02Z,Bronze,Boxing,Men's Middle (75kg),Kamran Shakhsuvarly
+Azerbaijan,AZE,2016-08-18T12:30:00Z,Silver,Canoe Sprint,Men's Canoe Single 200m,Valentin Demyanenko
+Azerbaijan,AZE,2016-08-18T00:15:00Z,Bronze,Taekwondo,Women -49kg,Patimat Abakarova
+Azerbaijan,AZE,2016-08-17T20:45:00Z,Silver,Wrestling,Women's Freestyle 48 kg,Mariya Stadnik
+Azerbaijan,AZE,2016-08-16T20:23:00Z,Bronze,Wrestling,Men's Greco-Roman 66 kg,Rasul Chunayev
+Azerbaijan,AZE,2016-08-16T12:54:00Z,Bronze,Canoe Sprint,Women's Kayak Single 200m,Inna Osipenko-Rodomska
+Azerbaijan,AZE,2016-08-15T20:32:00Z,Bronze,Wrestling,Men's Greco-Roman 130 kg,Sabah Shariati
+Azerbaijan,AZE,2016-08-11T20:08:00Z,Silver,Judo,Men -100 kg,Elmar Gasimov
+Azerbaijan,AZE,2016-08-08T20:08:00Z,Silver,Judo,Men -73 kg,Rustam Orujov
+Bahamas,BAH,2016-08-21T01:38:00Z,Bronze,Athletics,Men's 4 x 400m Relay,Men's team
+Bahamas,BAH,2016-08-16T02:06:00Z,Gold,Athletics,Women's 400m,Shaunae Miller
+Burundi,BDI,2016-08-21T00:17:00Z,Silver,Athletics,Women's 800m,Francine Niyonsaba
+Belgium,BEL,2016-08-18T21:27:52Z,Silver,Hockey,Men,Men's team
+Belgium,BEL,2016-08-16T20:42:00Z,Bronze,Cycling Track,Women's Omnium,Jolien D'hoore
+Belgium,BEL,2016-08-14T02:26:00Z,Gold,Athletics,Women's Heptathlon,Nafissatou Thiam
+Belgium,BEL,2016-08-11T02:08:00Z,Silver,Swimming,Men's 100m Freestyle,Pieter Timmers
+Belgium,BEL,2016-08-08T20:01:00Z,Bronze,Judo,Men -73 kg,Dirk van Tichelt
+Belgium,BEL,2016-08-06T18:57:00Z,Gold,Cycling Road,Men's Road Race,Greg van Avermaet
+Belarus,BLR,2016-08-20T21:08:00Z,Bronze,Wrestling,Men's Freestyle 125 kg,Ibrahim Saidau
+Belarus,BLR,2016-08-20T12:54:00Z,Bronze,Canoe Sprint,Women's Kayak Four 500m,Women's team
+Belarus,BLR,2016-08-20T01:25:00Z,Silver,Athletics,Men's Hammer Throw,Ivan Tsikhan
+Belarus,BLR,2016-08-18T21:15:00Z,Silver,Wrestling,Women's Freestyle 63 kg,Maryia Mamashuk
+Belarus,BLR,2016-08-15T20:08:00Z,Bronze,Wrestling,Men's Greco-Roman 85 kg,Javid Hamzatau
+Belarus,BLR,2016-08-14T01:08:00Z,Bronze,Swimming,Women's 50m Freestyle,Aliaksandra Herasimenia
+Belarus,BLR,2016-08-13T23:40:00Z,Silver,Weightlifting,Men's 94kg,Vadzim Straltsou
+Belarus,BLR,2016-08-13T19:13:00Z,Gold,Gymnastics Trampoline,Men,Uladzislau Hancharou
+Belarus,BLR,2016-08-12T20:10:00Z,Silver,Weightlifting,Women's 75kg,Darya Naumava
+Brazil,BRA,2016-08-21T17:58:00Z,Gold,Volleyball,Men,Men's team
+Brazil,BRA,2016-08-21T00:30:00Z,Bronze,Taekwondo,Men +80kg,Maicon Siqueira
+Brazil,BRA,2016-08-20T23:10:12Z,Gold,Football,Men,Men's team
+Brazil,BRA,2016-08-20T12:29:00Z,Silver,Canoe Sprint,Men's Canoe Double 1000m,de Souza Silva/Queiroz dos Santos
+Brazil,BRA,2016-08-19T03:46:28Z,Gold,Beach Volleyball,Men,Cerutti/Oscar Schmidt
+Brazil,BRA,2016-08-18T18:50:00Z,Gold,Sailing,49er FX Women,Grael/Kunze
+Brazil,BRA,2016-08-18T12:30:00Z,Bronze,Canoe Sprint,Men's Canoe Single 200m,Isaquias Queiroz dos Santos
+Brazil,BRA,2016-08-18T03:42:17Z,Silver,Beach Volleyball,Women,Bednarczuk/Seixas de Freitas
+Brazil,BRA,2016-08-16T22:35:19Z,Gold,Boxing,Men's Light (60kg),Robson Conceicao
+Brazil,BRA,2016-08-16T12:15:00Z,Silver,Canoe Sprint,Men's Canoe Single 1000m,Isaquias Queiroz dos Santos
+Brazil,BRA,2016-08-16T02:46:00Z,Gold,Athletics,Men's Pole Vault,Thiago Braz da Silva
+Brazil,BRA,2016-08-15T17:30:00Z,Silver,Gymnastics Artistic,Men's Rings,Arthur Zanetti
+Brazil,BRA,2016-08-15T14:30:00Z,Bronze,Marathon Swimming,Women's 10km,Poliana Okimoto
+Brazil,BRA,2016-08-14T17:30:00Z,Bronze,Gymnastics Artistic,Men's Floor Exercise,Arthur Mariano
+Brazil,BRA,2016-08-14T17:30:00Z,Silver,Gymnastics Artistic,Men's Floor Exercise,Diego Hypolito
+Brazil,BRA,2016-08-12T19:54:00Z,Bronze,Judo,Men +100 kg,Rafael Silva
+Brazil,BRA,2016-08-11T19:33:00Z,Bronze,Judo,Women -78 kg,Mayra Aguiar
+Brazil,BRA,2016-08-08T19:47:00Z,Gold,Judo,Women -57 kg,Rafaela Silva
+Brazil,BRA,2016-08-06T19:00:00Z,Silver,Shooting,10m Air Pistol Men,Felipe Almeida Wu
+Bahrain,BRN,2016-08-15T14:25:00Z,Gold,Athletics,Women's 3000m Steeplechase,Ruth Jebet
+Bahrain,BRN,2016-08-14T15:30:00Z,Silver,Athletics,Women's Marathon,Eunice Jepkirui Kirwa
+Bulgaria,BUL,2016-08-21T15:30:00Z,Bronze,Gymnastics Rhythmic,Group All-Around,Women's team
+Bulgaria,BUL,2016-08-21T01:29:00Z,Silver,Athletics,Women's High Jump,Mirela Demireva
+Bulgaria,BUL,2016-08-17T20:30:00Z,Bronze,Wrestling,Women's Freestyle 48 kg,Elitsa Atanasova Yankova
+Canada,CAN,2016-08-20T17:15:00Z,Bronze,Cycling Mountain Bike,Women's Cross-country,Catharine Pendrel
+Canada,CAN,2016-08-20T01:36:00Z,Bronze,Athletics,Men's 4 x 100m Relay,Men's team
+Canada,CAN,2016-08-19T17:50:29Z,Bronze,Football,Women,Women's team
+Canada,CAN,2016-08-19T17:20:00Z,Bronze,Equestrian,Jumping Individual,Eric Lamaze
+Canada,CAN,2016-08-19T01:31:00Z,Silver,Athletics,Men's 200m,Andre de Grasse
+Canada,CAN,2016-08-19T01:01:00Z,Bronze,Athletics,Men's Decathlon,Damian Warner
+Canada,CAN,2016-08-18T22:00:00Z,Gold,Wrestling,Women's Freestyle 75 kg,Erica Elizabeth Wiebe
+Canada,CAN,2016-08-18T20:15:00Z,Bronze,Diving,Women's 10m Platform,Meaghan Benfeito
+Canada,CAN,2016-08-17T01:36:00Z,Gold,Athletics,Men's High Jump,Derek Drouin
+Canada,CAN,2016-08-15T01:26:00Z,Bronze,Athletics,Men's 100m,Andre de Grasse
+Canada,CAN,2016-08-14T02:26:00Z,Bronze,Athletics,Women's Heptathlon,Brianne Theisen Eaton
+Canada,CAN,2016-08-13T20:14:00Z,Bronze,Cycling Track,Women's Team Pursuit,Women's team
+Canada,CAN,2016-08-13T01:09:00Z,Bronze,Swimming,Women's 200m Backstroke,Hilary Caldwell
+Canada,CAN,2016-08-12T19:22:00Z,Gold,Gymnastics Trampoline,Women,Rosannagh Maclennan
+Canada,CAN,2016-08-12T13:39:00Z,Silver,Rowing,Lightweight Women's Double Sculls,Jennerich/Obee
+Canada,CAN,2016-08-12T02:23:00Z,Gold,Swimming,Women's 100m Freestyle,Penny Oleksiak
+Canada,CAN,2016-08-11T03:07:00Z,Bronze,Swimming,Women's 4 x 200m Freestyle Relay,Women's team
+Canada,CAN,2016-08-09T20:00:00Z,Bronze,Diving,Women's Synchronised 10m Platform,Benfeito/Filion
+Canada,CAN,2016-08-09T01:35:00Z,Bronze,Swimming,Women's 100m Backstroke,Kylie Masse
+Canada,CAN,2016-08-08T21:57:59Z,Bronze,Rugby Sevens,Women,Women's team
+Canada,CAN,2016-08-08T01:08:00Z,Silver,Swimming,Women's 100m Butterfly,Penny Oleksiak
+Canada,CAN,2016-08-07T02:32:00Z,Bronze,Swimming,Women's 4 x 100m Freestyle Relay,Women's team
+China,CHN,2016-08-21T03:01:00Z,Gold,Volleyball,Women,Women's team
+China,CHN,2016-08-21T01:15:00Z,Gold,Taekwondo,Women +67kg,Shuyin Zheng
+China,CHN,2016-08-20T20:55:00Z,Gold,Diving,Men's 10m Platform,Aisen Chen
+China,CHN,2016-08-20T16:36:59Z,Bronze,Golf,Women's Individual Stroke Play,Shanshan Feng
+China,CHN,2016-08-20T13:10:00Z,Gold,Badminton,Men's Singles,Long Chen
+China,CHN,2016-08-19T19:27:30Z,Silver,Boxing,Women's Light (57-60kg),Junhua Yin
+China,CHN,2016-08-19T19:15:00Z,Bronze,Athletics,Women's 20km Walk,Xiuzhi Lu
+China,CHN,2016-08-19T19:15:00Z,Gold,Athletics,Women's 20km Walk,Hong Liu
+China,CHN,2016-08-19T19:10:17Z,Bronze,Boxing,Women's Middle (69-75kg),Qian Li
+China,CHN,2016-08-19T17:28:37Z,Bronze,Boxing,Men's Fly (52kg),Jianguan Hu
+China,CHN,2016-08-19T16:00:00Z,Silver,Synchronised Swimming,Teams,Women's team
+China,CHN,2016-08-19T15:00:00Z,Gold,Badminton,Men's Doubles,Fu/Zhang
+China,CHN,2016-08-18T21:40:00Z,Bronze,Wrestling,Women's Freestyle 75 kg,Fengliu Zhang
+China,CHN,2016-08-18T20:15:00Z,Silver,Diving,Women's 10m Platform,Yajie Si
+China,CHN,2016-08-18T20:15:00Z,Gold,Diving,Women's 10m Platform,Qian Ren
+China,CHN,2016-08-18T17:11:54Z,Bronze,Boxing,Women's Fly (48-51kg),Cancan Ren
+China,CHN,2016-08-18T01:30:00Z,Gold,Taekwondo,Men -58kg,Shuai Zhao
+China,CHN,2016-08-18T01:10:00Z,Gold,Table Tennis,Men's Team,Men's team
+China,CHN,2016-08-17T20:15:00Z,Bronze,Wrestling,Women's Freestyle 48 kg,Yanan Sun
+China,CHN,2016-08-17T00:00:00Z,Bronze,Badminton,Mixed Doubles,Zhang/Zhao
+China,CHN,2016-08-16T23:55:00Z,Gold,Table Tennis,Women's Team,Women's team
+China,CHN,2016-08-16T22:45:00Z,Gold,Diving,Men's 3m Springboard,Yuan Cao
+China,CHN,2016-08-16T18:00:00Z,Silver,Synchronised Swimming,Duets,Huang/Sun
+China,CHN,2016-08-16T14:15:00Z,Bronze,Athletics,Men's Triple Jump,Bin Dong
+China,CHN,2016-08-15T15:00:00Z,Silver,Athletics,Women's Hammer Throw,Wenxiu Zhang
+China,CHN,2016-08-14T23:40:00Z,Gold,Weightlifting,Women's +75kg,Suping Meng
+China,CHN,2016-08-14T20:15:00Z,Silver,Diving,Women's 3m Springboard,Zi He
+China,CHN,2016-08-14T20:15:00Z,Gold,Diving,Women's 3m Springboard,Tingmao Shi
+China,CHN,2016-08-14T17:35:00Z,Silver,Sailing,RS:X Women,Peina Chen
+China,CHN,2016-08-13T19:13:00Z,Bronze,Gymnastics Trampoline,Men,Lei Gao
+China,CHN,2016-08-13T19:13:00Z,Silver,Gymnastics Trampoline,Men,Dong Dong
+China,CHN,2016-08-13T16:15:00Z,Bronze,Shooting,25m Rapid Fire Pistol Men,Yuehong Li
+China,CHN,2016-08-13T13:52:00Z,Bronze,Rowing,Women's Single Sculls,Jingli Duan
+China,CHN,2016-08-12T23:40:00Z,Silver,Weightlifting,Men's 85kg,Tao Tian
+China,CHN,2016-08-12T21:08:00Z,Gold,Cycling Track,Women's Team Sprint,Gong/Zhong
+China,CHN,2016-08-12T19:40:00Z,Bronze,Judo,Women +78 kg,Song Yu
+China,CHN,2016-08-12T19:22:00Z,Bronze,Gymnastics Trampoline,Women,Dan Li
+China,CHN,2016-08-12T19:10:00Z,Silver,Athletics,Men's 20km Walk,Zelin Cai
+China,CHN,2016-08-12T19:10:00Z,Gold,Athletics,Men's 20km Walk,Zhen Wang
+China,CHN,2016-08-12T13:39:00Z,Bronze,Rowing,Lightweight Women's Double Sculls,Huang/Pan
+China,CHN,2016-08-12T02:07:00Z,Bronze,Swimming,Men's 200m Individual Medley,Shun Wang
+China,CHN,2016-08-12T01:23:00Z,Bronze,Swimming,Women's 200m Breaststroke,Jinglin Shi
+China,CHN,2016-08-12T01:07:00Z,Silver,Table Tennis,Men's Singles,Jike Zhang
+China,CHN,2016-08-12T01:07:00Z,Gold,Table Tennis,Men's Singles,Long Ma
+China,CHN,2016-08-11T22:30:00Z,Silver,Fencing,Women's ÃpÃ©e Team,Women's team
+China,CHN,2016-08-11T16:00:00Z,Bronze,Shooting,50m Rifle 3 Positions Women,Li Du
+China,CHN,2016-08-11T16:00:00Z,Silver,Shooting,50m Rifle 3 Positions Women,Binbin Zhang
+China,CHN,2016-08-11T01:44:00Z,Silver,Table Tennis,Women's Singles,Xiaoxia Li
+China,CHN,2016-08-11T01:44:00Z,Gold,Table Tennis,Women's Singles,Ning Ding
+China,CHN,2016-08-10T23:40:00Z,Silver,Weightlifting,Men's 77kg,Xiaojun Lyu
+China,CHN,2016-08-10T20:10:00Z,Gold,Weightlifting,Women's 69kg,Yanmei Xiang
+China,CHN,2016-08-10T20:01:00Z,Bronze,Judo,Men -90 kg,Xunzhao Cheng
+China,CHN,2016-08-10T20:00:00Z,Bronze,Diving,Men's Synchronised 3m Springboard,Cao/Qin
+China,CHN,2016-08-09T23:40:00Z,Gold,Weightlifting,Men's 69kg,Zhiyong Shi
+China,CHN,2016-08-09T20:55:00Z,Bronze,Gymnastics Artistic,Women's Team,Women's team
+China,CHN,2016-08-09T20:10:00Z,Gold,Weightlifting,Women's 63kg,Wei Deng
+China,CHN,2016-08-09T20:00:00Z,Gold,Diving,Women's Synchronised 10m Platform,Chen/Liu
+China,CHN,2016-08-09T01:43:00Z,Silver,Swimming,Men's 100m Backstroke,Jiayu Xu
+China,CHN,2016-08-09T01:35:00Z,Bronze,Swimming,Women's 100m Backstroke,Yuanhui Fu
+China,CHN,2016-08-09T01:27:00Z,Gold,Swimming,Men's 200m Freestyle,Yang Sun
+China,CHN,2016-08-08T21:40:00Z,Bronze,Gymnastics Artistic,Men's Team,Men's team
+China,CHN,2016-08-08T20:00:00Z,Gold,Diving,Men's Synchronised 10m Platform,Chen/Lin
+China,CHN,2016-08-07T23:40:00Z,Gold,Weightlifting,Men's 56kg,Qingquan Long
+China,CHN,2016-08-07T20:00:00Z,Gold,Diving,Women's Synchronised 3m Springboard,Shi/Wu
+China,CHN,2016-08-07T14:30:00Z,Gold,Shooting,10m Air Pistol Women,Mengxue Zhang
+China,CHN,2016-08-07T01:38:00Z,Silver,Swimming,Men's 400m Freestyle,Yang Sun
+China,CHN,2016-08-06T20:45:00Z,Bronze,Fencing,Women's ÃpÃ©e Individual,Yiwen Sun
+China,CHN,2016-08-06T19:00:00Z,Bronze,Shooting,10m Air Pistol Men,Wei Pang
+China,CHN,2016-08-06T14:00:00Z,Bronze,Shooting,10m Air Rifle Women,Siling Yi
+China,CHN,2016-08-06T14:00:00Z,Silver,Shooting,10m Air Rifle Women,Li Du
+Ivory Coast,CIV,2016-08-20T01:30:00Z,Gold,Taekwondo,Men -80kg,Cheick Sallah Junior Cisse
+Ivory Coast,CIV,2016-08-20T00:15:00Z,Bronze,Taekwondo,Women -67kg,Ruth Marie Christelle Gbagbi
+Colombia,COL,2016-08-19T18:15:00Z,Bronze,Cycling BMX,Men,Carlos Alberto Ramirez Yepes
+Colombia,COL,2016-08-19T18:05:00Z,Gold,Cycling BMX,Women,Mariana Pajon
+Colombia,COL,2016-08-18T17:28:26Z,Bronze,Boxing,Women's Fly (48-51kg),Ingrit Lorena Valencia Victoria
+Colombia,COL,2016-08-15T01:20:00Z,Gold,Athletics,Women's Triple Jump,Caterine Ibarguen
+Colombia,COL,2016-08-14T17:52:32Z,Silver,Boxing,Men's Light Fly (46-49kg),Yurberjen Herney Martinez
+Colombia,COL,2016-08-10T19:47:00Z,Silver,Judo,Women -70 kg,Yuri Alvear
+Colombia,COL,2016-08-09T23:40:00Z,Bronze,Weightlifting,Men's 69kg,Luis Javier Mosquera Lozano
+Colombia,COL,2016-08-08T23:40:00Z,Gold,Weightlifting,Men's 62kg,Oscar Albeiro Figueroa Mosquera
+Croatia,CRO,2016-08-21T01:29:00Z,Bronze,Athletics,Women's High Jump,Blanka Vlasic
+Croatia,CRO,2016-08-20T21:57:03Z,Silver,Water Polo,Men,Men's team
+Croatia,CRO,2016-08-19T18:19:57Z,Bronze,Boxing,Men's Super Heavy (+91kg),Filip Hrgovic
+Croatia,CRO,2016-08-19T01:20:00Z,Gold,Athletics,Women's Javelin Throw,Sara Kolak
+Croatia,CRO,2016-08-18T17:50:00Z,Gold,Sailing,470 Men,Fantela/Marenic
+Croatia,CRO,2016-08-16T17:50:00Z,Silver,Sailing,Laser Men,Tonci Stipanovic
+Croatia,CRO,2016-08-16T15:25:00Z,Gold,Athletics,Women's Discus Throw,Sandra Perkovic
+Croatia,CRO,2016-08-13T13:39:00Z,Silver,Rowing,Men's Single Sculls,Damir Martin
+Croatia,CRO,2016-08-11T14:31:00Z,Gold,Rowing,Men's Double Sculls,Sinkovic/Sinkovic
+Croatia,CRO,2016-08-08T19:00:00Z,Gold,Shooting,Trap Men,Josip Glasnovic
+Cuba,CUB,2016-08-20T18:23:07Z,Gold,Boxing,Men's Middle (75kg),Arlen Lopez
+Cuba,CUB,2016-08-20T17:29:44Z,Gold,Boxing,Men's Bantam (56kg),Robeisy Ramirez
+Cuba,CUB,2016-08-18T18:36:54Z,Gold,Boxing,Men's Light Heavy (81kg),Julio Cesar la Cruz
+Cuba,CUB,2016-08-16T21:38:00Z,Silver,Wrestling,Men's Greco-Roman 98 kg,Yasmany Daniel Lugo Cabrera
+Cuba,CUB,2016-08-16T15:25:00Z,Bronze,Athletics,Women's Discus Throw,Denia Caballero
+Cuba,CUB,2016-08-15T20:48:00Z,Gold,Wrestling,Men's Greco-Roman 130 kg,Mijain Lopez Nunez
+Cuba,CUB,2016-08-14T20:24:00Z,Gold,Wrestling,Men's Greco-Roman 59 kg,Ismael Borrero Molina
+Cuba,CUB,2016-08-14T15:56:46Z,Bronze,Boxing,Men's Light (60kg),Lazaro Jorge Alvarez
+Cuba,CUB,2016-08-13T22:07:27Z,Bronze,Boxing,Men's Heavy (91kg),Erislandy Savon
+Cuba,CUB,2016-08-12T19:47:00Z,Silver,Judo,Women +78 kg,Idalys Ortiz
+Cuba,CUB,2016-08-12T15:18:20Z,Bronze,Boxing,Men's Light Fly (46-49kg),Joahnys Argilagos
+Czech Republic,CZE,2016-08-21T17:15:00Z,Silver,Cycling Mountain Bike,Men's Cross-country,Jaroslav Kulhavy
+Czech Republic,CZE,2016-08-20T13:19:00Z,Bronze,Canoe Sprint,Men's Kayak Four 1000m,Men's team
+Czech Republic,CZE,2016-08-19T01:20:00Z,Bronze,Athletics,Women's Javelin Throw,Barbora Spotakova
+Czech Republic,CZE,2016-08-16T13:19:00Z,Silver,Canoe Sprint,Men's Kayak Single 1000m,Josef Dostal
+Czech Republic,CZE,2016-08-14T16:30:00Z,Bronze,Tennis,Mixed Doubles,Hradecka/Stepanek
+Czech Republic,CZE,2016-08-13T18:00:00Z,Bronze,Tennis,Women's Doubles,Safarova/Strycova
+Czech Republic,CZE,2016-08-13T16:30:00Z,Bronze,Tennis,Women's Singles,Petra Kvitova
+Czech Republic,CZE,2016-08-13T13:39:00Z,Bronze,Rowing,Men's Single Sculls,Ondrej Synek
+Czech Republic,CZE,2016-08-11T20:08:00Z,Gold,Judo,Men -100 kg,Lukas Krpalek
+Czech Republic,CZE,2016-08-10T18:47:00Z,Bronze,Canoe Slalom,Kayak (K1) Men,Jiri Prskavec
+Denmark,DEN,2016-08-21T18:27:54Z,Gold,Handball,Men,Men's team
+Denmark,DEN,2016-08-20T12:20:00Z,Bronze,Badminton,Men's Singles,Viktor Axelsen
+Denmark,DEN,2016-08-19T01:16:00Z,Silver,Athletics,Women's 400m Hurdles,Sara Slott Petersen
+Denmark,DEN,2016-08-18T18:50:00Z,Bronze,Sailing,49er FX Women,Hansen/Salskov-Iversen
+Denmark,DEN,2016-08-18T15:30:00Z,Silver,Badminton,Women's Doubles,Pedersen/Rytter juhl
+Denmark,DEN,2016-08-18T13:18:00Z,Silver,Canoe Sprint,Women's Kayak Single 500m,Emma Jorgensen
+Denmark,DEN,2016-08-16T17:05:00Z,Bronze,Sailing,Laser Radial Women,Anne-Marie Rindom
+Denmark,DEN,2016-08-15T21:15:00Z,Bronze,Cycling Track,Men's Omnium,Lasse Norman Hansen
+Denmark,DEN,2016-08-14T20:48:00Z,Silver,Wrestling,Men's Greco-Roman 75 kg,Mark Overgaard Madsen
+Denmark,DEN,2016-08-14T02:01:00Z,Bronze,Swimming,Women's 4 x 100m Medley Relay,Women's team
+Denmark,DEN,2016-08-14T01:08:00Z,Gold,Swimming,Women's 50m Freestyle,Pernille Blume
+Denmark,DEN,2016-08-12T21:42:00Z,Bronze,Cycling Track,Men's Team Pursuit,Men's team
+Denmark,DEN,2016-08-12T14:13:00Z,Bronze,Rowing,Women's Pair,Rasmussen/Andersen
+Denmark,DEN,2016-08-11T14:51:00Z,Silver,Rowing,Lightweight Men's Four,Men's team
+Denmark,DEN,2016-08-06T18:57:00Z,Silver,Cycling Road,Men's Road Race,Jakob Fuglsang
+Dominican Republic,DOM,2016-08-18T00:30:00Z,Bronze,Taekwondo,Men -58kg,Luisito Pie
+Egypt,EGY,2016-08-19T00:15:00Z,Bronze,Taekwondo,Women -57kg,Hedaya Wahba
+Egypt,EGY,2016-08-10T23:40:00Z,Bronze,Weightlifting,Men's 77kg,Mohamed Mahmoud
+Egypt,EGY,2016-08-10T20:10:00Z,Bronze,Weightlifting,Women's 69kg,Sara Ahmed
+Spain,ESP,2016-08-21T17:15:00Z,Bronze,Cycling Mountain Bike,Men's Cross-country,Carlos Coloma Nicolas
+Spain,ESP,2016-08-21T16:22:09Z,Bronze,Basketball,Men,Men's team
+Spain,ESP,2016-08-21T15:30:00Z,Silver,Gymnastics Rhythmic,Group All-Around,Women's team
+Spain,ESP,2016-08-21T01:29:00Z,Gold,Athletics,Women's High Jump,Ruth Beitia
+Spain,ESP,2016-08-20T20:08:32Z,Silver,Basketball,Women,Women's team
+Spain,ESP,2016-08-20T12:14:00Z,Bronze,Canoe Sprint,Men's Kayak Single 200m,Saul Craviotto
+Spain,ESP,2016-08-19T14:15:00Z,Gold,Badminton,Women's Singles,Carolina Marin
+Spain,ESP,2016-08-19T01:15:00Z,Silver,Taekwondo,Women -57kg,Eva Calvo Gomez
+Spain,ESP,2016-08-19T00:30:00Z,Bronze,Taekwondo,Men -68kg,Joel Gonzalez Bonilla
+Spain,ESP,2016-08-18T12:54:00Z,Gold,Canoe Sprint,Men's Kayak Double 200m,Craviotto/Toro
+Spain,ESP,2016-08-17T01:46:00Z,Silver,Athletics,Men's 110m Hurdles,Orlando Ortega
+Spain,ESP,2016-08-16T13:19:00Z,Gold,Canoe Sprint,Men's Kayak Single 1000m,Marcus Walz
+Spain,ESP,2016-08-12T21:00:00Z,Gold,Tennis,Men's Doubles,Lopez/Nadal
+Spain,ESP,2016-08-12T20:10:00Z,Bronze,Weightlifting,Women's 75kg,Lidia Valentin Perez
+Spain,ESP,2016-08-11T18:32:00Z,Gold,Canoe Slalom,Kayak (K1) Women,Maialen Chourraut
+Spain,ESP,2016-08-11T02:00:00Z,Gold,Swimming,Women's 200m Butterfly,Mireia Belmonte Garcia
+Spain,ESP,2016-08-07T01:57:00Z,Bronze,Swimming,Women's 400m Individual Medley,Mireia Belmonte Garcia
+Estonia,EST,2016-08-11T13:19:00Z,Bronze,Rowing,Men's Quadruple Sculls,Men's team
+Ethiopia,ETH,2016-08-21T15:15:00Z,Silver,Athletics,Men's Marathon,Feyisa Lilesa
+Ethiopia,ETH,2016-08-21T00:44:00Z,Bronze,Athletics,Men's 5000m,Hagos Gebrhiwet
+Ethiopia,ETH,2016-08-20T00:56:00Z,Bronze,Athletics,Women's 5000m,Almaz Ayana
+Ethiopia,ETH,2016-08-17T01:34:00Z,Silver,Athletics,Women's 1500m,Genzebe Dibaba
+Ethiopia,ETH,2016-08-14T15:30:00Z,Bronze,Athletics,Women's Marathon,Mare Dibaba
+Ethiopia,ETH,2016-08-14T00:56:00Z,Bronze,Athletics,"Men's 10,000m",Tamirat Tola
+Ethiopia,ETH,2016-08-12T14:43:00Z,Bronze,Athletics,"Women's 10,000m",Tirunesh Dibaba
+Ethiopia,ETH,2016-08-12T14:43:00Z,Gold,Athletics,"Women's 10,000m",Almaz Ayana
+Fiji,FIJ,2016-08-11T22:32:37Z,Gold,Rugby Sevens,Men,Men's team
+Finland,FIN,2016-08-17T17:11:22Z,Bronze,Boxing,Women's Light (57-60kg),Mira Potkonen
+France,FRA,2016-08-21T18:42:04Z,Gold,Boxing,Men's Super Heavy (+91kg),Tony Victor James Yoka
+France,FRA,2016-08-21T18:27:54Z,Silver,Handball,Men,Men's team
+France,FRA,2016-08-20T19:58:07Z,Silver,Handball,Women,Women's team
+France,FRA,2016-08-20T17:11:56Z,Silver,Boxing,Women's Fly (48-51kg),Sarah Ourahmoune
+France,FRA,2016-08-20T12:14:00Z,Silver,Canoe Sprint,Men's Kayak Single 200m,Maxime Beaumont
+France,FRA,2016-08-20T01:15:00Z,Silver,Taekwondo,Women -67kg,Haby Niare
+France,FRA,2016-08-19T21:20:00Z,Silver,Modern Pentathlon,Women's Individual,Elodie Clouvel
+France,FRA,2016-08-19T19:27:30Z,Gold,Boxing,Women's Light (57-60kg),Estelle Mossely
+France,FRA,2016-08-19T01:31:00Z,Bronze,Athletics,Men's 200m,Christophe Lemaitre
+France,FRA,2016-08-19T01:01:00Z,Silver,Athletics,Men's Decathlon,Kevin Mayer
+France,FRA,2016-08-18T17:05:00Z,Bronze,Sailing,470 Women,Lecointre/Defrance
+France,FRA,2016-08-17T15:20:00Z,Gold,Equestrian,Jumping Team,Mixed team
+France,FRA,2016-08-17T15:04:00Z,Bronze,Athletics,Men's 3000m Steeplechase,Mahiedine Mekhissi
+France,FRA,2016-08-17T01:46:00Z,Bronze,Athletics,Men's 110m Hurdles,Dimitri Bascou
+France,FRA,2016-08-16T22:35:19Z,Silver,Boxing,Men's Light (60kg),Sofiane Oumiha
+France,FRA,2016-08-16T15:56:13Z,Bronze,Boxing,Men's Light Heavy (81kg),Mathieu Albert Daniel Bauderlique
+France,FRA,2016-08-16T15:25:00Z,Silver,Athletics,Women's Discus Throw,Melina Robert-Michon
+France,FRA,2016-08-16T14:30:00Z,Bronze,Marathon Swimming,Men's 10km,Marc-Antoine Olivier
+France,FRA,2016-08-16T02:46:00Z,Silver,Athletics,Men's Pole Vault,Renaud Lavillenie
+France,FRA,2016-08-15T21:50:37Z,Bronze,Boxing,Men's Welter (69kg),Souleymane Diop Cissokho
+France,FRA,2016-08-14T22:30:00Z,Gold,Fencing,Men's ÃpÃ©e Team,Men's team
+France,FRA,2016-08-14T17:35:00Z,Gold,Sailing,RS:X Women,Charline Picon
+France,FRA,2016-08-14T17:00:00Z,Bronze,Shooting,50m Rifle 3 Positions Men,Alexis Raynaud
+France,FRA,2016-08-14T16:35:00Z,Bronze,Sailing,RS:X Men,Pierre le Coq
+France,FRA,2016-08-13T16:15:00Z,Silver,Shooting,25m Rapid Fire Pistol Men,Jean Quiquampoix
+France,FRA,2016-08-13T01:48:00Z,Silver,Swimming,Men's 50m Freestyle,Florent Manaudou
+France,FRA,2016-08-12T22:30:00Z,Silver,Fencing,Men's Foil Team,Men's team
+France,FRA,2016-08-12T20:08:00Z,Gold,Judo,Men +100 kg,Teddy Riner
+France,FRA,2016-08-12T19:56:00Z,Silver,Archery,Men's Individual,Jean-Charles Valladont
+France,FRA,2016-08-12T19:47:00Z,Gold,Judo,Women +78 kg,Emilie Andeol
+France,FRA,2016-08-12T13:52:00Z,Gold,Rowing,Lightweight Men's Double Sculls,Houin/Azou
+France,FRA,2016-08-11T21:25:00Z,Bronze,Cycling Track,Men's Team Sprint,Men's team
+France,FRA,2016-08-11T19:54:00Z,Bronze,Judo,Men -100 kg,Cyrille Maret
+France,FRA,2016-08-11T19:47:00Z,Silver,Judo,Women -78 kg,Audrey Tcheumeo
+France,FRA,2016-08-11T17:47:00Z,Bronze,Canoe Slalom,Canoe Double (C2) Men,Klauss/Peche
+France,FRA,2016-08-11T14:51:00Z,Bronze,Rowing,Lightweight Men's Four,Men's team
+France,FRA,2016-08-09T20:45:00Z,Bronze,Fencing,Men's ÃpÃ©e Individual,Gauthier Grumier
+France,FRA,2016-08-09T19:47:00Z,Silver,Judo,Women -63 kg,Clarisse Agbegnenou
+France,FRA,2016-08-09T18:48:00Z,Gold,Canoe Slalom,Canoe Single (C1) Men,Denis Gargaud Chanut
+France,FRA,2016-08-09T17:56:00Z,Silver,Equestrian,Eventing Individual,Astier Nicolas
+France,FRA,2016-08-09T15:32:00Z,Gold,Equestrian,Eventing Team,Mixed team
+France,FRA,2016-08-08T03:00:00Z,Silver,Swimming,Men's 4 x 100m Freestyle Relay,Men's team
+Great Britain,GBR,2016-08-21T18:42:04Z,Silver,Boxing,Men's Super Heavy (+91kg),Joe Joyce
+Great Britain,GBR,2016-08-21T01:04:00Z,Bronze,Athletics,Women's 4 x 400m Relay,Women's team
+Great Britain,GBR,2016-08-21T00:44:00Z,Gold,Athletics,Men's 5000m,Mohamed Farah
+Great Britain,GBR,2016-08-21T00:15:00Z,Bronze,Taekwondo,Women +67kg,Bianca Walkden
+Great Britain,GBR,2016-08-20T17:11:56Z,Gold,Boxing,Women's Fly (48-51kg),Nicola Adams
+Great Britain,GBR,2016-08-20T16:00:00Z,Bronze,Triathlon,Women,Vicky Holland
+Great Britain,GBR,2016-08-20T12:14:00Z,Gold,Canoe Sprint,Men's Kayak Single 200m,Liam Heath
+Great Britain,GBR,2016-08-20T01:30:00Z,Silver,Taekwondo,Men -80kg,Lutalo Muhammad
+Great Britain,GBR,2016-08-20T01:16:00Z,Bronze,Athletics,Women's 4 x 100m Relay,Women's team
+Great Britain,GBR,2016-08-19T21:43:43Z,Gold,Hockey,Women,Women's team
+Great Britain,GBR,2016-08-19T17:20:00Z,Gold,Equestrian,Jumping Individual,Nick Skelton
+Great Britain,GBR,2016-08-19T01:15:00Z,Gold,Taekwondo,Women -57kg,Jade Jones
+Great Britain,GBR,2016-08-18T17:05:00Z,Gold,Sailing,470 Women,Mills/Clark
+Great Britain,GBR,2016-08-18T16:00:00Z,Silver,Triathlon,Men,Jonathan Brownlee
+Great Britain,GBR,2016-08-18T16:00:00Z,Gold,Triathlon,Men,Alistair Brownlee
+Great Britain,GBR,2016-08-18T14:00:00Z,Bronze,Badminton,Men's Doubles,Ellis/Langridge
+Great Britain,GBR,2016-08-18T12:54:00Z,Silver,Canoe Sprint,Men's Kayak Double 200m,Heath/Schofield
+Great Britain,GBR,2016-08-16T22:45:00Z,Silver,Diving,Men's 3m Springboard,Jack Laugher
+Great Britain,GBR,2016-08-16T21:45:54Z,Bronze,Boxing,Men's Light Heavy (81kg),Joshua Buatsi
+Great Britain,GBR,2016-08-16T21:30:00Z,Bronze,Cycling Track,Women's Sprint,Katy Marchant
+Great Britain,GBR,2016-08-16T21:30:00Z,Silver,Cycling Track,Women's Sprint,Rebecca James
+Great Britain,GBR,2016-08-16T21:26:00Z,Gold,Cycling Track,Men's Keirin,Jason Kenny
+Great Britain,GBR,2016-08-16T20:42:00Z,Gold,Cycling Track,Women's Omnium,Laura Trott
+Great Britain,GBR,2016-08-16T19:11:00Z,Bronze,Gymnastics Artistic,Men's Horizontal Bar,Nile Wilson
+Great Britain,GBR,2016-08-16T18:35:00Z,Gold,Sailing,Finn Men,Giles Scott
+Great Britain,GBR,2016-08-16T18:17:00Z,Bronze,Gymnastics Artistic,Women's Floor Exercise,Amy Tinkler
+Great Britain,GBR,2016-08-15T21:15:00Z,Silver,Cycling Track,Men's Omnium,Mark Cavendish
+Great Britain,GBR,2016-08-15T16:30:00Z,Gold,Equestrian,Dressage Individual,Charlotte Dujardin
+Great Britain,GBR,2016-08-15T15:00:00Z,Bronze,Athletics,Women's Hammer Throw,Sophie Hitchon
+Great Britain,GBR,2016-08-14T21:51:00Z,Silver,Cycling Track,Men's Sprint,Callum Skinner
+Great Britain,GBR,2016-08-14T21:51:00Z,Gold,Cycling Track,Men's Sprint,Jason Kenny
+Great Britain,GBR,2016-08-14T19:30:00Z,Gold,Tennis,Men's Singles,Andy Murray
+Great Britain,GBR,2016-08-14T19:11:00Z,Silver,Gymnastics Artistic,Men's Pommel Horse,Louis Smith
+Great Britain,GBR,2016-08-14T19:11:00Z,Gold,Gymnastics Artistic,Men's Pommel Horse,Max Whitlock
+Great Britain,GBR,2016-08-14T18:46:24Z,Gold,Golf,Men's Individual Stroke Play,Justin Rose
+Great Britain,GBR,2016-08-14T17:30:00Z,Gold,Gymnastics Artistic,Men's Floor Exercise,Max Whitlock
+Great Britain,GBR,2016-08-14T16:35:00Z,Silver,Sailing,RS:X Men,Nick Dempsey
+Great Britain,GBR,2016-08-14T02:26:00Z,Silver,Athletics,Women's Heptathlon,Jessica Ennis-Hill
+Great Britain,GBR,2016-08-14T02:16:00Z,Silver,Swimming,Men's 4 x 100m Medley Relay,Men's team
+Great Britain,GBR,2016-08-14T01:23:00Z,Bronze,Athletics,Men's Long Jump,Greg Rutherford
+Great Britain,GBR,2016-08-14T00:56:00Z,Gold,Athletics,"Men's 10,000m",Mohamed Farah
+Great Britain,GBR,2016-08-13T20:39:00Z,Silver,Cycling Track,Women's Keirin,Rebecca James
+Great Britain,GBR,2016-08-13T20:21:00Z,Gold,Cycling Track,Women's Team Pursuit,Women's team
+Great Britain,GBR,2016-08-13T14:34:00Z,Gold,Rowing,Men's Eight,Men's team
+Great Britain,GBR,2016-08-13T14:13:00Z,Silver,Rowing,Women's Eight,Women's team
+Great Britain,GBR,2016-08-13T01:33:00Z,Silver,Swimming,Women's 800m Freestyle,Jazz Carlin
+Great Britain,GBR,2016-08-12T21:50:00Z,Gold,Cycling Track,Men's Team Pursuit,Men's team
+Great Britain,GBR,2016-08-12T19:24:00Z,Silver,Equestrian,Dressage Team,Mixed team
+Great Britain,GBR,2016-08-12T19:22:00Z,Silver,Gymnastics Trampoline,Women,Bryony Page
+Great Britain,GBR,2016-08-12T14:34:00Z,Gold,Rowing,Men's Four,Men's team
+Great Britain,GBR,2016-08-12T14:13:00Z,Gold,Rowing,Women's Pair,Glover/Stanning
+Great Britain,GBR,2016-08-11T22:32:37Z,Silver,Rugby Sevens,Men,Men's team
+Great Britain,GBR,2016-08-11T21:29:00Z,Gold,Cycling Track,Men's Team Sprint,Men's team
+Great Britain,GBR,2016-08-11T17:47:00Z,Silver,Canoe Slalom,Canoe Double (C2) Men,Florence/Hounslow
+Great Britain,GBR,2016-08-11T14:11:00Z,Silver,Rowing,Women's Double Sculls,Thornley/Grainger
+Great Britain,GBR,2016-08-10T21:30:00Z,Bronze,Gymnastics Artistic,Men's Individual All-Around,Max Whitlock
+Great Britain,GBR,2016-08-10T20:00:00Z,Gold,Diving,Men's Synchronised 3m Springboard,Laugher/Mears
+Great Britain,GBR,2016-08-10T19:33:00Z,Bronze,Judo,Women -70 kg,Sally Conway
+Great Britain,GBR,2016-08-10T18:47:00Z,Gold,Canoe Slalom,Kayak (K1) Men,Joseph Clarke
+Great Britain,GBR,2016-08-10T18:25:00Z,Bronze,Shooting,Double Trap Men,Steven Scott
+Great Britain,GBR,2016-08-10T16:00:00Z,Bronze,Cycling Road,Men's Individual Time Trial,Christopher Froome
+Great Britain,GBR,2016-08-10T02:50:00Z,Silver,Swimming,Men's 4 x 200m Freestyle Relay,Men's team
+Great Britain,GBR,2016-08-10T02:35:00Z,Silver,Swimming,Women's 200m Individual Medley,Siobhan-Marie O'Connor
+Great Britain,GBR,2016-08-08T20:00:00Z,Bronze,Diving,Men's Synchronised 10m Platform,Daley/Goodfellow
+Great Britain,GBR,2016-08-08T18:25:00Z,Bronze,Shooting,Trap Men,Edward Ling
+Great Britain,GBR,2016-08-08T02:09:00Z,Silver,Swimming,Women's 400m Freestyle,Jazz Carlin
+Great Britain,GBR,2016-08-08T01:58:00Z,Gold,Swimming,Men's 100m Breaststroke,Adam Peaty
+Georgia,GEO,2016-08-20T21:23:00Z,Bronze,Wrestling,Men's Freestyle 125 kg,Geno Petriashvili
+Georgia,GEO,2016-08-19T21:00:00Z,Gold,Wrestling,Men's Freestyle 57 kg,Vladimer Khinchegashvili
+Georgia,GEO,2016-08-16T23:40:00Z,Bronze,Weightlifting,Men's +105kg,Irakli Turmanidze
+Georgia,GEO,2016-08-16T23:40:00Z,Gold,Weightlifting,Men's +105kg,Lasha Talakhadze
+Georgia,GEO,2016-08-16T20:08:00Z,Bronze,Wrestling,Men's Greco-Roman 66 kg,Shmagi Bolkvadze
+Georgia,GEO,2016-08-10T20:08:00Z,Silver,Judo,Men -90 kg,Varlam Liparteliani
+Georgia,GEO,2016-08-08T19:54:00Z,Bronze,Judo,Men -73 kg,Lasha Shavdatuashvili
+Germany,GER,2016-08-21T15:01:41Z,Bronze,Handball,Men,Men's team
+Germany,GER,2016-08-21T01:15:00Z,Gold,Athletics,Men's Javelin Throw,Thomas Rohler
+Germany,GER,2016-08-20T23:10:12Z,Silver,Football,Men,Men's team
+Germany,GER,2016-08-20T13:19:00Z,Gold,Canoe Sprint,Men's Kayak Four 1000m,Men's team
+Germany,GER,2016-08-20T12:54:00Z,Silver,Canoe Sprint,Women's Kayak Four 500m,Women's team
+Germany,GER,2016-08-20T12:29:00Z,Gold,Canoe Sprint,Men's Canoe Double 1000m,Brendel/Vandrey
+Germany,GER,2016-08-20T12:14:00Z,Bronze,Canoe Sprint,Men's Kayak Single 200m,Ronald Rauhe
+Germany,GER,2016-08-19T22:17:32Z,Gold,Football,Women,Women's team
+Germany,GER,2016-08-19T18:02:52Z,Bronze,Boxing,Men's Light Welter (64kg),Artem Harutyunyan
+Germany,GER,2016-08-19T16:22:47Z,Bronze,Hockey,Women,Women's team
+Germany,GER,2016-08-18T18:05:00Z,Bronze,Sailing,49er Men,Heil/Ploessel
+Germany,GER,2016-08-18T16:35:52Z,Bronze,Hockey,Men,Men's team
+Germany,GER,2016-08-18T12:15:00Z,Gold,Canoe Sprint,Men's Kayak Double 1000m,Rendschmidt/Gross
+Germany,GER,2016-08-18T03:42:17Z,Gold,Beach Volleyball,Women,Ludwig/Walkenhorst
+Germany,GER,2016-08-17T17:43:00Z,Bronze,Table Tennis,Men's Team,Men's team
+Germany,GER,2016-08-17T15:20:00Z,Bronze,Equestrian,Jumping Team,Mixed team
+Germany,GER,2016-08-16T23:55:00Z,Silver,Table Tennis,Women's Team,Women's team
+Germany,GER,2016-08-16T22:45:00Z,Bronze,Diving,Men's 3m Springboard,Patrick Hausding
+Germany,GER,2016-08-16T21:30:00Z,Gold,Cycling Track,Women's Sprint,Kristina Vogel
+Germany,GER,2016-08-16T19:11:00Z,Gold,Gymnastics Artistic,Men's Horizontal Bar,Fabian Hambuechen
+Germany,GER,2016-08-16T12:30:00Z,Silver,Canoe Sprint,Women's Kayak Double 500m,Weber/Dietze
+Germany,GER,2016-08-16T12:15:00Z,Gold,Canoe Sprint,Men's Canoe Single 1000m,Sebastian Brendel
+Germany,GER,2016-08-15T20:16:00Z,Bronze,Wrestling,Men's Greco-Roman 85 kg,Denis Maksymilian Kudla
+Germany,GER,2016-08-15T16:30:00Z,Bronze,Equestrian,Dressage Individual,Kristina Broring-Sprehe
+Germany,GER,2016-08-15T16:30:00Z,Silver,Equestrian,Dressage Individual,Isabell Werth
+Germany,GER,2016-08-14T20:02:00Z,Bronze,Gymnastics Artistic,Women's Uneven Bars,Sophie Scheder
+Germany,GER,2016-08-13T19:30:00Z,Silver,Tennis,Women's Singles,Angelique Kerber
+Germany,GER,2016-08-13T16:15:00Z,Gold,Shooting,25m Rapid Fire Pistol Men,Christian Reitz
+Germany,GER,2016-08-13T14:55:00Z,Bronze,Athletics,Men's Discus Throw,Daniel Jasinski
+Germany,GER,2016-08-13T14:55:00Z,Gold,Athletics,Men's Discus Throw,Christoph Harting
+Germany,GER,2016-08-13T14:34:00Z,Silver,Rowing,Men's Eight,Men's team
+Germany,GER,2016-08-12T21:04:00Z,Bronze,Cycling Track,Women's Team Sprint,Vogel/Welte
+Germany,GER,2016-08-12T19:24:00Z,Gold,Equestrian,Dressage Team,Mixed team
+Germany,GER,2016-08-12T14:30:00Z,Gold,Shooting,50m Rifle Prone Men,Henri Junghaenel
+Germany,GER,2016-08-11T19:56:00Z,Silver,Archery,Women's Individual,Lisa Unruh
+Germany,GER,2016-08-11T16:00:00Z,Gold,Shooting,50m Rifle 3 Positions Women,Barbara Engleder
+Germany,GER,2016-08-11T13:31:00Z,Gold,Rowing,Women's Quadruple Sculls,Women's team
+Germany,GER,2016-08-11T13:19:00Z,Gold,Rowing,Men's Quadruple Sculls,Men's team
+Germany,GER,2016-08-10T19:40:00Z,Bronze,Judo,Women -70 kg,Laura Vargas Koch
+Germany,GER,2016-08-09T19:15:00Z,Silver,Shooting,25m Pistol Women,Monika Karsch
+Germany,GER,2016-08-09T17:56:00Z,Gold,Equestrian,Eventing Individual,Michael Jung
+Germany,GER,2016-08-09T15:32:00Z,Silver,Equestrian,Eventing Team,Mixed team
+Greece,GRE,2016-08-20T01:36:00Z,Gold,Athletics,Women's Pole Vault,Ekaterini Stefanidi
+Greece,GRE,2016-08-18T17:50:00Z,Bronze,Sailing,470 Men,Mantis/Kagialis
+Greece,GRE,2016-08-16T14:30:00Z,Silver,Marathon Swimming,Men's 10km,Spiros Gianniotis
+Greece,GRE,2016-08-15T17:30:00Z,Gold,Gymnastics Artistic,Men's Rings,Eleftherios Petrounias
+Greece,GRE,2016-08-09T19:15:00Z,Gold,Shooting,25m Pistol Women,Anna Korakaki
+Greece,GRE,2016-08-07T14:30:00Z,Bronze,Shooting,10m Air Pistol Women,Anna Korakaki
+Grenada,GRN,2016-08-15T01:01:00Z,Silver,Athletics,Men's 400m,Kirani James
+Hungary,HUN,2016-08-20T12:54:00Z,Gold,Canoe Sprint,Women's Kayak Four 500m,Women's team
+Hungary,HUN,2016-08-18T13:18:00Z,Gold,Canoe Sprint,Women's Kayak Single 500m,Danuta Kozak
+Hungary,HUN,2016-08-16T12:30:00Z,Gold,Canoe Sprint,Women's Kayak Double 500m,Szabo/Kozak
+Hungary,HUN,2016-08-14T21:00:00Z,Bronze,Fencing,Men's ÃpÃ©e Team,Men's team
+Hungary,HUN,2016-08-13T02:00:00Z,Bronze,Athletics,Women's Shot Put,Anita Marton
+Hungary,HUN,2016-08-13T01:33:00Z,Bronze,Swimming,Women's 800m Freestyle,Boglarka Kapas
+Hungary,HUN,2016-08-13T01:17:00Z,Silver,Swimming,Men's 100m Butterfly,Laszlo Cseh
+Hungary,HUN,2016-08-13T01:09:00Z,Silver,Swimming,Women's 200m Backstroke,Katinka Hosszu
+Hungary,HUN,2016-08-11T00:10:00Z,Gold,Fencing,Men's Sabre Individual,Aron Szilagyi
+Hungary,HUN,2016-08-10T02:35:00Z,Gold,Swimming,Women's 200m Individual Medley,Katinka Hosszu
+Hungary,HUN,2016-08-10T01:34:00Z,Bronze,Swimming,Men's 200m Butterfly,Tamas Kenderesi
+Hungary,HUN,2016-08-09T21:15:00Z,Silver,Fencing,Men's ÃpÃ©e Individual,Geza Imre
+Hungary,HUN,2016-08-09T01:35:00Z,Gold,Swimming,Women's 100m Backstroke,Katinka Hosszu
+Hungary,HUN,2016-08-07T01:57:00Z,Gold,Swimming,Women's 400m Individual Medley,Katinka Hosszu
+Hungary,HUN,2016-08-06T21:15:00Z,Gold,Fencing,Women's ÃpÃ©e Individual,Emese Szasz
+Indonesia,INA,2016-08-17T15:30:00Z,Gold,Badminton,Mixed Doubles,Ahmad/Natsir
+Indonesia,INA,2016-08-08T23:40:00Z,Silver,Weightlifting,Men's 62kg,Eko Yuli Irawan
+Indonesia,INA,2016-08-06T23:40:00Z,Silver,Weightlifting,Women's 48kg,Sri Wahyuni Agustiani
+India,IND,2016-08-19T14:15:00Z,Silver,Badminton,Women's Singles,V. Sindhu Pusarla
+India,IND,2016-08-17T21:15:00Z,Bronze,Wrestling,Women's Freestyle 58 kg,Sakshi Malik
+Individual Olympic Athletes,IOA,2016-08-13T18:25:00Z,Bronze,Shooting,Skeet Men,Abdullah Alrashidi
+Individual Olympic Athletes,IOA,2016-08-10T19:00:00Z,Gold,Shooting,Double Trap Men,Fehaid Aldeehani
+Iran,IRI,2016-08-20T21:38:00Z,Silver,Wrestling,Men's Freestyle 125 kg,Komeil Nemat Ghasemi
+Iran,IRI,2016-08-19T21:45:00Z,Gold,Wrestling,Men's Freestyle 74 kg,Hassan Aliazam Yazdanicharati
+Iran,IRI,2016-08-19T20:30:00Z,Bronze,Wrestling,Men's Freestyle 57 kg,Hassan Sabzali Rahimi
+Iran,IRI,2016-08-19T00:45:00Z,Bronze,Taekwondo,Women -57kg,Kimia Alizadeh Zenoorin
+Iran,IRI,2016-08-16T21:23:00Z,Bronze,Wrestling,Men's Greco-Roman 98 kg,Ghasem Gholamreza Rezaei
+Iran,IRI,2016-08-14T20:40:00Z,Bronze,Wrestling,Men's Greco-Roman 75 kg,Saeid Morad Abdvali
+Iran,IRI,2016-08-13T23:40:00Z,Gold,Weightlifting,Men's 94kg,Sohrab Moradi
+Iran,IRI,2016-08-12T23:40:00Z,Gold,Weightlifting,Men's 85kg,Kianoush Rostami
+Ireland,IRL,2016-08-16T17:05:00Z,Silver,Sailing,Laser Radial Women,Annalise Murphy
+Ireland,IRL,2016-08-12T13:52:00Z,Silver,Rowing,Lightweight Men's Double Sculls,O'Donovan/O'Donovan
+Israel,ISR,2016-08-12T20:01:00Z,Bronze,Judo,Men +100 kg,Or Sasson
+Israel,ISR,2016-08-09T19:33:00Z,Bronze,Judo,Women -63 kg,Yarden Gerbi
+Italy,ITA,2016-08-21T17:58:00Z,Silver,Volleyball,Men,Men's team
+Italy,ITA,2016-08-21T16:53:00Z,Bronze,Wrestling,Men's Freestyle 65 kg,Frank Chamizo Marquez
+Italy,ITA,2016-08-20T17:10:11Z,Bronze,Water Polo,Men,Men's team
+Italy,ITA,2016-08-19T19:38:20Z,Silver,Water Polo,Women,Women's team
+Italy,ITA,2016-08-19T03:46:28Z,Silver,Beach Volleyball,Men,Nicolai/Lupo
+Italy,ITA,2016-08-15T21:15:00Z,Gold,Cycling Track,Men's Omnium,Elia Viviani
+Italy,ITA,2016-08-15T14:30:00Z,Silver,Marathon Swimming,Women's 10km,Rachele Bruni
+Italy,ITA,2016-08-14T22:30:00Z,Silver,Fencing,Men's ÃpÃ©e Team,Men's team
+Italy,ITA,2016-08-14T20:15:00Z,Bronze,Diving,Women's 3m Springboard,Tania Cagnotto
+Italy,ITA,2016-08-14T17:00:00Z,Gold,Shooting,50m Rifle 3 Positions Men,Niccolo Campriani
+Italy,ITA,2016-08-14T01:30:00Z,Bronze,Swimming,Men's 1500m Freestyle,Gabriele Detti
+Italy,ITA,2016-08-14T01:30:00Z,Gold,Swimming,Men's 1500m Freestyle,Gregorio Paltrinieri
+Italy,ITA,2016-08-13T19:00:00Z,Gold,Shooting,Skeet Men,Gabriele Rossetti
+Italy,ITA,2016-08-12T19:00:00Z,Silver,Shooting,Skeet Women,Chiara Cainero
+Italy,ITA,2016-08-12T19:00:00Z,Gold,Shooting,Skeet Women,Diana Bacosi
+Italy,ITA,2016-08-12T14:34:00Z,Bronze,Rowing,Men's Four,Men's team
+Italy,ITA,2016-08-11T13:51:00Z,Bronze,Rowing,Men's Pair,Abagnale/DI COSTANZO
+Italy,ITA,2016-08-10T23:40:00Z,Silver,Fencing,Women's Foil Individual,Elisa di Francisca
+Italy,ITA,2016-08-10T19:00:00Z,Silver,Shooting,Double Trap Men,Marco Innocenti
+Italy,ITA,2016-08-08T19:00:00Z,Silver,Shooting,Trap Men,Giovanni Pellielo
+Italy,ITA,2016-08-08T15:30:00Z,Gold,Shooting,10m Air Rifle Men,Niccolo Campriani
+Italy,ITA,2016-08-07T21:15:00Z,Gold,Fencing,Men's Foil Individual,Daniele Garozzo
+Italy,ITA,2016-08-07T20:08:00Z,Gold,Judo,Men -66 kg,Fabio Basile
+Italy,ITA,2016-08-07T20:00:00Z,Silver,Diving,Women's Synchronised 3m Springboard,Cagnotto/Dallape'
+Italy,ITA,2016-08-07T19:47:00Z,Silver,Judo,Women -52 kg,Odette Giuffrida
+Italy,ITA,2016-08-07T19:21:00Z,Bronze,Cycling Road,Women's Road Race,Elisa Longo Borghini
+Italy,ITA,2016-08-07T01:38:00Z,Bronze,Swimming,Men's 400m Freestyle,Gabriele Detti
+Italy,ITA,2016-08-06T21:15:00Z,Silver,Fencing,Women's ÃpÃ©e Individual,Rossella Fiamingo
+Jamaica,JAM,2016-08-21T01:38:00Z,Silver,Athletics,Men's 4 x 400m Relay,Men's team
+Jamaica,JAM,2016-08-21T01:04:00Z,Silver,Athletics,Women's 4 x 400m Relay,Women's team
+Jamaica,JAM,2016-08-20T01:36:00Z,Gold,Athletics,Men's 4 x 100m Relay,Men's team
+Jamaica,JAM,2016-08-20T01:16:00Z,Silver,Athletics,Women's 4 x 100m Relay,Women's team
+Jamaica,JAM,2016-08-19T01:31:00Z,Gold,Athletics,Men's 200m,Usain Bolt
+Jamaica,JAM,2016-08-18T01:31:00Z,Gold,Athletics,Women's 200m,Elaine Thompson
+Jamaica,JAM,2016-08-17T01:46:00Z,Gold,Athletics,Men's 110m Hurdles,Omar McLeod
+Jamaica,JAM,2016-08-16T02:06:00Z,Bronze,Athletics,Women's 400m,Shericka Jackson
+Jamaica,JAM,2016-08-15T01:26:00Z,Gold,Athletics,Men's 100m,Usain Bolt
+Jamaica,JAM,2016-08-14T01:38:00Z,Bronze,Athletics,Women's 100m,Shelly-Ann Fraser-Pryce
+Jamaica,JAM,2016-08-14T01:38:00Z,Gold,Athletics,Women's 100m,Elaine Thompson
+Jordan,JOR,2016-08-19T01:30:00Z,Gold,Taekwondo,Men -68kg,Ahmad Abughaush
+Japan,JPN,2016-08-20T01:36:00Z,Silver,Athletics,Men's 4 x 100m Relay,Men's team
+Japan,JPN,2016-08-19T21:00:00Z,Silver,Wrestling,Men's Freestyle 57 kg,Rei Higuchi
+Japan,JPN,2016-08-19T16:00:00Z,Bronze,Synchronised Swimming,Teams,Women's team
+Japan,JPN,2016-08-19T15:20:00Z,Bronze,Athletics,Men's 50km Walk,Hirooki Arai
+Japan,JPN,2016-08-19T12:35:00Z,Bronze,Badminton,Women's Singles,Nozomi Okuhara
+Japan,JPN,2016-08-18T21:15:00Z,Gold,Wrestling,Women's Freestyle 63 kg,Risako Kawai
+Japan,JPN,2016-08-18T20:30:00Z,Silver,Wrestling,Women's Freestyle 53 kg,Saori Yoshida
+Japan,JPN,2016-08-18T15:30:00Z,Gold,Badminton,Women's Doubles,Matsutomo/Takahashi
+Japan,JPN,2016-08-18T01:10:00Z,Silver,Table Tennis,Men's Team,Men's team
+Japan,JPN,2016-08-17T22:15:00Z,Gold,Wrestling,Women's Freestyle 69 kg,Sara Dosho
+Japan,JPN,2016-08-17T21:30:00Z,Gold,Wrestling,Women's Freestyle 58 kg,Kaori Icho
+Japan,JPN,2016-08-17T20:45:00Z,Gold,Wrestling,Women's Freestyle 48 kg,Eri Tosaka
+Japan,JPN,2016-08-16T18:00:00Z,Bronze,Synchronised Swimming,Duets,Inui/Mitsui
+Japan,JPN,2016-08-16T16:19:00Z,Bronze,Table Tennis,Women's Team,Women's team
+Japan,JPN,2016-08-15T18:24:00Z,Bronze,Gymnastics Artistic,Men's Vault,Kenzo Shirai
+Japan,JPN,2016-08-14T20:24:00Z,Silver,Wrestling,Men's Greco-Roman 59 kg,Shinobu Ota
+Japan,JPN,2016-08-14T18:00:00Z,Bronze,Tennis,Men's Singles,Kei Nishikori
+Japan,JPN,2016-08-12T20:08:00Z,Silver,Judo,Men +100 kg,Hisayoshi Harasawa
+Japan,JPN,2016-08-12T19:33:00Z,Bronze,Judo,Women +78 kg,Kanae Yamabe
+Japan,JPN,2016-08-12T02:07:00Z,Silver,Swimming,Men's 200m Individual Medley,Kosuke Hagino
+Japan,JPN,2016-08-12T01:23:00Z,Gold,Swimming,Women's 200m Breaststroke,Rie Kaneto
+Japan,JPN,2016-08-12T00:26:00Z,Bronze,Table Tennis,Men's Singles,Jun Mizutani
+Japan,JPN,2016-08-11T20:01:00Z,Bronze,Judo,Men -100 kg,Ryunosuke Haga
+Japan,JPN,2016-08-11T02:00:00Z,Bronze,Swimming,Women's 200m Butterfly,Natsumi Hoshi
+Japan,JPN,2016-08-10T21:30:00Z,Gold,Gymnastics Artistic,Men's Individual All-Around,Kohei Uchimura
+Japan,JPN,2016-08-10T20:08:00Z,Gold,Judo,Men -90 kg,Mashu Baker
+Japan,JPN,2016-08-10T19:47:00Z,Gold,Judo,Women -70 kg,Haruka Tachimoto
+Japan,JPN,2016-08-10T02:50:00Z,Bronze,Swimming,Men's 4 x 200m Freestyle Relay,Men's team
+Japan,JPN,2016-08-10T01:34:00Z,Silver,Swimming,Men's 200m Butterfly,Masato Sakai
+Japan,JPN,2016-08-09T20:01:00Z,Bronze,Judo,Men -81 kg,Takanori Nagase
+Japan,JPN,2016-08-09T18:48:00Z,Bronze,Canoe Slalom,Canoe Single (C1) Men,Takuya Haneda
+Japan,JPN,2016-08-08T21:40:00Z,Gold,Gymnastics Artistic,Men's Team,Men's team
+Japan,JPN,2016-08-08T20:08:00Z,Gold,Judo,Men -73 kg,Shohei Ono
+Japan,JPN,2016-08-08T19:40:00Z,Bronze,Judo,Women -57 kg,Kaori Matsumoto
+Japan,JPN,2016-08-07T20:01:00Z,Bronze,Judo,Men -66 kg,Masashi Ebinuma
+Japan,JPN,2016-08-07T19:33:00Z,Bronze,Judo,Women -52 kg,Misato Nakamura
+Japan,JPN,2016-08-07T01:11:00Z,Bronze,Swimming,Men's 400m Individual Medley,Daiya Seto
+Japan,JPN,2016-08-07T01:11:00Z,Gold,Swimming,Men's 400m Individual Medley,Kosuke Hagino
+Japan,JPN,2016-08-06T23:40:00Z,Bronze,Weightlifting,Women's 48kg,Hiromi Miyake
+Japan,JPN,2016-08-06T19:54:00Z,Bronze,Judo,Men -60 kg,Naohisa Takato
+Japan,JPN,2016-08-06T19:33:00Z,Bronze,Judo,Women -48 kg,Ami Kondo
+Kazakhstan,KAZ,2016-08-19T18:53:37Z,Bronze,Boxing,Women's Middle (69-75kg),Dariga Shakimova
+Kazakhstan,KAZ,2016-08-19T18:36:32Z,Bronze,Boxing,Men's Super Heavy (+91kg),Ivan Dychko
+Kazakhstan,KAZ,2016-08-18T22:00:00Z,Silver,Wrestling,Women's Freestyle 75 kg,Guzel Manyurova
+Kazakhstan,KAZ,2016-08-18T20:55:00Z,Bronze,Wrestling,Women's Freestyle 63 kg,Yekaterina Larionova
+Kazakhstan,KAZ,2016-08-18T18:36:54Z,Silver,Boxing,Men's Light Heavy (81kg),Adilbek Niyazymbetov
+Kazakhstan,KAZ,2016-08-17T21:45:00Z,Bronze,Wrestling,Women's Freestyle 69 kg,Elmira Syzdykova
+Kazakhstan,KAZ,2016-08-17T19:57:39Z,Gold,Boxing,Men's Welter (69kg),Daniyar Yeleussinov
+Kazakhstan,KAZ,2016-08-15T23:40:00Z,Bronze,Weightlifting,Men's 105kg,Alexandr Zaichikov
+Kazakhstan,KAZ,2016-08-15T22:43:18Z,Silver,Boxing,Men's Heavy (91kg),Vassiliy Levit
+Kazakhstan,KAZ,2016-08-15T01:20:00Z,Bronze,Athletics,Women's Triple Jump,Olga Rypakova
+Kazakhstan,KAZ,2016-08-11T01:09:00Z,Gold,Swimming,Men's 200m Breaststroke,Dmitriy Balandin
+Kazakhstan,KAZ,2016-08-10T23:40:00Z,Gold,Weightlifting,Men's 77kg,Nijat Rahimov
+Kazakhstan,KAZ,2016-08-10T20:10:00Z,Silver,Weightlifting,Women's 69kg,Zhazira Zhapparkul
+Kazakhstan,KAZ,2016-08-09T20:10:00Z,Bronze,Weightlifting,Women's 63kg,Karina Goricheva
+Kazakhstan,KAZ,2016-08-08T23:40:00Z,Bronze,Weightlifting,Men's 62kg,Farkhad Kharki
+Kazakhstan,KAZ,2016-08-06T20:08:00Z,Silver,Judo,Men -60 kg,Yeldos Smetov
+Kazakhstan,KAZ,2016-08-06T19:40:00Z,Bronze,Judo,Women -48 kg,Otgontsetseg Galbadrakh
+Kenya,KEN,2016-08-21T15:15:00Z,Gold,Athletics,Men's Marathon,Eliud Kipchoge
+Kenya,KEN,2016-08-21T01:15:00Z,Silver,Athletics,Men's Javelin Throw,Julius Yego
+Kenya,KEN,2016-08-21T00:17:00Z,Bronze,Athletics,Women's 800m,Margaret Nyairera Wambui
+Kenya,KEN,2016-08-20T00:56:00Z,Silver,Athletics,Women's 5000m,Hellen Onsando Obiri
+Kenya,KEN,2016-08-20T00:56:00Z,Gold,Athletics,Women's 5000m,Vivian Jepkemoi Cheruiyot
+Kenya,KEN,2016-08-18T15:01:00Z,Silver,Athletics,Men's 400m Hurdles,Boniface Mucheru Tumuti
+Kenya,KEN,2016-08-17T15:04:00Z,Gold,Athletics,Men's 3000m Steeplechase,Conseslus Kipruto
+Kenya,KEN,2016-08-17T01:34:00Z,Gold,Athletics,Women's 1500m,Faith Chepngetich Kipyegon
+Kenya,KEN,2016-08-16T01:47:00Z,Gold,Athletics,Men's 800m,David Lekuta Rudisha
+Kenya,KEN,2016-08-15T14:25:00Z,Silver,Athletics,Women's 3000m Steeplechase,Hyvin Kiyeng Jepkemoi
+Kenya,KEN,2016-08-14T15:30:00Z,Gold,Athletics,Women's Marathon,Jemima Jelagat Sumgong
+Kenya,KEN,2016-08-14T00:56:00Z,Silver,Athletics,"Men's 10,000m",Paul Kipngetich Tanui
+Kenya,KEN,2016-08-12T14:43:00Z,Silver,Athletics,"Women's 10,000m",Vivian Jepkemoi Cheruiyot
+South Korea,KOR,2016-08-21T01:00:00Z,Bronze,Taekwondo,Men +80kg,Dongmin Cha
+South Korea,KOR,2016-08-20T16:36:59Z,Gold,Golf,Women's Individual Stroke Play,Inbee Park
+South Korea,KOR,2016-08-20T01:15:00Z,Gold,Taekwondo,Women -67kg,Hyeri Oh
+South Korea,KOR,2016-08-19T01:00:00Z,Bronze,Taekwondo,Men -68kg,Daehoon Lee
+South Korea,KOR,2016-08-18T12:20:00Z,Bronze,Badminton,Women's Doubles,Jung/Shin
+South Korea,KOR,2016-08-18T01:15:00Z,Gold,Taekwondo,Women -49kg,Sohui Kim
+South Korea,KOR,2016-08-18T01:00:00Z,Bronze,Taekwondo,Men -58kg,Taehun Kim
+South Korea,KOR,2016-08-14T20:32:00Z,Bronze,Wrestling,Men's Greco-Roman 75 kg,Hyeonwoo Kim
+South Korea,KOR,2016-08-12T19:56:00Z,Gold,Archery,Men's Individual,Bonchan Ku
+South Korea,KOR,2016-08-12T14:30:00Z,Silver,Shooting,50m Rifle Prone Men,Jonghyun Kim
+South Korea,KOR,2016-08-11T19:56:00Z,Gold,Archery,Women's Individual,Hyejin Chang
+South Korea,KOR,2016-08-11T19:40:00Z,Bronze,Archery,Women's Individual,Bobae Ki
+South Korea,KOR,2016-08-10T23:10:00Z,Bronze,Fencing,Men's Sabre Individual,Junghwan Kim
+South Korea,KOR,2016-08-10T19:54:00Z,Bronze,Judo,Men -90 kg,Donghan Gwak
+South Korea,KOR,2016-08-10T15:30:00Z,Gold,Shooting,50m Pistol Men,Jongoh Jin
+South Korea,KOR,2016-08-09T21:15:00Z,Gold,Fencing,Men's ÃpÃ©e Individual,Sangyoung Park
+South Korea,KOR,2016-08-07T20:32:00Z,Gold,Archery,Women's Team,Women's team
+South Korea,KOR,2016-08-07T20:10:00Z,Bronze,Weightlifting,Women's 53kg,Jin Hee Yoon
+South Korea,KOR,2016-08-07T20:08:00Z,Silver,Judo,Men -66 kg,Baul An
+South Korea,KOR,2016-08-06T20:32:00Z,Gold,Archery,Men's Team,Men's team
+South Korea,KOR,2016-08-06T19:47:00Z,Silver,Judo,Women -48 kg,Bokyeong Jeong
+Kosovo,KOS,2016-08-07T19:47:00Z,Gold,Judo,Women -52 kg,Majlinda Kelmendi
+Lithuania,LTU,2016-08-18T12:54:00Z,Bronze,Canoe Sprint,Men's Kayak Double 200m,Lankas/Ramanauskas
+Lithuania,LTU,2016-08-13T23:40:00Z,Bronze,Weightlifting,Men's 94kg,Aurimas Didzbalis
+Lithuania,LTU,2016-08-11T14:31:00Z,Silver,Rowing,Men's Double Sculls,Griskonis/Ritter
+Lithuania,LTU,2016-08-11T14:11:00Z,Bronze,Rowing,Women's Double Sculls,Vistartaite/Valciukaite
+Morocco,MAR,2016-08-15T15:50:06Z,Bronze,Boxing,Men's Welter (69kg),Mohammed Rabii
+Malaysia,MAS,2016-08-20T13:10:00Z,Silver,Badminton,Men's Singles,Chong Wei Lee
+Malaysia,MAS,2016-08-19T15:00:00Z,Silver,Badminton,Men's Doubles,Goh/Tan
+Malaysia,MAS,2016-08-17T15:30:00Z,Silver,Badminton,Mixed Doubles,Chan/Goh
+Malaysia,MAS,2016-08-16T21:26:00Z,Bronze,Cycling Track,Men's Keirin,Azizulhasni Awang
+Malaysia,MAS,2016-08-09T20:00:00Z,Silver,Diving,Women's Synchronised 10m Platform,Cheong/Pamg
+Moldova,MDA,2016-08-16T12:15:00Z,Bronze,Canoe Sprint,Men's Canoe Single 1000m,Serghei Tarnovschi
+Mexico,MEX,2016-08-21T01:15:00Z,Silver,Taekwondo,Women +67kg,Maria del Rosario Espinoza Espinoza
+Mexico,MEX,2016-08-20T21:20:00Z,Bronze,Modern Pentathlon,Men's Individual,Ismael Marcelo Hernandez Uscanga
+Mexico,MEX,2016-08-20T20:55:00Z,Silver,Diving,Men's 10m Platform,German Sanchez
+Mexico,MEX,2016-08-19T19:15:00Z,Silver,Athletics,Women's 20km Walk,Maria Guadalupe Gonzalez
+Mexico,MEX,2016-08-18T18:19:33Z,Bronze,Boxing,Men's Middle (75kg),Misael Uziel Rodriguez
+Mongolia,MGL,2016-08-14T21:49:10Z,Bronze,Boxing,Men's Light (60kg),Otgondalai Dorjnyambuu
+Mongolia,MGL,2016-08-08T19:47:00Z,Silver,Judo,Women -57 kg,Sumiya Dorjsuren
+Netherlands,NED,2016-08-21T17:12:00Z,Silver,Boxing,Women's Middle (69-75kg),Nouchka Fontijn
+Netherlands,NED,2016-08-19T21:43:43Z,Silver,Hockey,Women,Women's team
+Netherlands,NED,2016-08-19T18:15:00Z,Silver,Cycling BMX,Men,Jelle van Gorkom
+Netherlands,NED,2016-08-19T01:47:12Z,Bronze,Beach Volleyball,Men,Brouwer/Meeuwsen
+Netherlands,NED,2016-08-18T01:31:00Z,Silver,Athletics,Women's 200m,Dafne Schippers
+Netherlands,NED,2016-08-16T21:26:00Z,Silver,Cycling Track,Men's Keirin,Matthijs Buchli
+Netherlands,NED,2016-08-16T17:05:00Z,Gold,Sailing,Laser Radial Women,Marit Bouwmeester
+Netherlands,NED,2016-08-16T14:30:00Z,Gold,Marathon Swimming,Men's 10km,Ferry Weertman
+Netherlands,NED,2016-08-15T19:16:00Z,Gold,Gymnastics Artistic,Women's Balance Beam,Sanne Wevers
+Netherlands,NED,2016-08-15T14:30:00Z,Gold,Marathon Swimming,Women's 10km,Sharon van rouwendaal
+Netherlands,NED,2016-08-14T16:35:00Z,Gold,Sailing,RS:X Men,Dorian van Rijsselberghe
+Netherlands,NED,2016-08-13T20:39:00Z,Gold,Cycling Track,Women's Keirin,Elis Ligtlee
+Netherlands,NED,2016-08-13T14:34:00Z,Bronze,Rowing,Men's Eight,Men's team
+Netherlands,NED,2016-08-12T13:39:00Z,Gold,Rowing,Lightweight Women's Double Sculls,Paulis/Head
+Netherlands,NED,2016-08-11T13:31:00Z,Silver,Rowing,Women's Quadruple Sculls,Women's team
+Netherlands,NED,2016-08-10T16:00:00Z,Silver,Cycling Road,Men's Individual Time Trial,Tom Dumoulin
+Netherlands,NED,2016-08-10T12:46:00Z,Bronze,Cycling Road,Women's Individual Time Trial,Anna van der Breggen
+Netherlands,NED,2016-08-09T19:40:00Z,Bronze,Judo,Women -63 kg,Anicka van Emden
+Netherlands,NED,2016-08-07T19:21:00Z,Gold,Cycling Road,Women's Road Race,Anna van der Breggen
+Nigeria,NGR,2016-08-20T17:53:22Z,Bronze,Football,Men,Men's team
+Niger,NIG,2016-08-21T01:30:00Z,Silver,Taekwondo,Men +80kg,Abdoulrazak Issoufou Alfaga
+Norway,NOR,2016-08-20T15:53:12Z,Bronze,Handball,Women,Women's team
+Norway,NOR,2016-08-14T20:16:00Z,Bronze,Wrestling,Men's Greco-Roman 59 kg,Stig-Andre Berge
+Norway,NOR,2016-08-12T13:52:00Z,Bronze,Rowing,Lightweight Men's Double Sculls,Brun/Strandli
+Norway,NOR,2016-08-11T14:31:00Z,Bronze,Rowing,Men's Double Sculls,Borch/Tufte
+New Zealand,NZL,2016-08-21T00:04:00Z,Bronze,Athletics,Men's 1500m,Nicholas Willis
+New Zealand,NZL,2016-08-20T16:36:59Z,Silver,Golf,Women's Individual Stroke Play,Lydia Ko
+New Zealand,NZL,2016-08-20T01:36:00Z,Bronze,Athletics,Women's Pole Vault,Eliza McCartney
+New Zealand,NZL,2016-08-19T00:35:00Z,Bronze,Athletics,Men's Shot Put,Tomas Walsh
+New Zealand,NZL,2016-08-18T18:50:00Z,Silver,Sailing,49er FX Women,Maloney/Meech
+New Zealand,NZL,2016-08-18T18:05:00Z,Gold,Sailing,49er Men,Burling/Tuke
+New Zealand,NZL,2016-08-18T17:05:00Z,Silver,Sailing,470 Women,Aleh/Powrie
+New Zealand,NZL,2016-08-18T13:18:00Z,Bronze,Canoe Sprint,Women's Kayak Single 500m,Lisa Carrington
+New Zealand,NZL,2016-08-16T17:50:00Z,Bronze,Sailing,Laser Men,Sam Meech
+New Zealand,NZL,2016-08-16T12:54:00Z,Gold,Canoe Sprint,Women's Kayak Single 200m,Lisa Carrington
+New Zealand,NZL,2016-08-13T13:39:00Z,Gold,Rowing,Men's Single Sculls,Mahe Drysdale
+New Zealand,NZL,2016-08-13T02:00:00Z,Silver,Athletics,Women's Shot Put,Valerie Adams
+New Zealand,NZL,2016-08-12T14:13:00Z,Silver,Rowing,Women's Pair,Behrent/Scown
+New Zealand,NZL,2016-08-11T21:29:00Z,Silver,Cycling Track,Men's Team Sprint,Men's team
+New Zealand,NZL,2016-08-11T18:32:00Z,Silver,Canoe Slalom,Kayak (K1) Women,Luuka Jones
+New Zealand,NZL,2016-08-11T13:51:00Z,Gold,Rowing,Men's Pair,Murray/Bond
+New Zealand,NZL,2016-08-08T22:31:59Z,Silver,Rugby Sevens,Women,Women's team
+New Zealand,NZL,2016-08-07T18:30:00Z,Silver,Shooting,Trap Women,Natalie Rooney
+Philippines,PHI,2016-08-07T20:10:00Z,Silver,Weightlifting,Women's 53kg,Hidilyn Diaz
+Poland,POL,2016-08-20T17:15:00Z,Silver,Cycling Mountain Bike,Women's Cross-country,Maja Wloszczowska
+Poland,POL,2016-08-20T01:25:00Z,Bronze,Athletics,Men's Hammer Throw,Wojciech Nowicki
+Poland,POL,2016-08-19T21:20:00Z,Bronze,Modern Pentathlon,Women's Individual,Oktawia Nowacka
+Poland,POL,2016-08-18T21:05:00Z,Bronze,Wrestling,Women's Freestyle 63 kg,Monika Ewa Michalik
+Poland,POL,2016-08-16T12:54:00Z,Silver,Canoe Sprint,Women's Kayak Single 200m,Marta Walczykiewicz
+Poland,POL,2016-08-16T12:30:00Z,Bronze,Canoe Sprint,Women's Kayak Double 500m,Naja/Mikolajczyk
+Poland,POL,2016-08-15T15:00:00Z,Gold,Athletics,Women's Hammer Throw,Anita Wlodarczyk
+Poland,POL,2016-08-13T14:55:00Z,Silver,Athletics,Men's Discus Throw,Piotr Malachowski
+Poland,POL,2016-08-11T14:11:00Z,Gold,Rowing,Women's Double Sculls,Fularczyk-Kozlowska/Madaj
+Poland,POL,2016-08-11T13:31:00Z,Bronze,Rowing,Women's Quadruple Sculls,Women's team
+Poland,POL,2016-08-06T18:57:00Z,Bronze,Cycling Road,Men's Road Race,Rafal Majka
+Portugal,POR,2016-08-08T19:33:00Z,Bronze,Judo,Women -57 kg,Telma Monteiro
+North Korea,PRK,2016-08-15T18:24:00Z,Gold,Gymnastics Artistic,Men's Vault,Se Gwang Ri
+North Korea,PRK,2016-08-14T23:40:00Z,Silver,Weightlifting,Women's +75kg,Kuk Hyang Kim
+North Korea,PRK,2016-08-12T20:10:00Z,Gold,Weightlifting,Women's 75kg,Jong Sim Rim
+North Korea,PRK,2016-08-11T00:19:00Z,Bronze,Table Tennis,Women's Singles,Song I Kim
+North Korea,PRK,2016-08-10T15:30:00Z,Bronze,Shooting,50m Pistol Men,Song Guk Kim
+North Korea,PRK,2016-08-09T20:10:00Z,Silver,Weightlifting,Women's 63kg,Hyo Sim Choe
+North Korea,PRK,2016-08-07T23:40:00Z,Silver,Weightlifting,Men's 56kg,Yun Chol Om
+Puerto Rico,PUR,2016-08-13T19:30:00Z,Gold,Tennis,Women's Singles,Monica Puig
+Qatar,QAT,2016-08-17T01:36:00Z,Silver,Athletics,Men's High Jump,Mutaz Essa Barshim
+Romania,ROU,2016-08-21T17:53:00Z,Bronze,Wrestling,Men's Freestyle 97 kg,Albert Saritov
+Romania,ROU,2016-08-13T14:13:00Z,Bronze,Rowing,Women's Eight,Women's team
+Romania,ROU,2016-08-12T23:40:00Z,Bronze,Weightlifting,Men's 85kg,Gabriel Sincraian
+Romania,ROU,2016-08-12T21:00:00Z,Silver,Tennis,Men's Doubles,Mergea/Tecau
+Romania,ROU,2016-08-11T22:30:00Z,Gold,Fencing,Women's ÃpÃ©e Team,Women's team
+South Africa,RSA,2016-08-21T00:17:00Z,Gold,Athletics,Women's 800m,Caster Semenya
+South Africa,RSA,2016-08-19T01:20:00Z,Silver,Athletics,Women's Javelin Throw,Sunette Viljoen
+South Africa,RSA,2016-08-18T16:00:00Z,Bronze,Triathlon,Men,Henri Schoeman
+South Africa,RSA,2016-08-15T01:01:00Z,Gold,Athletics,Men's 400m,Wayde van Niekerk
+South Africa,RSA,2016-08-14T01:23:00Z,Silver,Athletics,Men's Long Jump,Luvo Manyonga
+South Africa,RSA,2016-08-13T01:17:00Z,Silver,Swimming,Men's 100m Butterfly,Chad Guy Bertrand le Clos
+South Africa,RSA,2016-08-11T21:56:30Z,Bronze,Rugby Sevens,Men,Men's team
+South Africa,RSA,2016-08-11T13:51:00Z,Silver,Rowing,Men's Pair,Brittain/Keeling
+South Africa,RSA,2016-08-09T01:27:00Z,Silver,Swimming,Men's 200m Freestyle,Chad Guy Bertrand le Clos
+South Africa,RSA,2016-08-08T01:58:00Z,Silver,Swimming,Men's 100m Breaststroke,Cameron van der Burgh
+Russia,RUS,2016-08-21T17:29:57Z,Silver,Boxing,Men's Fly (52kg),Misha Aloian
+Russia,RUS,2016-08-21T17:23:00Z,Gold,Wrestling,Men's Freestyle 65 kg,Soslan Ramonov
+Russia,RUS,2016-08-21T15:30:00Z,Gold,Gymnastics Rhythmic,Group All-Around,Women's team
+Russia,RUS,2016-08-20T21:20:00Z,Gold,Modern Pentathlon,Men's Individual,Alexander Lesun
+Russia,RUS,2016-08-20T20:42:00Z,Silver,Gymnastics Rhythmic,Individual All-Around,Yana Kudryavtseva
+Russia,RUS,2016-08-20T20:42:00Z,Gold,Gymnastics Rhythmic,Individual All-Around,Margarita Mamun
+Russia,RUS,2016-08-20T20:38:00Z,Gold,Wrestling,Men's Freestyle 86 kg,Abdulrashid Sadulaev
+Russia,RUS,2016-08-20T19:58:07Z,Gold,Handball,Women,Women's team
+Russia,RUS,2016-08-19T21:45:00Z,Silver,Wrestling,Men's Freestyle 74 kg,Aniuar Geduev
+Russia,RUS,2016-08-19T17:45:17Z,Bronze,Boxing,Men's Light Welter (64kg),Vitaly Dunaytsev
+Russia,RUS,2016-08-19T16:00:00Z,Gold,Synchronised Swimming,Teams,Women's team
+Russia,RUS,2016-08-19T15:40:29Z,Bronze,Water Polo,Women,Women's team
+Russia,RUS,2016-08-19T01:30:00Z,Silver,Taekwondo,Men -68kg,Alexey Denisenko
+Russia,RUS,2016-08-18T21:50:00Z,Bronze,Wrestling,Women's Freestyle 75 kg,Ekaterina Bukina
+Russia,RUS,2016-08-18T17:32:50Z,Bronze,Boxing,Men's Bantam (56kg),Vladimir Nikitin
+Russia,RUS,2016-08-17T22:15:00Z,Silver,Wrestling,Women's Freestyle 69 kg,Natalia Vorobeva
+Russia,RUS,2016-08-17T21:30:00Z,Silver,Wrestling,Women's Freestyle 58 kg,Valeriia Koblova Zholobova
+Russia,RUS,2016-08-17T17:19:20Z,Bronze,Boxing,Women's Light (57-60kg),Anastasiia Beliakova
+Russia,RUS,2016-08-16T18:00:00Z,Gold,Synchronised Swimming,Duets,Ishchenko/Romashina
+Russia,RUS,2016-08-16T17:30:00Z,Bronze,Gymnastics Artistic,Men's Parallel Bars,David Belyavskiy
+Russia,RUS,2016-08-16T13:19:00Z,Bronze,Canoe Sprint,Men's Kayak Single 1000m,Roman Anoshkin
+Russia,RUS,2016-08-15T22:43:18Z,Gold,Boxing,Men's Heavy (91kg),Evgeny Tishchenko
+Russia,RUS,2016-08-15T20:40:00Z,Bronze,Wrestling,Men's Greco-Roman 130 kg,Sergey Semenov
+Russia,RUS,2016-08-15T20:24:00Z,Gold,Wrestling,Men's Greco-Roman 85 kg,Davit Chakvetadze
+Russia,RUS,2016-08-15T18:24:00Z,Silver,Gymnastics Artistic,Men's Vault,Denis Abliazin
+Russia,RUS,2016-08-15T17:30:00Z,Bronze,Gymnastics Artistic,Men's Rings,Denis Abliazin
+Russia,RUS,2016-08-14T21:51:00Z,Bronze,Cycling Track,Men's Sprint,Denis Dmitriev
+Russia,RUS,2016-08-14T20:48:00Z,Gold,Wrestling,Men's Greco-Roman 75 kg,Roman Vlasov
+Russia,RUS,2016-08-14T20:02:00Z,Gold,Gymnastics Artistic,Women's Uneven Bars,Aliya Mustafina
+Russia,RUS,2016-08-14T18:17:00Z,Silver,Gymnastics Artistic,Women's Vault,Maria Paseka
+Russia,RUS,2016-08-14T17:35:00Z,Bronze,Sailing,RS:X Women,Stefaniya Elfutina
+Russia,RUS,2016-08-14T17:00:00Z,Silver,Shooting,50m Rifle 3 Positions Men,Sergey Kamenskiy
+Russia,RUS,2016-08-14T16:30:00Z,Gold,Tennis,Women's Doubles,Makarova/Vesnina
+Russia,RUS,2016-08-13T22:15:00Z,Gold,Fencing,Women's Sabre Team,Women's team
+Russia,RUS,2016-08-12T22:30:00Z,Gold,Fencing,Men's Foil Team,Men's team
+Russia,RUS,2016-08-12T21:08:00Z,Silver,Cycling Track,Women's Team Sprint,Shmeleva/Voinova
+Russia,RUS,2016-08-12T14:30:00Z,Bronze,Shooting,50m Rifle Prone Men,Kirill Grigoryan
+Russia,RUS,2016-08-12T01:32:00Z,Bronze,Swimming,Men's 200m Backstroke,Evgeny Rylov
+Russia,RUS,2016-08-12T01:23:00Z,Silver,Swimming,Women's 200m Breaststroke,Yulia Efimova
+Russia,RUS,2016-08-11T21:00:00Z,Bronze,Fencing,Women's ÃpÃ©e Team,Women's team
+Russia,RUS,2016-08-11T20:55:00Z,Bronze,Gymnastics Artistic,Women's Individual All-Around,Aliya Mustafina
+Russia,RUS,2016-08-11T01:09:00Z,Bronze,Swimming,Men's 200m Breaststroke,Anton Chupkov
+Russia,RUS,2016-08-10T23:40:00Z,Gold,Fencing,Women's Foil Individual,Inna Deriglazova
+Russia,RUS,2016-08-10T12:46:00Z,Silver,Cycling Road,Women's Individual Time Trial,Olga Zabelinskaya
+Russia,RUS,2016-08-09T20:55:00Z,Silver,Gymnastics Artistic,Women's Team,Women's team
+Russia,RUS,2016-08-09T20:08:00Z,Gold,Judo,Men -81 kg,Khasan Khalmurzaev
+Russia,RUS,2016-08-09T01:59:00Z,Silver,Swimming,Women's 100m Breaststroke,Yulia Efimova
+Russia,RUS,2016-08-08T21:40:00Z,Silver,Gymnastics Artistic,Men's Team,Men's team
+Russia,RUS,2016-08-08T21:15:00Z,Silver,Fencing,Women's Sabre Individual,Sofya Velikaya
+Russia,RUS,2016-08-08T21:15:00Z,Gold,Fencing,Women's Sabre Individual,Yana Egorian
+Russia,RUS,2016-08-08T15:30:00Z,Bronze,Shooting,10m Air Rifle Men,Vladimir Maslennikov
+Russia,RUS,2016-08-07T20:45:00Z,Bronze,Fencing,Men's Foil Individual,Timur Safin
+Russia,RUS,2016-08-07T20:32:00Z,Silver,Archery,Women's Team,Women's team
+Russia,RUS,2016-08-07T19:40:00Z,Bronze,Judo,Women -52 kg,Natalia Kuziutina
+Russia,RUS,2016-08-07T14:30:00Z,Silver,Shooting,10m Air Pistol Women,Vitalina Batsarashkina
+Russia,RUS,2016-08-06T20:08:00Z,Gold,Judo,Men -60 kg,Beslan Mudranov
+Singapore,SIN,2016-08-13T01:17:00Z,Gold,Swimming,Men's 100m Butterfly,Joseph Schooling
+Slovenia,SLO,2016-08-16T18:35:00Z,Silver,Sailing,Finn Men,Vasilij Zbogar
+Slovenia,SLO,2016-08-11T19:40:00Z,Bronze,Judo,Women -78 kg,Anamari Velensek
+Slovenia,SLO,2016-08-10T18:47:00Z,Silver,Canoe Slalom,Kayak (K1) Men,Peter Kauzer
+Slovenia,SLO,2016-08-09T19:47:00Z,Gold,Judo,Women -63 kg,Tina Trstenjak
+Serbia,SRB,2016-08-21T20:29:26Z,Silver,Basketball,Men,Men's team
+Serbia,SRB,2016-08-21T03:01:00Z,Silver,Volleyball,Women,Women's team
+Serbia,SRB,2016-08-20T21:57:03Z,Gold,Water Polo,Men,Men's team
+Serbia,SRB,2016-08-20T16:12:49Z,Bronze,Basketball,Women,Women's team
+Serbia,SRB,2016-08-18T12:15:00Z,Silver,Canoe Sprint,Men's Kayak Double 1000m,Tomicevic/Zoric
+Serbia,SRB,2016-08-18T01:40:00Z,Bronze,Athletics,Women's Long Jump,Ivana Spanovic
+Serbia,SRB,2016-08-18T01:15:00Z,Silver,Taekwondo,Women -49kg,Tijana Bogdanovic
+Serbia,SRB,2016-08-16T20:38:00Z,Gold,Wrestling,Men's Greco-Roman 66 kg,Davor Stefanek
+Switzerland,SUI,2016-08-21T17:15:00Z,Gold,Cycling Mountain Bike,Men's Cross-country,Nino Schurter
+Switzerland,SUI,2016-08-20T16:00:00Z,Silver,Triathlon,Women,Nicola Spirig Hug
+Switzerland,SUI,2016-08-14T18:17:00Z,Bronze,Gymnastics Artistic,Women's Vault,Giulia Steingruber
+Switzerland,SUI,2016-08-14T16:30:00Z,Silver,Tennis,Women's Doubles,Bacsinszky/Hingis
+Switzerland,SUI,2016-08-11T14:51:00Z,Gold,Rowing,Lightweight Men's Four,Men's team
+Switzerland,SUI,2016-08-10T16:00:00Z,Gold,Cycling Road,Men's Individual Time Trial,Fabian Cancellara
+Switzerland,SUI,2016-08-09T18:55:00Z,Bronze,Shooting,25m Pistol Women,Heidi Diethelm Gerber
+Slovakia,SVK,2016-08-20T13:19:00Z,Silver,Canoe Sprint,Men's Kayak Four 1000m,Men's team
+Slovakia,SVK,2016-08-19T15:20:00Z,Gold,Athletics,Men's 50km Walk,Matej Toth
+Slovakia,SVK,2016-08-11T17:47:00Z,Gold,Canoe Slalom,Canoe Double (C2) Men,Skantar/Skantar
+Slovakia,SVK,2016-08-09T18:48:00Z,Silver,Canoe Slalom,Canoe Single (C1) Men,Matej Benus
+Sweden,SWE,2016-08-20T17:15:00Z,Gold,Cycling Mountain Bike,Women's Cross-country,Jenny Rissveds
+Sweden,SWE,2016-08-19T22:17:32Z,Silver,Football,Women,Women's team
+Sweden,SWE,2016-08-19T17:20:00Z,Silver,Equestrian,Jumping Individual,Peder Fredricson
+Sweden,SWE,2016-08-18T20:20:00Z,Bronze,Wrestling,Women's Freestyle 53 kg,Sofia Magdalena Mattsson
+Sweden,SWE,2016-08-17T22:00:00Z,Bronze,Wrestling,Women's Freestyle 69 kg,Anna Jenny Fransson
+Sweden,SWE,2016-08-14T18:46:24Z,Silver,Golf,Men's Individual Stroke Play,Henrik Stenson
+Sweden,SWE,2016-08-13T19:00:00Z,Silver,Shooting,Skeet Men,Marcus Svensson
+Sweden,SWE,2016-08-12T02:23:00Z,Bronze,Swimming,Women's 100m Freestyle,Sarah Sjostrom
+Sweden,SWE,2016-08-10T01:25:00Z,Silver,Swimming,Women's 200m Freestyle,Sarah Sjostrom
+Sweden,SWE,2016-08-08T01:08:00Z,Gold,Swimming,Women's 100m Butterfly,Sarah Sjostrom
+Sweden,SWE,2016-08-07T19:21:00Z,Silver,Cycling Road,Women's Road Race,Emma Johansson
+Thailand,THA,2016-08-18T01:30:00Z,Silver,Taekwondo,Men -58kg,Tawin Hanprab
+Thailand,THA,2016-08-18T00:45:00Z,Bronze,Taekwondo,Women -49kg,Panipak Wongpattanakit
+Thailand,THA,2016-08-08T20:10:00Z,Silver,Weightlifting,Women's 58kg,Pimsiri Sirikaew
+Thailand,THA,2016-08-08T20:10:00Z,Gold,Weightlifting,Women's 58kg,Sukanya Srisurat
+Thailand,THA,2016-08-07T23:40:00Z,Bronze,Weightlifting,Men's 56kg,Sinphet Kruaithong
+Thailand,THA,2016-08-06T23:40:00Z,Gold,Weightlifting,Women's 48kg,Sopita Tanasan
+Tajikistan,TJK,2016-08-20T01:25:00Z,Gold,Athletics,Men's Hammer Throw,Dilshod Nazarov
+Taiwan,TPE,2016-08-08T20:10:00Z,Bronze,Weightlifting,Women's 58kg,Hsing-Chun Kuo
+Taiwan,TPE,2016-08-07T20:10:00Z,Gold,Weightlifting,Women's 53kg,Shu-Ching Hsu
+Taiwan,TPE,2016-08-07T20:04:00Z,Bronze,Archery,Women's Team,Women's team
+Trinidad and Tobago,TTO,2016-08-21T01:15:00Z,Bronze,Athletics,Men's Javelin Throw,Keshorn Walcott
+Tunisia,TUN,2016-08-20T00:30:00Z,Bronze,Taekwondo,Men -80kg,Oussama Oueslati
+Tunisia,TUN,2016-08-17T21:00:00Z,Bronze,Wrestling,Women's Freestyle 58 kg,Marwa Amri
+Tunisia,TUN,2016-08-10T22:45:00Z,Bronze,Fencing,Women's Foil Individual,Ines Boubakri
+Turkey,TUR,2016-08-20T21:38:00Z,Gold,Wrestling,Men's Freestyle 125 kg,Taha Akgul
+Turkey,TUR,2016-08-20T20:38:00Z,Silver,Wrestling,Men's Freestyle 86 kg,Selim Yasar
+Turkey,TUR,2016-08-20T00:45:00Z,Bronze,Taekwondo,Women -67kg,Nur Tatar
+Turkey,TUR,2016-08-19T21:30:00Z,Bronze,Wrestling,Men's Freestyle 74 kg,Soner Demirtas
+Turkey,TUR,2016-08-18T15:01:00Z,Bronze,Athletics,Men's 400m Hurdles,Yasmani Copello
+Turkey,TUR,2016-08-16T21:08:00Z,Bronze,Wrestling,Men's Greco-Roman 98 kg,Cenk Ildem
+Turkey,TUR,2016-08-15T20:48:00Z,Silver,Wrestling,Men's Greco-Roman 130 kg,Riza Kayaalp
+Turkey,TUR,2016-08-09T23:40:00Z,Silver,Weightlifting,Men's 69kg,Daniyar Ismayilov
+United Arab Emirates,UAE,2016-08-09T19:54:00Z,Bronze,Judo,Men -81 kg,Sergiu Toma
+Ukraine,UKR,2016-08-20T21:20:00Z,Silver,Modern Pentathlon,Men's Individual,Pavlo Tymoshchenko
+Ukraine,UKR,2016-08-20T20:42:00Z,Bronze,Gymnastics Rhythmic,Individual All-Around,Ganna Rizatdinova
+Ukraine,UKR,2016-08-20T12:29:00Z,Bronze,Canoe Sprint,Men's Canoe Double 1000m,Ianchuk/Mishchuk
+Ukraine,UKR,2016-08-18T12:30:00Z,Gold,Canoe Sprint,Men's Canoe Single 200m,Iurii Cheban
+Ukraine,UKR,2016-08-17T01:36:00Z,Bronze,Athletics,Men's High Jump,Bohdan Bondarenko
+Ukraine,UKR,2016-08-16T17:30:00Z,Gold,Gymnastics Artistic,Men's Parallel Bars,Oleg Verniaiev
+Ukraine,UKR,2016-08-15T20:24:00Z,Silver,Wrestling,Men's Greco-Roman 85 kg,Zhan Beleniuk
+Ukraine,UKR,2016-08-13T22:15:00Z,Silver,Fencing,Women's Sabre Team,Women's team
+Ukraine,UKR,2016-08-10T21:30:00Z,Silver,Gymnastics Artistic,Men's Individual All-Around,Oleg Verniaiev
+Ukraine,UKR,2016-08-08T20:45:00Z,Bronze,Fencing,Women's Sabre Individual,Olga Kharlan
+Ukraine,UKR,2016-08-08T15:30:00Z,Silver,Shooting,10m Air Rifle Men,Serhiy Kulish
+United States,USA,2016-08-21T20:29:26Z,Gold,Basketball,Men,Men's team
+United States,USA,2016-08-21T18:23:00Z,Gold,Wrestling,Men's Freestyle 97 kg,Kyle Frederick Snyder
+United States,USA,2016-08-21T17:12:00Z,Gold,Boxing,Women's Middle (69-75kg),Claressa Maria Shields
+United States,USA,2016-08-21T15:15:00Z,Bronze,Athletics,Men's Marathon,Galen Rupp
+United States,USA,2016-08-21T14:39:00Z,Bronze,Volleyball,Men,Men's team
+United States,USA,2016-08-21T01:38:00Z,Gold,Athletics,Men's 4 x 400m Relay,Men's team
+United States,USA,2016-08-21T01:04:00Z,Gold,Athletics,Women's 4 x 400m Relay,Women's team
+United States,USA,2016-08-21T00:45:00Z,Bronze,Taekwondo,Women +67kg,Jackie Galloway
+United States,USA,2016-08-21T00:44:00Z,Silver,Athletics,Men's 5000m,Paul Kipkemoi Chelimo
+United States,USA,2016-08-21T00:04:00Z,Gold,Athletics,Men's 1500m,Matthew Centrowitz
+United States,USA,2016-08-20T20:55:00Z,Bronze,Diving,Men's 10m Platform,David Boudia
+United States,USA,2016-08-20T20:23:00Z,Bronze,Wrestling,Men's Freestyle 86 kg,J'den Michael Tbory Cox
+United States,USA,2016-08-20T20:08:32Z,Gold,Basketball,Women,Women's team
+United States,USA,2016-08-20T17:52:00Z,Bronze,Volleyball,Women,Women's team
+United States,USA,2016-08-20T17:29:44Z,Silver,Boxing,Men's Bantam (56kg),Shakur Stevenson
+United States,USA,2016-08-20T16:00:00Z,Gold,Triathlon,Women,Gwen Jorgensen
+United States,USA,2016-08-20T01:36:00Z,Silver,Athletics,Women's Pole Vault,Sandi Morris
+United States,USA,2016-08-20T01:16:00Z,Gold,Athletics,Women's 4 x 100m Relay,Women's team
+United States,USA,2016-08-19T19:38:20Z,Gold,Water Polo,Women,Women's team
+United States,USA,2016-08-19T18:15:00Z,Gold,Cycling BMX,Men,Connor Fields
+United States,USA,2016-08-19T18:05:00Z,Silver,Cycling BMX,Women,Alise Post
+United States,USA,2016-08-19T01:16:00Z,Bronze,Athletics,Women's 400m Hurdles,Ashley Spencer
+United States,USA,2016-08-19T01:16:00Z,Gold,Athletics,Women's 400m Hurdles,Dalilah Muhammad
+United States,USA,2016-08-19T01:01:00Z,Gold,Athletics,Men's Decathlon,Ashton Eaton
+United States,USA,2016-08-19T00:35:00Z,Silver,Athletics,Men's Shot Put,Joe Kovacs
+United States,USA,2016-08-19T00:35:00Z,Gold,Athletics,Men's Shot Put,Ryan Crouser
+United States,USA,2016-08-18T20:30:00Z,Gold,Wrestling,Women's Freestyle 53 kg,Helen Louise Maroulis
+United States,USA,2016-08-18T15:01:00Z,Gold,Athletics,Men's 400m Hurdles,Kerron Clement
+United States,USA,2016-08-18T01:56:00Z,Bronze,Athletics,Women's 100m Hurdles,Kristi Castlin
+United States,USA,2016-08-18T01:56:00Z,Silver,Athletics,Women's 100m Hurdles,Nia Ali
+United States,USA,2016-08-18T01:56:00Z,Gold,Athletics,Women's 100m Hurdles,Brianna Rollins
+United States,USA,2016-08-18T01:50:00Z,Bronze,Beach Volleyball,Women,Walsh Jennings/Ross
+United States,USA,2016-08-18T01:40:00Z,Silver,Athletics,Women's Long Jump,Brittney Reese
+United States,USA,2016-08-18T01:40:00Z,Gold,Athletics,Women's Long Jump,Tianna Bartoletta
+United States,USA,2016-08-18T01:31:00Z,Bronze,Athletics,Women's 200m,Tori Bowie
+United States,USA,2016-08-17T15:20:00Z,Silver,Equestrian,Jumping Team,Mixed team
+United States,USA,2016-08-17T15:04:00Z,Silver,Athletics,Men's 3000m Steeplechase,Evan Jager
+United States,USA,2016-08-17T01:34:00Z,Bronze,Athletics,Women's 1500m,Jennifer Simpson
+United States,USA,2016-08-16T20:42:00Z,Silver,Cycling Track,Women's Omnium,Sarah Hammer
+United States,USA,2016-08-16T19:11:00Z,Silver,Gymnastics Artistic,Men's Horizontal Bar,Danell Leyva
+United States,USA,2016-08-16T18:35:00Z,Bronze,Sailing,Finn Men,Caleb Paine
+United States,USA,2016-08-16T18:17:00Z,Silver,Gymnastics Artistic,Women's Floor Exercise,Alexandra Raisman
+United States,USA,2016-08-16T18:17:00Z,Gold,Gymnastics Artistic,Women's Floor Exercise,Simone Biles
+United States,USA,2016-08-16T17:30:00Z,Silver,Gymnastics Artistic,Men's Parallel Bars,Danell Leyva
+United States,USA,2016-08-16T14:15:00Z,Silver,Athletics,Men's Triple Jump,Will Claye
+United States,USA,2016-08-16T14:15:00Z,Gold,Athletics,Men's Triple Jump,Christian Taylor
+United States,USA,2016-08-16T02:46:00Z,Bronze,Athletics,Men's Pole Vault,Sam Kendricks
+United States,USA,2016-08-16T02:06:00Z,Silver,Athletics,Women's 400m,Allyson Felix
+United States,USA,2016-08-16T01:47:00Z,Bronze,Athletics,Men's 800m,Clayton Murphy
+United States,USA,2016-08-15T19:16:00Z,Bronze,Gymnastics Artistic,Women's Balance Beam,Simone Biles
+United States,USA,2016-08-15T19:16:00Z,Silver,Gymnastics Artistic,Women's Balance Beam,Lauren Hernandez
+United States,USA,2016-08-15T14:25:00Z,Bronze,Athletics,Women's 3000m Steeplechase,Emma Coburn
+United States,USA,2016-08-15T01:26:00Z,Silver,Athletics,Men's 100m,Justin Gatlin
+United States,USA,2016-08-15T01:01:00Z,Bronze,Athletics,Men's 400m,Lashawn Merritt
+United States,USA,2016-08-14T23:40:00Z,Bronze,Weightlifting,Women's +75kg,Sarah Elizabeth Robles
+United States,USA,2016-08-14T20:02:00Z,Silver,Gymnastics Artistic,Women's Uneven Bars,Madison Kocian
+United States,USA,2016-08-14T19:11:00Z,Bronze,Gymnastics Artistic,Men's Pommel Horse,Alexander Naddour
+United States,USA,2016-08-14T18:46:24Z,Bronze,Golf,Men's Individual Stroke Play,Matt Kuchar
+United States,USA,2016-08-14T18:17:00Z,Gold,Gymnastics Artistic,Women's Vault,Simone Biles
+United States,USA,2016-08-14T18:00:00Z,Silver,Tennis,Mixed Doubles,Williams/Ram
+United States,USA,2016-08-14T18:00:00Z,Gold,Tennis,Mixed Doubles,Mattek-Sands/Sock
+United States,USA,2016-08-14T02:16:00Z,Gold,Swimming,Men's 4 x 100m Medley Relay,Men's team
+United States,USA,2016-08-14T02:01:00Z,Gold,Swimming,Women's 4 x 100m Medley Relay,Women's team
+United States,USA,2016-08-14T01:38:00Z,Silver,Athletics,Women's 100m,Tori Bowie
+United States,USA,2016-08-14T01:30:00Z,Silver,Swimming,Men's 1500m Freestyle,Connor Jaeger
+United States,USA,2016-08-14T01:23:00Z,Gold,Athletics,Men's Long Jump,Jeff Henderson
+United States,USA,2016-08-14T01:08:00Z,Silver,Swimming,Women's 50m Freestyle,Simone Manuel
+United States,USA,2016-08-13T20:45:00Z,Bronze,Fencing,Women's Sabre Team,Women's team
+United States,USA,2016-08-13T20:21:00Z,Silver,Cycling Track,Women's Team Pursuit,Women's team
+United States,USA,2016-08-13T14:13:00Z,Gold,Rowing,Women's Eight,Women's team
+United States,USA,2016-08-13T13:52:00Z,Silver,Rowing,Women's Single Sculls,Genevra Stone
+United States,USA,2016-08-13T02:00:00Z,Gold,Athletics,Women's Shot Put,Michelle Carter
+United States,USA,2016-08-13T01:48:00Z,Bronze,Swimming,Men's 50m Freestyle,Nathan Adrian
+United States,USA,2016-08-13T01:48:00Z,Gold,Swimming,Men's 50m Freestyle,Anthony Ervin
+United States,USA,2016-08-13T01:33:00Z,Gold,Swimming,Women's 800m Freestyle,Katie Ledecky
+United States,USA,2016-08-13T01:17:00Z,Silver,Swimming,Men's 100m Butterfly,Michael Phelps
+United States,USA,2016-08-13T01:09:00Z,Gold,Swimming,Women's 200m Backstroke,Madeline Dirado
+United States,USA,2016-08-12T21:00:00Z,Bronze,Fencing,Men's Foil Team,Men's team
+United States,USA,2016-08-12T19:40:00Z,Bronze,Archery,Men's Individual,Brady Ellison
+United States,USA,2016-08-12T19:30:00Z,Bronze,Tennis,Men's Doubles,Johnson/Sock
+United States,USA,2016-08-12T19:24:00Z,Bronze,Equestrian,Dressage Team,Mixed team
+United States,USA,2016-08-12T18:25:00Z,Bronze,Shooting,Skeet Women,Kimberly Rhode
+United States,USA,2016-08-12T15:36:26Z,Bronze,Boxing,Men's Light Fly (46-49kg),Nico Miguel Hernandez
+United States,USA,2016-08-12T02:23:00Z,Gold,Swimming,Women's 100m Freestyle,Simone Manuel
+United States,USA,2016-08-12T02:07:00Z,Gold,Swimming,Men's 200m Individual Medley,Michael Phelps
+United States,USA,2016-08-12T01:32:00Z,Gold,Swimming,Men's 200m Backstroke,Ryan Murphy
+United States,USA,2016-08-11T20:55:00Z,Silver,Gymnastics Artistic,Women's Individual All-Around,Alexandra Raisman
+United States,USA,2016-08-11T20:55:00Z,Gold,Gymnastics Artistic,Women's Individual All-Around,Simone Biles
+United States,USA,2016-08-11T19:47:00Z,Gold,Judo,Women -78 kg,Kayla Harrison
+United States,USA,2016-08-11T03:07:00Z,Gold,Swimming,Women's 4 x 200m Freestyle Relay,Women's team
+United States,USA,2016-08-11T02:08:00Z,Bronze,Swimming,Men's 100m Freestyle,Nathan Adrian
+United States,USA,2016-08-11T01:09:00Z,Silver,Swimming,Men's 200m Breaststroke,Josh Prenot
+United States,USA,2016-08-11T00:10:00Z,Silver,Fencing,Men's Sabre Individual,Daryl Homer
+United States,USA,2016-08-10T20:00:00Z,Silver,Diving,Men's Synchronised 3m Springboard,Dorman/Hixon
+United States,USA,2016-08-10T12:46:00Z,Gold,Cycling Road,Women's Individual Time Trial,Kristin Armstrong
+United States,USA,2016-08-10T02:50:00Z,Gold,Swimming,Men's 4 x 200m Freestyle Relay,Men's team
+United States,USA,2016-08-10T02:35:00Z,Bronze,Swimming,Women's 200m Individual Medley,Madeline Dirado
+United States,USA,2016-08-10T01:34:00Z,Gold,Swimming,Men's 200m Butterfly,Michael Phelps
+United States,USA,2016-08-10T01:25:00Z,Gold,Swimming,Women's 200m Freestyle,Katie Ledecky
+United States,USA,2016-08-09T20:55:00Z,Gold,Gymnastics Artistic,Women's Team,Women's team
+United States,USA,2016-08-09T20:08:00Z,Silver,Judo,Men -81 kg,Travis Stevens
+United States,USA,2016-08-09T17:56:00Z,Bronze,Equestrian,Eventing Individual,Phillip Dutton
+United States,USA,2016-08-09T01:59:00Z,Bronze,Swimming,Women's 100m Breaststroke,Catherine Meili
+United States,USA,2016-08-09T01:59:00Z,Gold,Swimming,Women's 100m Breaststroke,Lilly King
+United States,USA,2016-08-09T01:43:00Z,Bronze,Swimming,Men's 100m Backstroke,David Plummer
+United States,USA,2016-08-09T01:43:00Z,Gold,Swimming,Men's 100m Backstroke,Ryan Murphy
+United States,USA,2016-08-09T01:35:00Z,Silver,Swimming,Women's 100m Backstroke,Kathleen Baker
+United States,USA,2016-08-09T01:27:00Z,Bronze,Swimming,Men's 200m Freestyle,Conor Dwyer
+United States,USA,2016-08-08T20:00:00Z,Silver,Diving,Men's Synchronised 10m Platform,Boudia/Johnson
+United States,USA,2016-08-08T03:00:00Z,Gold,Swimming,Men's 4 x 100m Freestyle Relay,Men's team
+United States,USA,2016-08-08T02:09:00Z,Bronze,Swimming,Women's 400m Freestyle,Leah Smith
+United States,USA,2016-08-08T02:09:00Z,Gold,Swimming,Women's 400m Freestyle,Katie Ledecky
+United States,USA,2016-08-08T01:58:00Z,Bronze,Swimming,Men's 100m Breaststroke,Cody Miller
+United States,USA,2016-08-08T01:08:00Z,Bronze,Swimming,Women's 100m Butterfly,Dana Vollmer
+United States,USA,2016-08-07T21:15:00Z,Silver,Fencing,Men's Foil Individual,Alexander Massialas
+United States,USA,2016-08-07T18:45:00Z,Bronze,Shooting,Trap Women,Corey Cogdell
+United States,USA,2016-08-07T02:32:00Z,Silver,Swimming,Women's 4 x 100m Freestyle Relay,Women's team
+United States,USA,2016-08-07T01:57:00Z,Silver,Swimming,Women's 400m Individual Medley,Madeline Dirado
+United States,USA,2016-08-07T01:11:00Z,Silver,Swimming,Men's 400m Individual Medley,Chase Kalisz
+United States,USA,2016-08-06T20:32:00Z,Silver,Archery,Men's Team,Men's team
+United States,USA,2016-08-06T14:00:00Z,Gold,Shooting,10m Air Rifle Women,Virginia Thrasher
+Uzbekistan,UZB,2016-08-21T18:23:28Z,Gold,Boxing,Men's Light Welter (64kg),Fazliddin Gaibnazarov
+Uzbekistan,UZB,2016-08-21T18:08:00Z,Bronze,Wrestling,Men's Freestyle 97 kg,Magomed Idrisovitch Ibragimov
+Uzbekistan,UZB,2016-08-21T17:29:57Z,Gold,Boxing,Men's Fly (52kg),Shakhobidin Zoirov
+Uzbekistan,UZB,2016-08-21T17:08:00Z,Bronze,Wrestling,Men's Freestyle 65 kg,Ikhtiyor Navruzov
+Uzbekistan,UZB,2016-08-20T18:23:07Z,Silver,Boxing,Men's Middle (75kg),Bektemir Melikuziev
+Uzbekistan,UZB,2016-08-18T17:46:28Z,Bronze,Boxing,Men's Bantam (56kg),Murodjon Akhmadaliev
+Uzbekistan,UZB,2016-08-17T19:57:39Z,Silver,Boxing,Men's Welter (69kg),Shakhram Giyasov
+Uzbekistan,UZB,2016-08-15T23:40:00Z,Gold,Weightlifting,Men's 105kg,Ruslan Nurudinov
+Uzbekistan,UZB,2016-08-14T20:08:00Z,Bronze,Wrestling,Men's Greco-Roman 59 kg,Elmurat Tasmuradov
+Uzbekistan,UZB,2016-08-14T17:52:32Z,Gold,Boxing,Men's Light Fly (46-49kg),Hasanboy Dusmatov
+Uzbekistan,UZB,2016-08-13T16:07:13Z,Bronze,Boxing,Men's Heavy (91kg),Rustam Tulaganov
+Uzbekistan,UZB,2016-08-07T19:54:00Z,Bronze,Judo,Men -66 kg,Rishod Sobirov
+Uzbekistan,UZB,2016-08-06T20:01:00Z,Bronze,Judo,Men -60 kg,Diyorbek Urozboev
+Venezuela,VEN,2016-08-19T18:05:00Z,Bronze,Cycling BMX,Women,Stefany Hernandez
+Venezuela,VEN,2016-08-19T17:11:29Z,Bronze,Boxing,Men's Fly (52kg),Yoel Segundo Finol
+Venezuela,VEN,2016-08-15T01:20:00Z,Silver,Athletics,Women's Triple Jump,Yulimar Rojas
+Vietnam,VIE,2016-08-10T15:30:00Z,Silver,Shooting,50m Pistol Men,Xuan Vinh Hoang
+Vietnam,VIE,2016-08-06T19:00:00Z,Gold,Shooting,10m Air Pistol Men,Xuan Vinh Hoang

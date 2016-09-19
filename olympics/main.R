@@ -1,10 +1,16 @@
-readDataFile <- function() {
-    library(data.table)
-    library(ggplot2)
+library(data.table)
+library(ggplot2)
+
+readSearchDataFile <- function() {
     d <- fread("data/rio2016/searchInterest.Google.csv", 
                sep = ",", header = FALSE, stringsAsFactors = TRUE, skip = 2,
                colClasses = c("character", "integer", "character"),
                col.names = c("Country", "Interest", "Sport"))
+}
+
+readMedalsDataFile <- function() {
+    m <- fread("data/rio2016/medalsData.csv", 
+               sep = ",", header = TRUE, stringsAsFactors = TRUE)
 }
 
 commonTheme <- function() {
@@ -22,7 +28,7 @@ commonTheme <- function() {
 }
 
 sportSearchByCountry <- function(countries) {
-    d <- readDataFile()
+    d <- readSearchDataFile()
     all <- d[d$C %in% countries,]
     all$Country <- factor(all$Country)
     all$Sport <- factor(all$Sport)
@@ -39,7 +45,7 @@ sportSearchByCountry <- function(countries) {
 }
 
 indianSearchCompared <- function() {
-    d <- readDataFile()
+    d <- readSearchDataFile()
     
     india <- d[Country=="India"]
     indianSports <- india$Sport
@@ -65,7 +71,7 @@ indianSearchCompared <- function() {
 }
 
 searchBasicStats <- function() {
-    d <- readDataFile()
+    d <- readSearchDataFile()
     
     # Code 1: Countries searching more than a dozen sports
     #mostSports <- table(d$Country)
@@ -152,10 +158,20 @@ searchBasicStats <- function() {
 }
 
 fullSearchInterest <- function() {
-    d <- readDataFile()
+    d <- readSearchDataFile()
 
     # Show everything!
     qplot(Country, Sport, data=d, size=Interest) +
         theme(axis.text.x = element_text(angle = 90, size=5, hjust = 1))
     ggsave("fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
+}
+
+medalsBasicStats <- function() {
+    m <- readMedalsDataFile()
+    
+    numCountriesWithMedals <- length(levels(m$countrycode))
+    numSports <- length(levels(m$sport))
+    numEvents <- length(levels(m$event))
+    
+    #head(data.table(table(m$medalist))[order(-N,-V1)],30)
 }

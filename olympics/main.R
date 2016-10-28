@@ -19,8 +19,8 @@ commonTheme <- function() {
         legend.title = element_blank(),
         legend.position = c(.95,.95),
         plot.margin = unit(c(.1,.4,.1,.1), "cm"), # top,right,bottom,left
-        panel.grid.major.y = element_line(colour = "lightgray"),
-        panel.grid.minor.y = element_line(colour = "lightgray"),
+        panel.grid.major.y = element_line(colour = "#eeeeee"),
+        panel.grid.minor.y = element_line(colour = "#eeeeee"),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
         panel.background = element_blank(),
@@ -29,18 +29,28 @@ commonTheme <- function() {
 
 sportSearchByCountry <- function(countries) {
     d <- readSearchDataFile()
-    all <- d[d$C %in% countries,]
+    all <- d[d$C %in% countries,] # ignores items in input not in d$Country
     all$Country <- factor(all$Country)
     all$Sport <- factor(all$Sport)
     all <- data.table(xtabs(Interest ~ Country+Sport, all))
     colnames(all) <- c("Country", "Sport", "Interest")
-    
-    ggplot(data=all, aes(x=Sport,y=Interest,fill=factor(Country))) +
-        geom_bar(position="dodge",stat="identity") +
+    all$Country <- factor(all$Country)
+
+    ggp <-
+        ggplot(data=all, aes(x=Sport,y=Interest,fill=factor(Country))) +
+        geom_bar(position="dodge", stat="identity", width=0.5) +
         ggtitle("Search Interest for Olympic Sport for Period 6-Aug-2016 to 21-Aug-2016\nData Source: Google Trends") +
         coord_flip() +
         commonTheme()
-        
+
+    # We emphasize India if present
+    if ('India' %in% all$Country) {
+        indiaPos <- which(levels(all$C) == 'India') # levels are in sorted order
+        colors <- gray.colors(length(levels(all$C))-1, start=0.6)
+        colors <- c(colors[1:indiaPos-1], "orange", colors[indiaPos:length(colors)])
+        ggp <- ggp + scale_fill_manual(values=colors)
+    }
+    
     ggsave("sportSearchByCountry.png", width=10, height=5, units="in", dpi=150)
 }
 
@@ -57,15 +67,14 @@ indianSearchCompared <- function() {
     all <- rbind(india, topothers)
     
     ggplot(data=all, aes(x=Sport, y=Interest, fill=factor(Code))) +
-        geom_bar(position="dodge", stat="identity") +
+        geom_bar(position="dodge", stat="identity", width=0.7) +
         ggtitle("Indian Search Interest for Olympic Sport for Period 6-Aug-2016 to 21-Aug-2016\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
         scale_fill_manual(values=c("orange","#eeeeee")) +
-        scale_x_continuous(expand = c(0, 0)) +
         scale_y_continuous(expand = c(0, 0)) +
         scale_x_discrete(labels=sub(" ", "\n", indianSports)) +
-        geom_text(aes(x=Sport, y=Interest, label=Country, hjust=1, vjust=-0.5), color = "#aaaaaa", data = all[all$Country!="India",])
+        geom_text(aes(x=Sport, y=Interest, label=Country, hjust=1, vjust=-0.5, label.size=0.2), color = "#999999", data = all[all$Country!="India",])
 
     ggsave("indianSearchCompared.png", width=13, height=5, units="in", dpi=150)
 }
@@ -86,7 +95,7 @@ searchBasicStats <- function() {
     mostSportsAll$Sport <- factor(mostSportsAll$Sport)
     
     ggplot(data=mostSportsAll, aes(x=Country,y=NumOfSports)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue") +
+        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
         ggtitle("Countries Searching More Than a Dozen Sports\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
@@ -109,7 +118,7 @@ searchBasicStats <- function() {
     # Sports with most country followers
     mostFollowers <- d[, .(Country,Interest,NumberOfCountries=.N), by=Sport][NumberOfCountries>50]
     ggplot(data=mostFollowers, aes(x=Sport,y=NumberOfCountries)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue") +
+        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
         ggtitle("Sports With More Than 50 Country Followers\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
@@ -137,7 +146,7 @@ searchBasicStats <- function() {
     # Sports with most total interest
     mostTotalInterest <- d[, .(Interest,NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
     ggplot(data=mostTotalInterest, aes(x=Sport,y=TotalInterest)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue") +
+        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
         ggtitle("Sports With Most Total Interest (>150)\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
@@ -148,7 +157,7 @@ searchBasicStats <- function() {
     # Country showing highest interest for particular sport
     mostInterest <- d[, .(NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
     ggplot(data=mostInterest, aes(x=Sport,y=TotalInterest)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue") +
+        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
         ggtitle("Sports With Most Interest (>150)\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
@@ -162,7 +171,7 @@ fullSearchInterest <- function() {
 
     # Show everything!
     qplot(Country, Sport, data=d, size=Interest) +
-        theme(axis.text.x = element_text(angle = 90, size=5, hjust = 1))
+        theme(axis.text.x = element_text(angle = 90, size=5, hjust=1, vjust=0))
     ggsave("fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
 }
 
@@ -174,4 +183,12 @@ medalsBasicStats <- function() {
     numEvents <- length(levels(m$event))
     
     #head(data.table(table(m$medalist))[order(-N,-V1)],30)
+}
+
+runAll <- function() {
+    sportSearchByCountry(c("India", "United States", "Great Britain", "China"))
+    indianSearchCompared()
+    searchBasicStats()
+    fullSearchInterest()
+    medalsBasicStats()
 }

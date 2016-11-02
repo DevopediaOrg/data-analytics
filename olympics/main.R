@@ -95,7 +95,7 @@ searchBasicStats <- function() {
     mostSportsAll$Sport <- factor(mostSportsAll$Sport)
     
     ggplot(data=mostSportsAll, aes(x=Country,y=NumOfSports)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
+        geom_bar(position="dodge", stat="identity", fill="steelblue1", width=0.6) +
         ggtitle("Countries Searching More Than a Dozen Sports\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
@@ -118,7 +118,7 @@ searchBasicStats <- function() {
     # Sports with most country followers
     mostFollowers <- d[, .(Country,Interest,NumberOfCountries=.N), by=Sport][NumberOfCountries>50]
     ggplot(data=mostFollowers, aes(x=Sport,y=NumberOfCountries)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
+        geom_bar(position="dodge", stat="identity", fill="steelblue1", width=0.6) +
         ggtitle("Sports With More Than 50 Country Followers\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
@@ -144,9 +144,9 @@ searchBasicStats <- function() {
     ggsave("plots/mostCountryFollowers.stats.png", width=10, height=6, units="in", dpi=150)
     
     # Sports with most total interest
-    mostTotalInterest <- d[, .(Interest,NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
+    mostTotalInterest <- d[, .(Interest,NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][, head(.SD, 1), by=Sport][TotalInterest>150]
     ggplot(data=mostTotalInterest, aes(x=Sport,y=TotalInterest)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
+        geom_bar(position="dodge", stat="identity", fill="steelblue1", width=0.6) +
         ggtitle("Sports With Most Total Interest (>150)\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
@@ -154,16 +154,40 @@ searchBasicStats <- function() {
     
     ggsave("plots/mostTotalInterest.png", width=10, height=4, units="in", dpi=150)
     
-    # Country showing highest interest for particular sport
-    mostInterest <- d[, .(NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
-    ggplot(data=mostInterest, aes(x=Sport,y=TotalInterest)) +
-        geom_bar(position="dodge", stat="identity", fill="lightblue", width=0.6) +
-        ggtitle("Sports With Most Interest (>150)\nData Source: Google Trends") +
+    # Countries showing highest interest for particular sport
+    mostTotalInterest <- d[, .(Interest,NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][, head(.SD, 1), by=Sport]
+    mostInterest <- d[d[, .I[Interest==max(Interest)], by=Sport]$V1]
+    mi <- mostInterest[, lapply(.SD, paste0, collapse=", "), by=Sport]
+    mostInterest <- mostInterest[, head(.SD, 1), by=Sport]
+    mostInterest$Country <- mi$Country
+    mostInterest$TotalInterest <- mostTotalInterest$TotalInterest
+    mostInterest$NumberOfCountries <- mostTotalInterest$NumberOfCountries
+    ggplot(data=mostInterest, aes(x=Sport,y=Interest)) +
+        geom_bar(position="dodge", stat="identity", fill="steelblue1", width=0.5) +
+        ggtitle("Country Showing Most Interest in a Sport\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
-        geom_hline(yintercept = 150, linetype = "longdash")
+        geom_text(aes(x=Sport, y=Interest, label=Country, hjust=-0.05, vjust=0.2, label.size=0.05), color = "#999999", data = mostInterest)
     
-    ggsave("plots/mostInterest.png", width=10, height=4, units="in", dpi=150)
+    ggsave("plots/mostInterest.png", width=14, height=8, units="in", dpi=150)
+
+    # No. of Countries vs Total Interest showing the toppers by sport
+    png(filename="plots/mostInterestCircles1.png", width=12, height=6, units="in", res=150)
+    symbols(mostInterest$TotalInterest, mostInterest$NumberOfCountries, circles=sqrt(mostInterest$Interest/pi), inches=1, xlab="Total Interest", ylab="No. of Countries")
+    title("Countries Showing Most Interest By Sport\nData Source: Google Trends")
+    text(mostInterest$TotalInterest, mostInterest$NumberOfCountries, paste(mostInterest$Sport, mostInterest$Country, sep="\n"), cex=0.8)
+    dev.off()
+    
+    # Sport vs No. of Countries showing the toppers and their interest by sport
+    ggplot(mostInterest, aes(x=NumberOfCountries, y=Sport)) +
+        geom_point(data=mostInterest,aes(x=NumberOfCountries, y=Sport, size=TotalInterest, colour=Interest), alpha=.5) +
+        ggtitle("Countries Showing Interest By Sport\nSize: Total Interest; Colour: Topper Interest\nData Source: Google Trends") +
+        commonTheme() +
+        geom_text(data=mostInterest, aes(x=NumberOfCountries, y=Sport, label=Country), color="#222222") +
+        scale_colour_gradientn(colours=c('orange','red')) +
+        scale_size(range=c(1,70), guide=F)
+
+    ggsave("plots/mostInterestCircles2.png", width=12, height=8, units="in", dpi=150)
 }
 
 fullSearchInterest <- function() {

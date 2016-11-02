@@ -27,7 +27,7 @@ commonTheme <- function() {
         axis.line = element_line(colour = "black"))
 }
 
-sportSearchByCountry <- function(countries) {
+sportSearchByCountry <- function(fname, countries) {
     d <- readSearchDataFile()
     all <- d[d$C %in% countries,] # ignores items in input not in d$Country
     all$Country <- factor(all$Country)
@@ -51,7 +51,7 @@ sportSearchByCountry <- function(countries) {
         ggp <- ggp + scale_fill_manual(values=colors)
     }
     
-    ggsave("sportSearchByCountry.png", width=10, height=5, units="in", dpi=150)
+    ggsave(fname, width=10, height=5, units="in", dpi=150)
 }
 
 indianSearchCompared <- function() {
@@ -76,7 +76,7 @@ indianSearchCompared <- function() {
         scale_x_discrete(labels=sub(" ", "\n", indianSports)) +
         geom_text(aes(x=Sport, y=Interest, label=Country, hjust=1, vjust=-0.5, label.size=0.2), color = "#999999", data = all[all$Country!="India",])
 
-    ggsave("indianSearchCompared.png", width=13, height=5, units="in", dpi=150)
+    ggsave("plots/indianSearchCompared.png", width=13, height=5, units="in", dpi=150)
 }
 
 searchBasicStats <- function() {
@@ -101,7 +101,7 @@ searchBasicStats <- function() {
         commonTheme() +
         geom_hline(yintercept = 12, linetype = "longdash")
     
-    ggsave("mostSports.Bar.png", width=10, height=5, units="in", dpi=150)
+    ggsave("plots/mostSports.Bar.png", width=10, height=5, units="in", dpi=150)
 
     # TODO Add title to legend and show subset of integers
     ggplot(data=mostSportsAll, aes(x=Country,y=Interest)) +
@@ -113,7 +113,7 @@ searchBasicStats <- function() {
         coord_flip() +
         commonTheme()
 
-    ggsave("mostSports.Points.png", width=10, height=5, units="in", dpi=150)
+    ggsave("plots/mostSports.Points.png", width=10, height=5, units="in", dpi=150)
     
     # Sports with most country followers
     mostFollowers <- d[, .(Country,Interest,NumberOfCountries=.N), by=Sport][NumberOfCountries>50]
@@ -124,7 +124,7 @@ searchBasicStats <- function() {
         commonTheme() +
         geom_hline(yintercept = 50, linetype = "longdash")
     
-    ggsave("mostCountryFollowers.png", width=10, height=4, units="in", dpi=150)
+    ggsave("plots/mostCountryFollowers.png", width=10, height=4, units="in", dpi=150)
 
     # Show a boxplot for sports with most followers
     # TODO Add country name to farthest outlier: d[order(Sport,-Interest)][, head(.SD,1), by=Sport]
@@ -141,7 +141,7 @@ searchBasicStats <- function() {
         commonTheme() +
         geom_text(aes(label = BigFollower), na.rm = TRUE, hjust = -0.1)
     
-    ggsave("mostCountryFollowers.stats.png", width=10, height=6, units="in", dpi=150)
+    ggsave("plots/mostCountryFollowers.stats.png", width=10, height=6, units="in", dpi=150)
     
     # Sports with most total interest
     mostTotalInterest <- d[, .(Interest,NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
@@ -152,7 +152,7 @@ searchBasicStats <- function() {
         commonTheme() +
         geom_hline(yintercept = 150, linetype = "longdash")
     
-    ggsave("mostTotalInterest.png", width=10, height=4, units="in", dpi=150)
+    ggsave("plots/mostTotalInterest.png", width=10, height=4, units="in", dpi=150)
     
     # Country showing highest interest for particular sport
     mostInterest <- d[, .(NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][TotalInterest>150]
@@ -163,7 +163,7 @@ searchBasicStats <- function() {
         commonTheme() +
         geom_hline(yintercept = 150, linetype = "longdash")
     
-    ggsave("mostInterest.png", width=10, height=4, units="in", dpi=150)
+    ggsave("plots/mostInterest.png", width=10, height=4, units="in", dpi=150)
 }
 
 fullSearchInterest <- function() {
@@ -172,7 +172,7 @@ fullSearchInterest <- function() {
     # Show everything!
     qplot(Country, Sport, data=d, size=Interest) +
         theme(axis.text.x = element_text(angle = 90, size=5, hjust=1, vjust=0))
-    ggsave("fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
+    ggsave("plots/fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
 }
 
 medalsBasicStats <- function() {
@@ -186,7 +186,9 @@ medalsBasicStats <- function() {
 }
 
 runAll <- function() {
-    sportSearchByCountry(c("India", "United States", "Great Britain", "China"))
+    dir.create('plots', showWarnings=F)
+    sportSearchByCountry("plots/sportSearchIndia.png", "India")
+    sportSearchByCountry("plots/sportSearchByCountry.png", c("India", "United States", "Great Britain", "China"))
     indianSearchCompared()
     searchBasicStats()
     fullSearchInterest()

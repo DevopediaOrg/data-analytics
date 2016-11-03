@@ -169,7 +169,7 @@ searchBasicStats <- function() {
         commonTheme() +
         geom_text(aes(x=Sport, y=Interest, label=Country, hjust=-0.05, vjust=0.2, label.size=0.05), color = "#999999", data = mostInterest)
     
-    ggsave("plots/mostInterest.png", width=14, height=8, units="in", dpi=150)
+    ggsave("plots/mostInterest.png", width=15, height=7, units="in", dpi=150)
 
     # No. of Countries vs Total Interest showing the toppers by sport
     png(filename="plots/mostInterestCircles1.png", width=12, height=6, units="in", res=150)
@@ -194,7 +194,7 @@ fullSearchInterest <- function() {
     d <- readSearchDataFile()
 
     # Show everything!
-    qplot(Country, Sport, data=d, size=Interest) +
+    qplot(Country, Sport, data=d, size=Interest, colour=I("red")) +
         theme(axis.text.x = element_text(angle = 90, size=5, hjust=1, vjust=0))
     ggsave("plots/fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
 }

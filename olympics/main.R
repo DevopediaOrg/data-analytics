@@ -108,7 +108,7 @@ searchBasicStats <- function() {
         #geom_point(aes(size = InterestCount)) + 
         # :factor(InterestCount) can be used to force legend to integers
         # :can simply use geom_count() instead
-        geom_count() +
+        geom_count(color='indianred3') +
         ggtitle("Interest Within Countries Searching More Than a Dozen Sports\nData Source: Google Trends") +
         coord_flip() +
         commonTheme()
@@ -136,7 +136,7 @@ searchBasicStats <- function() {
     nonbig$BigFollower <- as.numeric(rep(NA,nrow(nonbig)))
     mostFollowers <- rbind(big, nonbig)
     ggplot(mostFollowers, aes(Sport, Interest)) + 
-        geom_boxplot() +
+        geom_boxplot(fill='orange', color="red") +
         ggtitle("Statistical Spread of Interest for Sports With More Than 50 Country Followers\nData Source: Google Trends") +
         commonTheme() +
         geom_text(aes(label = BigFollower), na.rm = TRUE, hjust = -0.1)

@@ -8,6 +8,22 @@ readSearchDataFile <- function() {
                col.names = c("Country", "Interest", "Sport"))
 }
 
+readHdiDataFile <- function() {
+    # Doesn't give correct classes for the columns
+    #hdiInfo <- fread("data/HDI.csv", sep=",", header = TRUE, skip = 1, nrows=0) # to get col names and types
+    #hdi <- fread("data/HDI.csv", 
+    #           sep = ",", header = TRUE, stringsAsFactors = FALSE, skip = 1,
+    #           colClasses = c("integer", "factor", rep("numeric", ncol(hdiInfo)-2)),
+    #           col.names = colnames(hdiInfo))
+
+    hdi <- fread("data/HDI.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE, skip = 1)
+    hdi$Country <- factor(trimws(hdi$Country))
+    hdi$'2014' <- as.numeric(hdi$'2014')
+    hdi <- hdi[,.(Country,HDI.2014=hdi$'2014')]
+
+    return(hdi)
+}
+
 readMedalsDataFile <- function() {
     m <- fread("data/rio2016/medalsData.csv", 
                sep = ",", header = TRUE, stringsAsFactors = TRUE)
@@ -20,7 +36,6 @@ commonTheme <- function() {
         legend.position = c(.95,.95),
         plot.margin = unit(c(.1,.4,.1,.1), "cm"), # top,right,bottom,left
         panel.grid.major.y = element_line(colour = "#eeeeee"),
-        panel.grid.minor.y = element_line(colour = "#eeeeee"),
         panel.grid.major.x = element_blank(),
         panel.grid.minor.x = element_blank(),
         panel.background = element_blank(),
@@ -82,6 +97,11 @@ indianSearchCompared <- function() {
 searchBasicStats <- function() {
     d <- readSearchDataFile()
     
+    # Show everything!
+    qplot(Country, Sport, data=d, size=Interest, colour=I("red")) +
+        theme(axis.text.x = element_text(angle = 90, size=5, hjust=1, vjust=0))
+    ggsave("plots/fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
+
     # Code 1: Countries searching more than a dozen sports
     #mostSports <- table(d$Country)
     #mostSports <- data.table(mostSports[mostSports>12])
@@ -190,13 +210,30 @@ searchBasicStats <- function() {
     ggsave("plots/mostInterestCircles2.png", width=12, height=8, units="in", dpi=150)
 }
 
-fullSearchInterest <- function() {
+searchHdiCorr <- function() {
     d <- readSearchDataFile()
+    hdi <- readHdiDataFile()
 
-    # Show everything!
-    qplot(Country, Sport, data=d, size=Interest, colour=I("red")) +
-        theme(axis.text.x = element_text(angle = 90, size=5, hjust=1, vjust=0))
-    ggsave("plots/fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
+    # Scatterplot comparing total interest and HDI
+    countryInterest <- d[, .(NumOfSports=.N,TotalInterest=sum(Interest)), by=Country]
+    m <- merge(countryInterest, hdi, by.x="Country", by.y="Country", all=F) # ignore countries without HDI info
+    ggplot(m, aes(x=HDI.2014, y=TotalInterest)) +
+        geom_point(shape=3, size=2) +
+        ggtitle("Countrywise Total Interest vs HDI\nData Source: Google Trends") +
+        commonTheme() +
+        theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
+    
+    ggsave("plots/interestHdi.png", width=12, height=8, units="in", dpi=150)
+    
+    # Scatterplot comparing number of sports and HDI
+    ggplot(m, aes(x=HDI.2014, y=NumOfSports)) +
+        geom_point(shape=3, size=2) +
+        geom_smooth(method=lm, se=T) +
+        ggtitle("Countrywise Number of Sports Searched vs HDI\nData Source: Google Trends") +
+        commonTheme() +
+        theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
+    
+    ggsave("plots/numOfSportsHdi.png", width=12, height=8, units="in", dpi=150)
 }
 
 medalsBasicStats <- function() {
@@ -215,6 +252,6 @@ runAll <- function() {
     sportSearchByCountry("plots/sportSearchByCountry.png", c("India", "United States", "Great Britain", "China"))
     indianSearchCompared()
     searchBasicStats()
-    fullSearchInterest()
+    searchHdiCorr()
     medalsBasicStats()
 }

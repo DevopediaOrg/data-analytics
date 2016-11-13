@@ -17,16 +17,22 @@ readHdiDataFile <- function() {
     #           col.names = colnames(hdiInfo))
 
     hdi <- fread("data/HDI.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE, skip = 1)
-    hdi$Country <- factor(trimws(hdi$Country))
+
+    hdi$Country <- trimws(hdi$Country)
     hdi$'2014' <- as.numeric(hdi$'2014')
     hdi <- hdi[,.(Country,HDI.2014=hdi$'2014')]
+
+    # Convert to be consistent with other data sets
+    hdi$Country[which(hdi$Country=='United Kingdom')] <- "Great Britain"
+    hdi$Country <- factor(hdi$Country)
 
     return(hdi)
 }
 
 readMedalsDataFile <- function() {
-    m <- fread("data/rio2016/medalsData.csv", 
-               sep = ",", header = TRUE, stringsAsFactors = TRUE)
+    m <- fread("data/rio2016/medalsData.csv", sep = ",", header = TRUE, stringsAsFactors = TRUE)
+    m[, ts := as.POSIXct(as.character(ts))] # TODO Preserve the time component
+    return(m)
 }
 
 commonTheme <- function() {
@@ -238,12 +244,41 @@ searchHdiCorr <- function() {
 
 medalsBasicStats <- function() {
     m <- readMedalsDataFile()
+    hdi <- readHdiDataFile()
     
     numCountriesWithMedals <- length(levels(m$countrycode))
     numSports <- length(levels(m$sport))
     numEvents <- length(levels(m$event))
+    numIndividualMedallists <- length(data.table(table(m$medalist))[!V1 %like% 'team']$V1)
+
+    # Scatterplot total medals by country and HDI
+    totalMedals <- m[,.(NumOfMedals=.N), by=country]
+    tmhdi <- merge(totalMedals, hdi, by.x="country", by.y="Country", all=F) # ignore countries without HDI info
+    ggplot(tmhdi, aes(x=HDI.2014, y=NumOfMedals)) +
+        geom_point(shape=3, size=2) +
+        geom_smooth(method=lm, se=T) +
+        ggtitle("Countrywise Total Medals vs HDI") +
+        commonTheme() +
+        theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
+        geom_text(data=tmhdi[tmhdi$country %in% c("United States","China","Kenya","Great Britain","Norway")], # outliers seen during exploration
+                  aes(x=HDI.2014, y=NumOfMedals, label=country),
+                  hjust=0.5, vjust=-0.7, color="darkgreen", size=3) +
+        geom_text(data=tmhdi[tmhdi$country=="India",],
+                  aes(x=HDI.2014, y=NumOfMedals, label=country),
+                  hjust=1.2, vjust=0.3, color="red", size=3)
     
-    #head(data.table(table(m$medalist))[order(-N,-V1)],30)
+    ggsave("plots/totalMedalsHdi.png", width=8, height=5, units="in", dpi=150)
+    
+    # Top individual medalists
+    toppers <- data.table(table(paste0(m$medalist, "\n[", m$country, "]")))[N>2 & !V1 %like% 'team'][order(-N,V1)]
+    colnames(toppers) <- c("Medalist","NumOfMedals")
+    toppers$Medalist <- factor(toppers$Medalist, levels=rev(toppers$Medalist)) # so that ggplot doesn't order the factors
+    ggplot(data=toppers, aes(x=Medalist,y=NumOfMedals)) +
+        geom_bar(position="dodge", stat="identity", fill="steelblue1", width=0.6) +
+        ggtitle("Top Individual Medalists") +
+        coord_flip() +
+        commonTheme()
+    ggsave("plots/topIndividualMedalists.png", width=10, height=5, units="in", dpi=150)
 }
 
 runAll <- function() {

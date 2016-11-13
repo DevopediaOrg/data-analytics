@@ -225,6 +225,7 @@ searchHdiCorr <- function() {
     m <- merge(countryInterest, hdi, by.x="Country", by.y="Country", all=F) # ignore countries without HDI info
     ggplot(m, aes(x=HDI.2014, y=TotalInterest)) +
         geom_point(shape=3, size=2) +
+        geom_smooth(method=lm, se=T) +
         ggtitle("Countrywise Total Interest vs HDI\nData Source: Google Trends") +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee"))

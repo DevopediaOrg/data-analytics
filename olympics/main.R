@@ -35,6 +35,11 @@ readMedalsDataFile <- function() {
     return(m)
 }
 
+readAthletesDataFile <- function() {
+    a <- fread("data/rio2016/athletes.csv", sep = ",", header = TRUE, stringsAsFactors = TRUE, drop=c("info"))
+    return(a)
+}
+
 commonTheme <- function() {
     theme(
         plot.title=element_text(size=12),
@@ -50,6 +55,7 @@ commonTheme <- function() {
 
 sportSearchByCountry <- function(fname, countries) {
     d <- readSearchDataFile()
+
     all <- d[d$C %in% countries,] # ignores items in input not in d$Country
     all$Country <- factor(all$Country)
     all$Sport <- factor(all$Sport)
@@ -73,6 +79,34 @@ sportSearchByCountry <- function(fname, countries) {
     }
     
     ggsave(fname, width=10, height=5, units="in", dpi=150)
+}
+
+indianSearchAndParticipation <- function() {
+    srch <- readSearchDataFile()
+    srchind <- srch[Country=="India"]
+    colnames(srchind) <- c("country", "interest", "sport")
+    
+    ath <- readAthletesDataFile()
+    athind <- ath[nationality=="IND"]
+    levels(athind$sport)[levels(athind$sport)=="hockey"] <- "Field hockey"
+    levels(athind$sport)[levels(athind$sport)=="athletics"] <- "Athletics (Track & Field)"
+    levels(athind$sport)[levels(athind$sport)=="gymnastics"] <- "Artistic gymnastics" # TODO Consider search interest (if any) in Rhythmic gymnastics
+    levels(athind$sport)[levels(athind$sport)=="aquatics"] <- "Swimming" # TODO Consider search interest (if any) in Diving
+    athind$sport <- factor(paste0(toupper(substring(athind$sport,1,1)), substring(athind$sport, 2)))
+    athind <- athind[, .(numMedals=sum(gold+silver+bronze), numAthletes=.N), by=sport]
+
+    all <- merge(athind, srchind, by=c("sport"), all.x=T)
+    all$interest[is.na(all$interest)] <- 0
+    
+    ggplot(all, aes(x=numAthletes, y=interest)) +
+        geom_point(data=all,aes(size=numMedals), colour="aquamarine4") +
+        ggtitle("Search Interest Correlated to Partipation & Performance\nSize: No. of Medals\nData Source: Google Trends") +
+        commonTheme() +
+        scale_size(range=c(1,30), guide=F) +
+        geom_text(data=all[sport %in% c("Badminton","Wrestling")], aes(label=paste0(sport,'\n',numMedals)), color="white") +
+        geom_text(data=all[numAthletes>10], aes(label=sport), color="red", hjust=0.8, vjust=0.8)
+
+    ggsave("plots/indianSearchAndParticipation.png", width=8, height=6, units="in", dpi=150)
 }
 
 indianSearchCompared <- function() {
@@ -284,6 +318,7 @@ medalsBasicStats <- function() {
         ggtitle("Top Individual Medalists") +
         coord_flip(ylim=c(0,5)) +
         commonTheme()
+    
     ggsave("plots/topIndividualMedalists.png", width=10, height=5, units="in", dpi=150)
 }
 

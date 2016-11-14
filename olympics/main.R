@@ -271,13 +271,18 @@ medalsBasicStats <- function() {
     ggsave("plots/totalMedalsHdi.png", width=8, height=5, units="in", dpi=150)
     
     # Top individual medalists
-    toppers <- data.table(table(paste0(m$medalist, "\n[", m$country, "]")))[N>2 & !V1 %like% 'team'][order(-N,V1)]
-    colnames(toppers) <- c("Medalist","NumOfMedals")
-    toppers$Medalist <- factor(toppers$Medalist, levels=rev(toppers$Medalist)) # so that ggplot doesn't order the factors
-    ggplot(data=toppers, aes(x=Medalist,y=NumOfMedals)) +
-        geom_bar(position="dodge", stat="identity", fill="steelblue1", width=0.6) +
+    topnames <- data.table(table(m$medalist))[N>2 & !V1 %like% 'team']
+    toppers <- m[medalist %in% topnames$V1]
+    toppers$medalist <- factor(paste(toppers$medalist, toppers$sport, toppers$country, sep="\n"))
+    toppers <- data.table(table(toppers$medalist, toppers$type))
+    colnames(toppers) <- c("Medalist", "Type", "NumOfMedals")
+    toppers$Medalist <- factor(toppers$Medalist, levels=rev(unique(toppers$Medalist))) # so that ggplot doesn't order the factors
+    toppers$Type = factor(toppers$Type,c("Bronze","Silver","Gold"))
+    toppers[toppers == 0] <- NA # so that zero counts are not displayed fill="#965a38",
+    ggplot(data=toppers, aes(x=Medalist, y=Type)) +
+        geom_text(aes(label=NumOfMedals), na.rm=T) + # TODO Repeat circles/points to represent medals
         ggtitle("Top Individual Medalists") +
-        coord_flip() +
+        coord_flip(ylim=c(0,5)) +
         commonTheme()
     ggsave("plots/topIndividualMedalists.png", width=10, height=5, units="in", dpi=150)
 }

@@ -265,7 +265,7 @@ searchHdiCorr <- function() {
         theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
     
     ggsave("plots/interestHdi.png", width=12, height=8, units="in", dpi=150)
-    
+
     # Scatterplot comparing number of sports and HDI
     ggplot(m, aes(x=HDI.2014, y=NumOfSports)) +
         geom_point(shape=3, size=2) +
@@ -273,14 +273,14 @@ searchHdiCorr <- function() {
         ggtitle("Countrywise Number of Sports Searched vs HDI\nData Source: Google Trends") +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
-    
+
     ggsave("plots/numOfSportsHdi.png", width=12, height=8, units="in", dpi=150)
 }
 
 medalsBasicStats <- function() {
     m <- readMedalsDataFile()
     hdi <- readHdiDataFile()
-    
+
     numCountriesWithMedals <- length(levels(m$countrycode))
     numSports <- length(levels(m$sport))
     numEvents <- length(levels(m$event))
@@ -303,22 +303,29 @@ medalsBasicStats <- function() {
                   hjust=1.2, vjust=0.3, color="red", size=3)
     
     ggsave("plots/totalMedalsHdi.png", width=8, height=5, units="in", dpi=150)
-    
+
     # Top individual medalists
     topnames <- data.table(table(m$medalist))[N>2 & !V1 %like% 'team']
     toppers <- m[medalist %in% topnames$V1]
     toppers$medalist <- factor(paste(toppers$medalist, toppers$sport, toppers$country, sep="\n"))
     toppers <- data.table(table(toppers$medalist, toppers$type))
     colnames(toppers) <- c("Medalist", "Type", "NumOfMedals")
+    all <- as.numeric(toppers[Type=='Gold']$NumOfMedals*1000 + toppers[Type=='Silver']$NumOfMedals*100 + toppers[Type=='Bronze']$NumOfMedals*10)
+    all <- data.table(cbind(toppers$Medalist, all))
+    colnames(all) <- c("Medalist", "all")
+    toppers <- merge(toppers, all, by="Medalist", allow.cartesian=T)
+    toppers <- toppers[order(-all)]
     toppers$Medalist <- factor(toppers$Medalist, levels=rev(unique(toppers$Medalist))) # so that ggplot doesn't order the factors
     toppers$Type = factor(toppers$Type,c("Bronze","Silver","Gold"))
-    toppers[toppers == 0] <- NA # so that zero counts are not displayed fill="#965a38",
+    toppers[toppers == 0] <- NA # TODO So that zero counts are not displayed, but not working in ggplot
     ggplot(data=toppers, aes(x=Medalist, y=Type)) +
+        geom_point(aes(colour=Type), size=15, na.rm=T) +
         geom_text(aes(label=NumOfMedals), na.rm=T) + # TODO Repeat circles/points to represent medals
         ggtitle("Top Individual Medalists") +
         coord_flip(ylim=c(0,5)) +
-        commonTheme()
-    
+        commonTheme() +
+        scale_color_manual(values=c("#965a38", "grey", "gold"), guide=F)
+
     ggsave("plots/topIndividualMedalists.png", width=10, height=5, units="in", dpi=150)
 }
 

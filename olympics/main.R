@@ -238,8 +238,8 @@ searchBasicStats <- function() {
 
     # No. of Countries vs Total Interest showing the toppers by sport
     png(filename="plots/mostInterestCircles1.png", width=12, height=6, units="in", res=150)
-    symbols(mostInterest$TotalInterest, mostInterest$NumberOfCountries, circles=sqrt(mostInterest$Interest/pi), inches=1, xlab="Total Interest", ylab="No. of Countries")
-    title("Countries Showing Most Interest By Sport\nData Source: Google Trends")
+    symbols(mostInterest$TotalInterest, mostInterest$NumberOfCountries, circles=sqrt(mostInterest$Interest/pi), inches=1, xlab="Total Interest Per Sport", ylab="No. of Countries")
+    title("Countries Showing Most Interest By Sport\nSize:Top Country's Interest in that Sport\nData Source: Google Trends")
     text(mostInterest$TotalInterest, mostInterest$NumberOfCountries, paste(mostInterest$Sport, mostInterest$Country, sep="\n"), cex=0.8)
     dev.off()
     

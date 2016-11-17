@@ -99,12 +99,17 @@ indianSearchAndParticipation <- function() {
     all$interest[is.na(all$interest)] <- 0
     
     ggplot(all, aes(x=numAthletes, y=interest)) +
-        geom_point(data=all,aes(size=numMedals), colour="aquamarine4") +
-        ggtitle("Search Interest Correlated to Partipation & Performance\nSize: No. of Medals\nData Source: Google Trends") +
+        geom_point(data=all,aes(size=numMedals), colour="green4") +
+        ggtitle("Indian Search Interest Correlated to Partipation & Performance\nSize: No. of Medals\nData Source: Google Trends") +
         commonTheme() +
-        scale_size(range=c(1,30), guide=F) +
+        coord_cartesian(xlim = c(-5, 40), ylim = c(0, 15)) +
+        scale_size(range=c(1,25), guide=F) +
         geom_text(data=all[sport %in% c("Badminton","Wrestling")], aes(label=paste0(sport,'\n',numMedals)), color="white") +
-        geom_text(data=all[numAthletes>10], aes(label=sport), color="red", hjust=0.8, vjust=0.8)
+        geom_text(data=all[numAthletes>10], aes(label=sport), color="red", hjust=0.8, vjust=0.8) +
+        geom_text(data=all[interest!=0 & numAthletes<6], aes(label=sport), color="blue", hjust=0.8, vjust=0.8)
+    
+    ggsave("plots/indianSearchAndParticipation.png", width=8, height=6, units="in", dpi=150)
+}
 
     ggsave("plots/indianSearchAndParticipation.png", width=8, height=6, units="in", dpi=150)
 }

@@ -451,7 +451,7 @@ ageAnalysis <- function() {
         geom_text(data=ath[sport=='archery' & sex=='male' & age>40], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
         geom_text(data=ath[sport %in% c('athletics','canoe') & sex=='male' & age>45], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
         geom_text(data=ath[sport %in% c('sailing','table tennis') & sex=='male' & age>50], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
-        facet_grid(. ~ sex, scales="free") +
+        facet_grid(. ~ sex) +
         ggtitle("Statistical Spread of Athlete's Age by Sport\nKey Outliers: Athlete Name/Country") +
         commonTheme() +
         theme(strip.background = element_rect(fill="#dddddd", colour="#dddddd")) +
@@ -460,6 +460,36 @@ ageAnalysis <- function() {
         coord_flip()
         
     ggsave("plots/ageAnalysis.png", width=12, height=6, units="in", dpi=150)
+}
+
+ageAnalysisIndia <- function() {
+    ath <- readAthletesDataFile()
+    ath$age <- floor(as.numeric(difftime(as.Date("2016-08-05"), ath$date_of_birth, unit="weeks")/52.25)) # approximate number
+    ath <- ath[!is.na(age)]
+    ath <- ath[,.(avgAge=mean(age),age,name,nationality,date_of_birth,gold,silver,bronze), by=.(sport,sex)]
+    mage <- ath[gold+silver+bronze>0,.(avgMedalistAge=mean(age)), by=.(sport,sex)]
+    iage <- ath[nationality=='IND',.(avgIndianAge=mean(age)), by=.(sport,sex)]
+    ath <- merge(ath, mage, by=c('sport','sex'), all.x=T)
+    ath <- merge(ath, iage, by=c('sport','sex'), all.x=T)
+    ath <- ath[nationality=='IND']
+
+    ggplot(data=ath, aes(x=sport, y=age, fill=sex)) + 
+        geom_boxplot(outlier.color='red') +
+        facet_grid(. ~ sex) +
+        geom_point(data=ath, aes(x=sport,y=avgMedalistAge), shape=1) +
+        geom_point(data=ath, aes(x=sport,y=avgAge), shape=4) +
+        geom_point(data=ath, aes(x=sport,y=avgIndianAge), shape=3) +
+        geom_text(data=ath[sport %in% c('badminton') & sex=='female' & age>30], aes(label=name), hjust=-0.05, vjust=0.4, size=3, color='red') +
+        geom_text(data=ath[sport %in% c('wrestling') & sex=='male' & age>30], aes(label=name), hjust=-0.05, vjust=0.4, size=3, color='red') +
+        geom_text(data=ath[sport %in% c('gymnastics') & sex=='female' & age==max(ath[sport=='gymnastics' & sex=='female']$age)], aes(label='Aged!'), color='red', hjust=-0.1, vjust=-0.4, size=3) +
+        geom_text(data=ath[sport %in% c('tennis') & sex=='male' & age==max(ath[sport=='tennis' & sex=='male']$age)], aes(label='Aged!'), color='red', hjust=0.8, vjust=-0.4, size=3) +
+        ggtitle("Statistical Spread of Indian Athlete's Age by Sport\nMean Age: + Indian Athletes    x All Athletes    o All medalists") +
+        commonTheme() +
+        theme(strip.background = element_rect(fill="#dddddd", colour="#dddddd")) +
+        scale_fill_manual(labels=letters[1:2], values=c("pink","steelblue1"), guide=F) +
+        coord_flip()
+
+    ggsave("plots/ageAnalysisIndia.png", width=12, height=6, units="in", dpi=150)
 }
 
 runAll <- function() {
@@ -473,4 +503,6 @@ runAll <- function() {
     searchBasicStats()
     searchHdiCorr()
     medalsBasicStats()
+    ageAnalysis()
+    ageAnalysisIndia()
 }

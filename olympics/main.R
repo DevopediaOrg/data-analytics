@@ -37,6 +37,7 @@ readMedalsDataFile <- function() {
 
 readAthletesDataFile <- function() {
     a <- fread("data/rio2016/athletes.csv", sep = ",", header = TRUE, stringsAsFactors = TRUE, drop=c("info"))
+    a[, date_of_birth := as.POSIXct(strptime(as.character(date_of_birth), "%Y-%m-%d"))]
     return(a)
 }
 
@@ -433,6 +434,32 @@ medalsBasicStats <- function() {
         scale_color_manual(values=c("#965a38", "grey", "gold"), guide=F)
 
     ggsave("plots/topIndividualMedalists.png", width=10, height=5, units="in", dpi=150)
+}
+
+ageAnalysis <- function() {
+    ath <- readAthletesDataFile()
+    ath$age <- floor(as.numeric(difftime(as.Date("2016-08-05"), ath$date_of_birth, unit="weeks")/52.25)) # approximate number
+    ath <- ath[!is.na(age)]
+    levels(ath$name)[levels(ath$name)=="Lesley Thompson-Willie"] <- "Lesley T-W" # shorten a long label
+    
+    ggplot(data=ath, aes(x=sport, y=age, fill=sex)) + 
+        geom_boxplot() +
+        geom_hline(yintercept = 35, linetype = "longdash") +
+        geom_text(data=ath[sport %in% c('golf') & sex=='female' & age>41], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
+        geom_text(data=ath[sport %in% c('gymnastics','handball') & sex=='female' & age>40], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
+        geom_text(data=ath[sport %in% c('rowing','table tennis') & sex=='female' & age>50], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
+        geom_text(data=ath[sport=='archery' & sex=='male' & age>40], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
+        geom_text(data=ath[sport %in% c('athletics','canoe') & sex=='male' & age>45], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
+        geom_text(data=ath[sport %in% c('sailing','table tennis') & sex=='male' & age>50], aes(label=paste0(name,"/",nationality)), hjust=-0.05, vjust=0.4, size=2.5) +
+        facet_grid(. ~ sex, scales="free") +
+        ggtitle("Statistical Spread of Athlete's Age by Sport\nKey Outliers: Athlete Name/Country") +
+        commonTheme() +
+        theme(strip.background = element_rect(fill="#dddddd", colour="#dddddd")) +
+        scale_fill_manual(labels=letters[1:2], values=c("pink","steelblue1"), guide=F) +
+        #scale_y_continuous(expand = c(0.05,11)) + # to show long labels hidden at the edges
+        coord_flip()
+        
+    ggsave("plots/ageAnalysis.png", width=12, height=6, units="in", dpi=150)
 }
 
 runAll <- function() {

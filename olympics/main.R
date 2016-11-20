@@ -116,14 +116,14 @@ indianSearchAndParticipation <- function() {
     ggsave("plots/indianSearchAndParticipation.png", width=8, height=6, units="in", dpi=150)
 }
 
-searchAndParticipation <- function() {
+searchAndParticipation <- function(srcdata) {
     srch <- readSearchDataFile()
     colnames(srch) <- c("country", "interest", "sport")
     levels(srch$sport)[levels(srch$sport) %in% c("Artistic gymnastics","Rhythmic gymnastics","Trampolining")] <- "Gymnastics"
     levels(srch$sport)[levels(srch$sport) %in% c("Swimming","Diving","Synchronized swimming","Water polo")] <- "Aquatics"
     levels(srch$sport)[levels(srch$sport) %in% c("Beach volleyball","Indoor volleyball")] <- "Volleyball"
     srch <- srch[,.(interest=sum(interest)), by=.(sport,country)] # sum due to data folding above
-    
+
     ath <- readAthletesDataFile()
     levels(ath$sport)[levels(ath$sport)=="canoe"] <- "Canoeing"
     levels(ath$sport)[levels(ath$sport)=="hockey"] <- "Field hockey"
@@ -131,37 +131,88 @@ searchAndParticipation <- function() {
     levels(ath$sport)[levels(ath$sport)=="football"] <- "Football (Soccer)"
     ath$sport <- factor(paste0(toupper(substring(ath$sport,1,1)), substring(ath$sport, 2)))
     ath <- ath[, .(numMedals=sum(gold+silver+bronze), numAthletes=.N), by=.(sport,nationality)]
-    
+
     ccode <- readCountryCodeFile()
     ath <- merge(ath, ccode, by.x="nationality", by.y="IOC", all.x=T)
     levels(ath$name)[levels(ath$name) %in% c("US")] <- "United States"
     levels(ath$name)[levels(ath$name) %in% c("UK")] <- "Great Britain"
-        
+    # unique(ath[is.na(name)]$nationality) TODO Country names missing for IOA KOS MHL MNE ROT SSD but that's okay for now
+    
+    if (srcdata=='perTeam') {
+        # Because athletes data does wrong counting of no. of medals for team events, 
+        # take tally from another source
+        m <- readMedalsDataFile()
+        levels(m$sport)[levels(m$sport)=="Athletics"] <- "Athletics (Track & Field)"
+        levels(m$sport)[levels(m$sport) %in% c("Beach Volleyball")] <- "Volleyball"
+        levels(m$sport)[levels(m$sport) %in% c("Canoe Slalom","Canoe Sprint")] <- "Canoeing"
+        levels(m$sport)[levels(m$sport) %in% c("Cycling BMX","Cycling Mountain Bike","Cycling Road","Cycling Track")] <- "Cycling"
+        levels(m$sport)[levels(m$sport) %in% c("Swimming","Diving","Marathon Swimming","Synchronised Swimming","Water Polo")] <- "Aquatics"
+        levels(m$sport)[levels(m$sport) %in% c("Gymnastics Artistic","Gymnastics Rhythmic","Gymnastics Trampoline")] <- "Gymnastics"
+        levels(m$sport)[levels(m$sport) %in% c("Football")] <- "Football (Soccer)"
+        levels(m$sport)[levels(m$sport) %in% c("Hockey")] <- "Field hockey"
+        levels(m$sport)[levels(m$sport) %in% c("Modern Pentathlon")] <- "Modern pentathlon"
+        levels(m$sport)[levels(m$sport) %in% c("Rugby Sevens")] <- "Rugby sevens"
+        levels(m$sport)[levels(m$sport) %in% c("Table Tennis")] <- "Table tennis"
+        m <- m[, .(numMedals=.N), by=.(sport,country)]
+
+        ath <- merge(ath, m, by.x=c("sport","name"), by.y=c("sport","country"), all.x=T)
+        ath$numMedals.x <- NULL
+        colnames(ath)[5] <- "numMedals"
+        ath$numMedals[is.na(ath$numMedals)] <- 0
+    }
+    
     all <- merge(ath, srch, by.x=c("sport","name"), by.y=c("sport","country"), all.x=T)
     all$interest[is.na(all$interest)] <- 0
     
-    ggplot(all, aes(x=numMedals, y=interest)) +
-        geom_point(shape=3, size=2, colour="#555555") +
-        geom_point(data=all[interest!=0 & numMedals==0], shape=3, size=2, colour="green") +
-        geom_point(data=all[numMedals!=0 & interest==0], shape=3, size=2, colour="red") +
-        geom_point(data=all[interest>=50], shape=3, size=2, colour="blue") +
-        geom_point(data=all[numMedals>=30 & interest<20], shape=3, size=2, colour="purple") +
-        ggtitle("Search Interest Correlated to Partipation & Performance\nLabels:Country/Sport/No. of Athletes\nData Source: Google Trends") +
-        geom_text(data=all[interest>=50], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=-0.05, vjust=0.2), color="blue", size=2) +
-        geom_text(data=all[numMedals>=30 & interest<20], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=0.5, vjust=-0.8), color="purple", size=2) +
-        commonTheme() +
-        theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
-        coord_cartesian(xlim = c(0, 50), ylim = c(0, 105)) +
-        labs(x="No. of Medals", y="Interest") +
-        scale_size(range=c(1,25), guide=F) +
-        annotate("text", x=42, y=108, label="High interest", colour='blue', size=3, hjust=0) +
-        annotate("text", x=42, y=104, label="No medals but non-zero interest", colour='green', size=3, hjust=0) +
-        annotate("text", x=42, y=100, label="Won medals but no interest", colour='red', size=3, hjust=0) +
-        annotate("text", x=42, y=96, label="Lots of medals but small interest", colour='purple', size=3, hjust=0) +
-        annotate("text", x=42, y=92, label="The rest", colour='#555555', size=3, hjust=0) +
-        annotate("rect", xmin=41.5, xmax=54, ymin=90, ymax=110, alpha=0.3, fill="grey")
+    if (srcdata=='perTeam') {
+        mi <- max(all$interest)
+        ggplot(all, aes(x=numMedals, y=interest)) +
+            geom_point(shape=3, size=2, colour="#555555") +
+            geom_point(data=all[interest!=0 & numMedals==0], shape=3, size=2, colour="green") +
+            geom_point(data=all[numMedals!=0 & interest==0], shape=3, size=2, colour="red") +
+            geom_point(data=all[interest>=25 & numMedals<10], shape=3, size=2, colour="blue") +
+            geom_point(data=all[numMedals>=10], shape=3, size=2, colour="purple") +
+            ggtitle("Search Interest Correlated to Partipation & Performance\nLabels:Country/Sport/No. of Athletes\nData Source: Google Trends") +
+            geom_text(data=all[interest>=25 & numMedals<10], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=-0.05, vjust=0.2), color="blue", size=2) +
+            geom_text(data=all[numMedals>=10], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=-0.05, vjust=0.2), color="purple", size=2) +
+            commonTheme() +
+            theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
+            coord_cartesian(xlim = c(0, max(all$numMedals)+2), ylim = c(0, mi)) +
+            labs(x="No. of Medals", y="Interest") +
+            scale_size(range=c(1,25), guide=F) +
+            annotate("text", x=31, y=mi, label="High interest", colour='blue', size=3, hjust=0) +
+            annotate("text", x=31, y=mi-4, label="No medals but non-zero interest", colour='green', size=3, hjust=0) +
+            annotate("text", x=31, y=mi-8, label="Won medals but no interest", colour='red', size=3, hjust=0) +
+            annotate("text", x=31, y=mi-12, label="Specialists: lots of medals", colour='purple', size=3, hjust=0) +
+            annotate("text", x=31, y=mi-16, label="The rest", colour='#555555', size=3, hjust=0) +
+            annotate("rect", xmin=30.5, xmax=40, ymin=mi+2, ymax=mi-19, alpha=0.3, fill="grey")
+            
+        ggsave("plots/searchAndParticipationPerTeam.png", width=10, height=6, units="in", dpi=150)
+    }
+    else {
+        ggplot(all, aes(x=numMedals, y=interest)) +
+            geom_point(shape=3, size=2, colour="#555555") +
+            geom_point(data=all[interest!=0 & numMedals==0], shape=3, size=2, colour="green") +
+            geom_point(data=all[numMedals!=0 & interest==0], shape=3, size=2, colour="red") +
+            geom_point(data=all[interest>=50], shape=3, size=2, colour="blue") +
+            geom_point(data=all[numMedals>=30 & interest<20], shape=3, size=2, colour="purple") +
+            ggtitle("Search Interest Correlated to Partipation & Performance\nLabels:Country/Sport/No. of Athletes\nData Source: Google Trends") +
+            geom_text(data=all[interest>=50], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=-0.05, vjust=0.2), color="blue", size=2) +
+            geom_text(data=all[numMedals>=30 & interest<20], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=0.5, vjust=-0.8), color="purple", size=2) +
+            commonTheme() +
+            theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
+            coord_cartesian(xlim = c(0, 50), ylim = c(0, 105)) +
+            labs(x="No. of Medals", y="Interest") +
+            scale_size(range=c(1,25), guide=F) +
+            annotate("text", x=42, y=108, label="High interest", colour='blue', size=3, hjust=0) +
+            annotate("text", x=42, y=104, label="No medals but non-zero interest", colour='green', size=3, hjust=0) +
+            annotate("text", x=42, y=100, label="Won medals but no interest", colour='red', size=3, hjust=0) +
+            annotate("text", x=42, y=96, label="Lots of medals but small interest", colour='purple', size=3, hjust=0) +
+            annotate("text", x=42, y=92, label="The rest", colour='#555555', size=3, hjust=0) +
+            annotate("rect", xmin=41.5, xmax=54, ymin=90, ymax=110, alpha=0.3, fill="grey")
         
-    ggsave("plots/searchAndParticipation.png", width=10, height=6, units="in", dpi=150)
+        ggsave("plots/searchAndParticipationPerAthlete.png", width=10, height=6, units="in", dpi=150)
+    }
 }
 
 indianSearchCompared <- function() {
@@ -389,7 +440,8 @@ runAll <- function() {
     sportSearchByCountry("plots/sportSearchIndia.png", "India")
     sportSearchByCountry("plots/sportSearchByCountry.png", c("India", "United States", "Great Britain", "China"))
     indianSearchAndParticipation()
-    searchAndParticipation()
+    searchAndParticipation('perAthlete')
+    searchAndParticipation('perTeam')
     indianSearchCompared()
     searchBasicStats()
     searchHdiCorr()

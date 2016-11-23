@@ -106,7 +106,7 @@ indianSearchAndParticipation <- function() {
     
     ggplot(all, aes(x=numAthletes, y=interest)) +
         geom_point(data=all,aes(size=numMedals), colour="green4") +
-        ggtitle("Indian Search Interest Correlated to Partipation & Performance\nSize: No. of Medals\nData Source: Google Trends") +
+        ggtitle("Indian Search Interest Correlated to Participation & Performance\nSize: No. of Medals\nData Source: Google Trends") +
         commonTheme() +
         coord_cartesian(xlim = c(-5, 40), ylim = c(0, 15)) +
         scale_size(range=c(1,25), guide=F) +
@@ -173,7 +173,7 @@ searchAndParticipation <- function(srcdata) {
             geom_point(data=all[numMedals!=0 & interest==0], shape=3, size=2, colour="red") +
             geom_point(data=all[interest>=25 & numMedals<10], shape=3, size=2, colour="blue") +
             geom_point(data=all[numMedals>=10], shape=3, size=2, colour="purple") +
-            ggtitle("Search Interest Correlated to Partipation & Performance\nLabels:Country/Sport/No. of Athletes\nData Source: Google Trends") +
+            ggtitle("Search Interest Correlated to Participation & Performance\nLabels:Country/Sport/No. of Athletes\nData Source: Google Trends") +
             geom_text(data=all[interest>=25 & numMedals<10], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=-0.05, vjust=0.2), color="blue", size=2) +
             geom_text(data=all[numMedals>=10], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=-0.05, vjust=0.2), color="purple", size=2) +
             commonTheme() +
@@ -197,7 +197,7 @@ searchAndParticipation <- function(srcdata) {
             geom_point(data=all[numMedals!=0 & interest==0], shape=3, size=2, colour="red") +
             geom_point(data=all[interest>=50], shape=3, size=2, colour="blue") +
             geom_point(data=all[numMedals>=30 & interest<20], shape=3, size=2, colour="purple") +
-            ggtitle("Search Interest Correlated to Partipation & Performance\nLabels:Country/Sport/No. of Athletes\nData Source: Google Trends") +
+            ggtitle("Search Interest Correlated to Participation & Performance\nLabels:Country/Sport/No. of Athletes\nData Source: Google Trends") +
             geom_text(data=all[interest>=50], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=-0.05, vjust=0.2), color="blue", size=2) +
             geom_text(data=all[numMedals>=30 & interest<20], aes(label=paste0(nationality,'/',sport,'/',numAthletes), hjust=0.5, vjust=-0.8), color="purple", size=2) +
             commonTheme() +
@@ -246,9 +246,15 @@ searchBasicStats <- function() {
     
     # Show everything!
     qplot(Country, Sport, data=d, size=Interest, colour=I("red")) +
-        theme(axis.text.x = element_text(angle = 90, size=5, hjust=1, vjust=0))
+        theme(axis.text.x = element_text(angle = 90, size=5, hjust=1, vjust=0)) +
+        ggtitle("Sports Searched by Various Countries\nData Source: Google Trends")
+        
     ggsave("plots/fullSearchInterest.png", width=15, height=18, units="in", dpi=150)
 
+    # Order by total interest per country
+    orderedSearch <- d[, .(TotalInterest=sum(Interest)), by=Country][order(-TotalInterest)]
+    indiaPostition <- which(orderedSearch$Country=='India')
+    
     # Code 1: Countries searching more than a dozen sports
     #mostSports <- table(d$Country)
     #mostSports <- data.table(mostSports[mostSports>12])
@@ -271,16 +277,20 @@ searchBasicStats <- function() {
     ggsave("plots/mostSports.Bar.png", width=10, height=5, units="in", dpi=150)
 
     # TODO Add title to legend and show subset of integers
-    ggplot(data=mostSportsAll, aes(x=Country,y=Interest)) +
+    maxInterest <- mostSportsAll[, .(maxInterest=max(Interest)), by=Country]
+    maxInterest <- merge(mostSportsAll, maxInterest, by="Country", all.x=T)
+    ggplot(data=maxInterest, aes(x=Country,y=Interest)) +
         #geom_point(aes(size = InterestCount)) + 
         # :factor(InterestCount) can be used to force legend to integers
         # :can simply use geom_count() instead
         geom_count(color='indianred3') +
-        ggtitle("Interest Within Countries Searching More Than a Dozen Sports\nData Source: Google Trends") +
+        ggtitle("Interest Within Countries Searching More Than a Dozen Sports\nSize: No. of Sports\nData Source: Google Trends") +
+        geom_text(data=maxInterest[maxInterest==Interest], aes(label=Sport), hjust=-0.05, vjust=0.4, size=3) +
         coord_flip() +
-        commonTheme()
-
-    ggsave("plots/mostSports.Points.png", width=10, height=5, units="in", dpi=150)
+        commonTheme() +
+        theme(legend.position=c(0.8,1), legend.direction="horizontal")
+    
+    ggsave("plots/mostSports.Points.png", width=11, height=5, units="in", dpi=150)
     
     # Sports with most country followers
     mostFollowers <- d[, .(Country,Interest,NumberOfCountries=.N), by=Sport][NumberOfCountries>50]
@@ -306,9 +316,11 @@ searchBasicStats <- function() {
         geom_boxplot(fill='orange', color="red") +
         ggtitle("Statistical Spread of Interest for Sports With More Than 50 Country Followers\nData Source: Google Trends") +
         commonTheme() +
-        geom_text(aes(label = BigFollower), na.rm = TRUE, hjust = -0.1)
+        geom_text(aes(label = BigFollower), na.rm = TRUE, hjust = -0.1) +
+        geom_text(data=mostFollowers[Country %in% c("Barbados","Grenada","Bahamas") & Sport=='Athletics (Track & Field)'], aes(label = Country), na.rm = FALSE, hjust = -0.1) +
+        geom_text(data=mostFollowers[Country %in% c("Argentina") & Sport=='Tennis'], aes(label = Country), na.rm = FALSE, hjust = -0.1)
     
-    ggsave("plots/mostCountryFollowers.stats.png", width=10, height=6, units="in", dpi=150)
+    ggsave("plots/mostCountryFollowers.stats.png", width=14, height=6, units="in", dpi=150)
     
     # Sports with most total interest
     mostTotalInterest <- d[, .(Interest,NumberOfCountries=.N,TotalInterest=sum(Interest)), by=Sport][, head(.SD, 1), by=Sport][TotalInterest>150]

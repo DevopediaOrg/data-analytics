@@ -3,49 +3,64 @@ library(ggplot2)
 library(grid)
 library(XML)
 
-downloadAllGroupsData <- function() {
+getGroupUrls <- function() {
     # Source: https://www.meetup.com/find/tech/?allMeetups=false&radius=2&userFreeform=Bangalore%2C+India&mcId=z1018093&mcName=Bangalore%2C+IN&sort=recommended&eventFilter=mysugg
     # Filtered to topic Tech
     # Copied manually from web browser and saved into HTML file
 
     html <- readLines('BangaloreTechMeetups.htm')
     doc = htmlParse(html, asText=TRUE)
-    groupNames <- xpathSApply(doc, "//li[@class='groupCard tileGrid-tile']", xmlGetAttr, 'data-name') 
     groupUrls <- xpathSApply(doc, "//li[@class='groupCard tileGrid-tile']/div/a[@itemprop='url']", xmlGetAttr, 'href')
-    numMembers <- sub("^\\s*.*We're\\s*([\\d,]+)\\s*(.*)\\s*$", "\\1~\\2", xpathSApply(doc, "//p[@class='small ellipsize']", xmlValue), perl=T)
-    salutations <- sub(".*~", "", numMembers)
-    numMembers <- sub("~.*", "\\1", numMembers)
-    numMembers <- sub(",", "", numMembers)
-    
-    d <- data.table(cbind(groupNames, groupUrls, numMembers, salutations))
+    #groupUrls <- unique.default(groupUrls)
+
+    #numMembers <- sub("^\\s*.*We're\\s*([\\d,]+)\\s*(.*)\\s*$", "\\1~\\2", xpathSApply(doc, "//p[@class='small ellipsize']", xmlValue), perl=T)
+    #salutations <- sub(".*~", "", numMembers)
+    #numMembers <- sub("~.*", "\\1", numMembers)
+    #numMembers <- sub(",", "", numMembers)
 }
 
-downloadGroupData <- function(grp) {
-    fname <- paste0(sub(".*/([^/]+)/$", "\\1", grp$groupUrls, perl=TRUE), '.htm')
+downloadGroupData <- function(url) {
+    fname <- paste0(sub(".*/([^/]+)/$", "\\1", url, perl=TRUE), '.htm')
     if (!file.exists(fname))
-        download.file(grp$groupUrls, fname, 'curl', quiet=T)
+        download.file(url, fname, 'curl', quiet=T)
 
     html <- readLines(fname)
     doc = htmlParse(html, asText=TRUE)
-    foundingDate <- as.Date(xpathSApply(doc, "//span[@itemprop='foundingDate']", xmlValue), format = "%Y%m%d")
-    fields <- c('Members', xpathSApply(doc, "//span[@class='unit size5of7']", xmlValue))
-    values <- xpathSApply(doc, "//span[@class='lastUnit align-right']", xmlValue)
-    d <- data.frame(t(values))
-    colnames(d) <- fields
-    d$Members <- sub(",", "", d$Members)
 
-    grpdata <- c(d$Members, levels(d$`Group reviews`), 
-                 levels(d$`Upcoming Meetups`), levels(d$`Past Meetups`),
-                 foundingDate, fname)
+    name <- xpathSApply(doc, "//div[@id='chapter-banner']/h1/a/span", xmlValue) 
+    foundingDate <- as.Date(xpathSApply(doc, "//span[@itemprop='foundingDate']", xmlValue), format = "%Y%m%d")
+
+    salutation <- xpathSApply(doc, "//span[@class='unit size5of7 wrapNice']", xmlValue)
+    if (length(salutation) == 0) salutation <- 'Members'
+    
+    fields <- c('numOfMembers', xpathSApply(doc, "//span[@class='unit size5of7']", xmlValue))
+    values <- xpathSApply(doc, "//span[@class='lastUnit align-right']", xmlValue)
+    if (length(values)!=length(fields)) {
+        values <- c("0", values) # zero members: update later
+    }
+
+    df <- data.frame(t(values))
+    colnames(df) <- fields
+    df$numOfMembers <- sub(",", "", df$numOfMembers)
+
+    if (is.null(df$`Group reviews`)) df$`Group reviews`<- factor(0)
+    if (is.null(df$`Upcoming Meetups`)) df$`Upcoming Meetups`<- factor(0)
+    if (is.null(df$`Past Meetups`)) df$`Past Meetups`<- factor(0)
+    
+    grpdata <- c(df$numOfMembers,
+                 levels(df$`Group reviews`), levels(df$`Upcoming Meetups`), levels(df$`Past Meetups`),
+                 url, fname, name, as.character(foundingDate), salutation)
+
+    return(grpdata)
 }
 
 readMainDataFile <- function() {
     d <- fread("blr.groups.30Mar2017.csv", 
                sep = "~", header = FALSE, stringsAsFactors = FALSE,
-               col.names = c("GroupName", "Num", "Salutation"))
+               col.names = c("name", "members", "salutation"))
 
-    d$Num <- as.numeric(gsub(",", "", d$Num))
-    d$Salutation <- factor(d$Salutation)
+    d$members <- as.numeric(gsub(",", "", d$members))
+    d$salutation <- factor(d$salutation)
     
     return(d)
 }
@@ -53,10 +68,10 @@ readMainDataFile <- function() {
 readTopicDataFile <- function() {
     d <- fread("blr.topics.30Mar2017.csv", 
                sep = ",", header = FALSE, stringsAsFactors = FALSE,
-               col.names = c("Topic", "Num"))
+               col.names = c("topic", "members"))
     
-    d$Num <- as.numeric(gsub(",", "", d$Num))
-    d$Topic <- factor(d$Topic)
+    d$members <- as.numeric(gsub(",", "", d$members))
+    d$topic <- factor(d$topic)
     
     return(d)
 }
@@ -76,7 +91,7 @@ commonTheme <- function() {
 
 basicNumbers <- function(d) {
     n <- data.table(X=c(1,4), Y=c(1,1), Colour=c('a','b'), 
-                    Value=c(length(d$Num), sum(d$Num)), 
+                    Value=c(length(d$members), sum(d$members)), 
                     Metric=c('Number of Bangalore\nTech Groups', 'Number of Members'))
     
     ggp <-
@@ -100,9 +115,9 @@ basicNumbers <- function(d) {
 }
 
 mostPopular <- function(d, topn) {
-    topsum <- sum(tail(sort(d$Num), topn[2]))
+    topsum <- sum(tail(sort(d$members), topn[2]))
     n <- data.table(X=c(1,4), Y=c(1,1), Colour=c('b','a'), 
-                    Value=as.numeric(format(c(topn[2]*100/length(d$Num), topsum*100/sum(d$Num)), digits=0)), 
+                    Value=as.numeric(format(c(topn[2]*100/length(d$members), topsum*100/sum(d$members)), digits=0)), 
                     Metric=c('Top Percentile', 'Share of Members'))
     
     ggp <-
@@ -126,11 +141,11 @@ mostPopular <- function(d, topn) {
 }
 
 membersPerTopGroups <- function(d, cutoff) {
-    top <- d[Num>=cutoff]
-    numToppers <- length(top$GroupName)
+    top <- d[members>=cutoff]
+    numToppers <- length(top$name)
 
     ggp <-
-        ggplot(data=top, aes(x=GroupName,y=Num)) +
+        ggplot(data=top, aes(x=name,y=members)) +
         geom_bar(position="dodge", stat="identity", width=0.5, fill='steelblue1') +
         ggtitle(paste("Number of Members Per Group: Only Popular Bangalore Tech Groups (3000+ Members). ", 
                       "Count: ", numToppers, ".\nData Source: Meetup.com, 30 Mar 2017.", sep='')) +
@@ -139,7 +154,7 @@ membersPerTopGroups <- function(d, cutoff) {
         theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
         xlab("Meetup Group Name") +
         ylab("Number of Members") +
-        geom_text(data=top, aes(label=Num, hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
+        geom_text(data=top, aes(label=members, hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
 
     ggsave('3.membersPerTopGroups.png', width=11, height=5, units="in", dpi=150)
     
@@ -147,7 +162,7 @@ membersPerTopGroups <- function(d, cutoff) {
 }
 
 membershipHistogram <- function(d, bins, fname) {
-    snum <- sort(d$Num)
+    snum <- sort(d$members)
     cnts <- as.data.table(tapply(snum, cut(snum, breaks=bins), length))$V1
     cnts[is.na(cnts)] <- 0
     percent <- as.numeric(format(cnts*100/sum(cnts), digits=0))
@@ -169,7 +184,7 @@ membershipHistogram <- function(d, bins, fname) {
 
 topTopicsHistogram <- function(top) {
     ggp <-
-        ggplot(data=top, aes(x=Topic,y=Num)) +
+        ggplot(data=top, aes(x=topic,y=members)) +
         geom_bar(position="dodge", stat="identity", width=0.5, fill='steelblue1') +
         ggtitle(paste("Number of Bangalore Tech Groups For Popular Topics.", 
                       "\nData Source: Meetup.com, 30 Mar 2017.", sep='')) +
@@ -178,25 +193,26 @@ topTopicsHistogram <- function(top) {
         theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
         xlab("Topic") +
         ylab("Number of Groups") +
-        geom_text(data=top, aes(label=Num, hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
+        geom_text(data=top, aes(label=members, hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
     
     ggsave('6.topTopicsHistogram.png', width=11, height=5, units="in", dpi=150)
 }
 
 main <- function() {
-    groups <- downloadAllGroupsData()
-    all <- sapply(groups[c(1,2,3)], downloadGroupData, USE.NAMES=F)
+    urls <- getGroupUrls()
+    all <- data.table(t(sapply(urls, downloadGroupData, USE.NAMES=F)))
+    colnames(all) <- c('members', 'reviews', 'upcoming', 'past', 'url', 'fname', 'name', 'created', 'salutation')
+    all <- all[, c(lapply(.(members,reviews,upcoming,past), as.integer), .(url, fname, name, created, salutation))]
+    colnames(all) <- c('members', 'reviews', 'upcoming', 'past', 'url', 'fname', 'name', 'created', 'salutation')
     
-#    d <- readMainDataFile()
- #   basicNumbers(d)
-#    topn <- membersPerTopGroups(d, 3000)
-#    mostPopular(d, topn)
-#    membershipHistogram(d, seq(0,11500,500), '4.membershipHistogram.png')
-#    membershipHistogram(d, seq(0,500,50), '5.lowMembershipHistogram.png')
+    basicNumbers(all)
+    topn <- membersPerTopGroups(all, 3000)
+    mostPopular(all, topn)
+    membershipHistogram(all, seq(0,11500,500), '4.membershipHistogram.png')
+    membershipHistogram(all, seq(0,500,50), '5.lowMembershipHistogram.png')
 
-#    t <- readTopicDataFile()
-#    topTopicsHistogram(t)
-
+    t <- readTopicDataFile()
+    topTopicsHistogram(t)
 }
 
 #main()

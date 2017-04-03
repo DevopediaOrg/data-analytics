@@ -57,6 +57,15 @@ downloadGroupData <- function(od) {
     return(grpdata)
 }
 
+initDerivedData <- function(d) {
+    today <- format(Sys.time(), "%Y-%m-%d")
+    created <- strptime(all$created, format="%Y-%m-%d")
+    d$since <- format(created, "%b %Y")
+    d$grpAgeDays <- difftime(today, created, units="days")
+    d$evtsPerMonth <- (365.25/12)*d$past/as.numeric(d$grpAgeDays) # approx
+    return(d)
+}
+
 readMainDataFile <- function() {
     d <- fread("blr.groups.30Mar2017.csv", 
                sep = "~", header = FALSE, stringsAsFactors = FALSE,
@@ -149,7 +158,7 @@ membersPerTopGroups <- function(d, cutoff) {
 
     ggp <-
         ggplot(data=top, aes(x=name,y=members)) +
-        geom_bar(position="dodge", stat="identity", width=0.5, fill='steelblue1') +
+        geom_bar(position="dodge", stat="identity", width=0.5, fill='chocolate') +
         ggtitle(paste("Number of Members Per Group: Only Popular Bangalore Tech Groups (3000+ Members). ", 
                       "Count: ", numToppers, ".\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
         coord_flip() +
@@ -185,6 +194,97 @@ membershipHistogram <- function(d, bins, fname) {
     ggsave(fname, width=11, height=5, units="in", dpi=150)
 }
 
+eventFreq <- function(d, topn) {
+    top <- d[members>=topn[1]]$name
+    chosen <- d[evtsPerMonth>=2]
+    evtsMax <- max(chosen$evtsPerMonth)
+
+    ggp <-
+        ggplot(data=chosen, aes(x=name,y=evtsPerMonth)) +
+        geom_bar(data=chosen[!name %in% top], position="dodge", stat="identity", width=0.5, fill='steelblue1') +
+        geom_bar(data=chosen[name %in% top], position="dodge", stat="identity", width=0.5, fill='olivedrab3') +
+        ggtitle(paste("Groups With At Least Two Events Per Month.", 
+                      "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
+        coord_flip() +
+        commonTheme() +
+        theme(panel.grid.major.x = element_line(colour = "#eeeeee"),
+              panel.grid.minor.x = element_line(colour = "#f5f5f5")) +
+        xlab("Meetup Group Name") +
+        ylab("Number of Events Per Month") +
+        annotate("text", x=28, y=evtsMax-2, label="<3000 members", colour='steelblue1', size=4, hjust=0) +
+        annotate("text", x=27, y=evtsMax-2, label=">=3000 members", colour='olivedrab3', size=4, hjust=0) +
+        geom_text(data=chosen, aes(label=format(evtsPerMonth,digits=2), hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
+            
+    
+    ggsave('6.eventFreqActiveGroups.png', width=16, height=8, units="in", dpi=150)
+
+    top <- d[members>=topn[1]]
+    ggp <-
+        ggplot(top, aes(x=members, y=name)) +
+        geom_point(data=top, aes(x=members, y=name, size=evtsPerMonth, colour=evtsPerMonth), alpha=.5) +
+        ggtitle(paste("Events Per Month of Most Popular Groups (>=3000 members).", 
+                      "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
+        commonTheme() +
+        theme(panel.grid.major.x = element_line(colour = "#eeeeee"),
+              panel.grid.minor.x = element_line(colour = "#f5f5f5"),
+              legend.direction = "horizontal") +
+        xlab("Number of Members") +
+        ylab("Meetup Group Name") +
+        xlim(0, max(top$members)) +
+        geom_text(data=top, aes(x=members, y=name, label=format(evtsPerMonth,digits=2)), color="#222222") +
+        scale_colour_gradientn(colours=c('orange','red')) +
+        scale_size(range=c(1,70), guide=F)
+    
+    ggsave('7.eventsMostPopularGroups.png', width=16, height=8, units="in", dpi=150)
+
+    bins <- c(0, 1/12, 2/12, 4/12, 6/12, 12/12, 24/12, 100)
+    binNames <- c('<=01/year', '>01/year -\n<=02/year', '>02/year -\n<=04/year', 
+                  '>04/year -\n<=06/year', '>06/year -\n<=12/year', '>12/year -\n<=24/year', '>24/year')
+    cnts <- as.data.table(tapply(d$evtsPerMonth, cut(sort(d$evtsPerMonth), breaks=bins), length))$V1
+    cnts[is.na(cnts)] <- 0
+    percent <- as.numeric(format(cnts*100/sum(cnts), digits=0))
+    countGrps <- as.data.table(cbind(bins=bins[1:length(bins)-1]+(bins[2]-bins[1])/2, cnts, percent))
+    
+    ggp <-
+        ggplot(data=countGrps, aes(x=binNames, y=cnts)) +
+        geom_bar(stat="identity", fill='orchid4') +
+        commonTheme() +
+        scale_x_discrete(breaks=binNames) +
+        ggtitle(paste("Histogram of Meetup Events", 
+                      "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
+        xlab("Frequency of Meetup Events") +
+        ylab("Number of Groups") +
+        geom_text(data=countGrps[cnts>0], aes(label=paste0(percent,"%"), hjust=0.5, vjust=-0.2), color="#aaaaaa", size=3)
+    
+    ggsave('8.eventFreqHistogram.png', width=6, height=4, units="in", dpi=150)
+}
+
+dateCorrelation <- function(d) {
+    ggplot(d, aes(x=grpAgeDays, y=members)) +
+        geom_point(shape=3, size=2) +
+        geom_smooth(method=lm, se=T) +
+        ggtitle(paste("Correlating Membership With Age of Meetup Group.", 
+                      "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
+        xlab("Age of Meetup Group (Days)") +
+        ylab("Number of Members") +
+        commonTheme() +
+        theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
+    
+    ggsave("9a.dateCorrelation.png", width=12, height=8, units="in", dpi=150)
+    
+    ggplot(d, aes(x=members, y=past)) +
+        geom_point(shape=3, size=2) +
+        geom_smooth(method=lm, se=T) +
+        ggtitle(paste("Correlating Number of Events With Membership.", 
+                      "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
+        xlab("Number of Members") +
+        ylab("Number of Events") +
+        commonTheme() +
+        theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
+    
+    ggsave("9b.dateCorrelation.png", width=12, height=8, units="in", dpi=150)
+}
+
 topTopicsHistogram <- function(top) {
     ggp <-
         ggplot(data=top, aes(x=topic,y=members)) +
@@ -198,7 +298,7 @@ topTopicsHistogram <- function(top) {
         ylab("Number of Groups") +
         geom_text(data=top, aes(label=members, hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
     
-    ggsave('6.topTopicsHistogram.png', width=11, height=5, units="in", dpi=150)
+    ggsave('10.topTopicsHistogram.png', width=11, height=5, units="in", dpi=150)
 }
 
 main <- function() {
@@ -208,11 +308,15 @@ main <- function() {
     all <- all[, c(lapply(.(members,reviews,upcoming,past), as.integer), .(url, fname, name, created, salutation))]
     colnames(all) <- c('members', 'reviews', 'upcoming', 'past', 'url', 'fname', 'name', 'created', 'salutation')
     
+    all <- initDerivedData(all)
+
     basicNumbers(all)
     topn <- membersPerTopGroups(all, 3000)
     mostPopular(all, topn)
     membershipHistogram(all, seq(0,11500,500), '4.membershipHistogram.png')
     membershipHistogram(all, seq(0,500,50), '5.lowMembershipHistogram.png')
+    eventFreq(all, topn)
+    dateCorrelation(all)
 
     t <- readTopicDataFile()
     topTopicsHistogram(t)

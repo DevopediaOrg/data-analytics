@@ -260,29 +260,22 @@ eventFreq <- function(d, topn) {
 }
 
 dateCorrelation <- function(d) {
-    ggplot(d, aes(x=grpAgeDays, y=members)) +
+    d1 <- data.table(members=d$members, y=as.integer(d$grpAgeDays), panel='Age of Meetup Group (Days)')
+    d2 <- data.table(members=d$members, y=as.integer(d$past), panel='Number of Events')
+    both <- rbind(d1, d2)
+
+    ggp <-
+        ggplot(both, aes(x=members, y=y)) +
+        facet_grid(panel~., scale="free") +
         geom_point(shape=3, size=2) +
         geom_smooth(method=lm, se=T) +
-        ggtitle(paste("Correlating Membership With Age of Meetup Group.", 
-                      "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
-        xlab("Age of Meetup Group (Days)") +
-        ylab("Number of Members") +
-        commonTheme() +
-        theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
-    
-    ggsave("9a.dateCorrelation.png", width=12, height=8, units="in", dpi=150)
-    
-    ggplot(d, aes(x=members, y=past)) +
-        geom_point(shape=3, size=2) +
-        geom_smooth(method=lm, se=T) +
-        ggtitle(paste("Correlating Number of Events With Membership.", 
+        ggtitle(paste("Correlating With Membership.", 
                       "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
         xlab("Number of Members") +
-        ylab("Number of Events") +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
     
-    ggsave("9b.dateCorrelation.png", width=12, height=8, units="in", dpi=150)
+    ggsave("9.dateCorrelation.png", width=12, height=8, units="in", dpi=150)
 }
 
 topTopicsHistogram <- function(top) {

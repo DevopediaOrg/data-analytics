@@ -8,7 +8,7 @@ getOverviewData <- function() {
     # Filtered to topic Tech
     # Copied manually from web browser and saved into HTML file
 
-    html <- readLines('BangaloreTechMeetups.htm')
+    html <- readLines('BangaloreTechMeetups.02Apr2017.htm')
     doc = htmlParse(html, asText=TRUE)
     urls <- xpathSApply(doc, "//li[@class='groupCard tileGrid-tile']/div/a[@itemprop='url']", xmlGetAttr, 'href')
     numMembers <- sub("^\\s*.*We're\\s*([\\d,]+)\\s*(.*)\\s*$", "\\1~\\2", xpathSApply(doc, "//p[@class='small ellipsize']", xmlValue), perl=T)
@@ -215,8 +215,8 @@ eventFreq <- function(d, topn) {
     
     ggsave('7.eventsMostPopularGroups.png', width=16, height=8, units="in", dpi=150)
 
-    bins <- c(0, 1/12, 2/12, 4/12, 6/12, 12/12, 24/12, 100)
-    binNames <- c('<=01/year', '>01/year -\n<=02/year', '>02/year -\n<=04/year', 
+    bins <- c(-1, 0, 1/12, 2/12, 4/12, 6/12, 12/12, 24/12, 100)
+    binNames <- c('==00/year', '>00/year -\n<=01/year', '>01/year -\n<=02/year', '>02/year -\n<=04/year', 
                   '>04/year -\n<=06/year', '>06/year -\n<=12/year', '>12/year -\n<=24/year', '>24/year')
     cnts <- as.data.table(tapply(d$evtsPerMonth, cut(sort(d$evtsPerMonth), breaks=bins), length))$V1
     cnts[is.na(cnts)] <- 0

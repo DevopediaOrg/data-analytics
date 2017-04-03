@@ -66,28 +66,6 @@ initDerivedData <- function(d) {
     return(d)
 }
 
-readMainDataFile <- function() {
-    d <- fread("blr.groups.30Mar2017.csv", 
-               sep = "~", header = FALSE, stringsAsFactors = FALSE,
-               col.names = c("name", "members", "salutation"))
-
-    d$members <- as.numeric(gsub(",", "", d$members))
-    d$salutation <- factor(d$salutation)
-    
-    return(d)
-}
-
-readTopicDataFile <- function() {
-    d <- fread("blr.topics.30Mar2017.csv", 
-               sep = ",", header = FALSE, stringsAsFactors = FALSE,
-               col.names = c("topic", "members"))
-    
-    d$members <- as.numeric(gsub(",", "", d$members))
-    d$topic <- factor(d$topic)
-    
-    return(d)
-}
-
 commonTheme <- function() {
     theme(
         plot.title=element_text(size=12),
@@ -272,16 +250,23 @@ dateCorrelation <- function(d) {
         ggtitle(paste("Correlating With Membership.", 
                       "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
         xlab("Number of Members") +
+        ylab("") +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee"))
     
     ggsave("9.dateCorrelation.png", width=12, height=8, units="in", dpi=150)
 }
 
-topTopicsHistogram <- function(top) {
+topTopicsHistogram <- function(d) {
+    kwds <- c('(?i)(design)', '(?i)(develop|program|coding)', '(?i)(devops)', '(?i)(embedded|electronics|raspberry|arduino)', '(?i)(entrepreneurs|startup)', '(?i)(fintech|blockchain|bitcoin)', '(?i)(open\\s*source|oss|foss|linux)', '(?i)(python|pydata|pyladies|numpy)', '(?i)(workshop)', '(?i)\\b(test)', '(?i)(analytics|data)', '(?i)(cloud|bluemix|azure|aws|gcp|google cloud platform)', '(?i)(hadoop|big\\s*data)', '(?i)(iot|internet of )', '(?i)(js|javascript)', '(?i)(machine learning|articifial intelligence|ML|AI|spark|tensorflow)', '(?i)(mobile)', '(?i)(security)', '(?i)(web)')
+    topicNames <- c('Design', 'Coding', 'DevOps', 'Electronics', 'Start-up', 'FinTech', 'OpenSource', 'Python', 'Workshop', 'Testing', 'DataAnalytics', 'Cloud', 'BigData', 'IoT', 'JS', 'ML/AI', 'Mobile', 'Security', 'Web')
+    numGroups <- sapply(sapply(kwds, grep, d$name, perl=T, USE.NAMES=F), length)
+    numGroups[11] <- numGroups[11]-numGroups[13] # exclude "BigData" from "DataAnalytics"
+    topicData <- data.table(x=topicNames, y=numGroups)
+    
     ggp <-
-        ggplot(data=top, aes(x=topic,y=members)) +
-        geom_bar(position="dodge", stat="identity", width=0.5, fill='steelblue1') +
+        ggplot(data=topicData, aes(x=x,y=y)) +
+        geom_bar(position="dodge", stat="identity", width=0.5, fill='goldenrod2') +
         ggtitle(paste("Number of Bangalore Tech Groups For Popular Topics.", 
                       "\nData Source: Meetup.com, 02 Apr 2017.", sep='')) +
         coord_flip() +
@@ -289,7 +274,7 @@ topTopicsHistogram <- function(top) {
         theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
         xlab("Topic") +
         ylab("Number of Groups") +
-        geom_text(data=top, aes(label=members, hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
+        geom_text(data=topicData, aes(label=y, hjust=-0.05, vjust=0.2), color="#aaaaaa", size=3)
     
     ggsave('10.topTopicsHistogram.png', width=11, height=5, units="in", dpi=150)
 }
@@ -300,7 +285,6 @@ main <- function() {
     colnames(all) <- c('members', 'reviews', 'upcoming', 'past', 'url', 'fname', 'name', 'created', 'salutation')
     all <- all[, c(lapply(.(members,reviews,upcoming,past), as.integer), .(url, fname, name, created, salutation))]
     colnames(all) <- c('members', 'reviews', 'upcoming', 'past', 'url', 'fname', 'name', 'created', 'salutation')
-    
     all <- initDerivedData(all)
 
     basicNumbers(all)
@@ -310,9 +294,7 @@ main <- function() {
     membershipHistogram(all, seq(0,500,50), '5.lowMembershipHistogram.png')
     eventFreq(all, topn)
     dateCorrelation(all)
-
-    t <- readTopicDataFile()
-    topTopicsHistogram(t)
+    topTopicsHistogram(all)
 }
 
-#main()
+main()

@@ -3,6 +3,7 @@
 
 This is an analysis of tech meetups in Bangalore. Data was obtained from [Meetup website](http://meetup.com). Category "Tech" was selected within a 2-mile radius in and around Bangalore. By scrolling down, all meetups were listed on the page. The HTML was manually copied. Individual meetup pages were later downloaded and parsed by an R script. Data analysis is done is R.
 
+An analysis done in early April 2017 is [described on IEDF blog with relevant visualizations](https://iedf.in/index.php/blog/item/an-analysis-of-tech-meetup-groups-in-bangalore).
 
 # Meetup API #
 Meetup offers an API. Since this requires a valid login, the API can be accessed from the web browser after logging into Meetup site. Response will be in JSON format. The browser will parse and display this response neatly but this is not suitable for copying. Hence we need to use the browser's developer tools to copy the JSON response manually.

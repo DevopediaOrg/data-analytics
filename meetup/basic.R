@@ -59,7 +59,7 @@ downloadGroupData <- function(od) {
 
 initDerivedData <- function(d) {
     today <- format(Sys.time(), "%Y-%m-%d")
-    created <- strptime(all$created, format="%Y-%m-%d")
+    created <- strptime(d$created, format="%Y-%m-%d")
     d$since <- format(created, "%b %Y")
     d$grpAgeDays <- difftime(today, created, units="days")
     d$evtsPerMonth <- (365.25/12)*d$past/as.numeric(d$grpAgeDays) # approx

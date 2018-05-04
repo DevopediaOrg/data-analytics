@@ -2,6 +2,8 @@ library(data.table)
 library(ggplot2)
 library(grid)
 library(XML)
+library(curl)
+
 
 getOverviewData <- function(fname) {
     # Source: https://www.meetup.com/find/tech/?allMeetups=false&radius=2&userFreeform=Bangalore%2C+India&mcId=z1018093&mcName=Bangalore%2C+IN&sort=recommended&eventFilter=mysugg
@@ -104,7 +106,7 @@ basicNumbers <- function(d) {
         ggplot(n, aes(x=X, y=Y)) +
         geom_point(data=n, aes(x=X, y=Y, size=100, colour=Colour), alpha=.5, show.legend=F) +
         ggtitle(paste("Some Basic Numbers.", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         commonTheme() +
         theme(panel.grid.major.y = element_blank(),
               axis.title.x=element_blank(),
@@ -130,7 +132,7 @@ mostPopular <- function(d, topn) {
         ggplot(n, aes(x=X, y=Y)) +
         geom_point(data=n, aes(x=X, y=Y, size=100, colour=Colour), alpha=.5, show.legend=F) +
         ggtitle(paste(topn[2]," Most Popular (", topn[1], "+ members) Bangalore Tech Groups.", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         commonTheme() +
         theme(panel.grid.major.y = element_blank(),
               axis.title.x=element_blank(),
@@ -154,7 +156,7 @@ membersPerTopGroups <- function(d, cutoff) {
         ggplot(data=top, aes(x=name,y=members)) +
         geom_bar(position="dodge", stat="identity", width=0.5, fill='chocolate') +
         ggtitle(paste("Number of Members Per Group: Only Popular Bangalore Tech Groups (3000+ Members). ", 
-                      "Count: ", numToppers, ".\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "Count: ", numToppers, ".\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         coord_flip() +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
@@ -180,7 +182,7 @@ membershipHistogram <- function(d, bins, fname) {
         commonTheme() +
         scale_x_continuous(breaks=bins) +
         ggtitle(paste("Histogram of Bangalore Tech Groups by Size [",bins[1],", ",last(bins),"]", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         xlab("Number of Members") +
         ylab("Number of Groups") +
         geom_text(data=countGrps[cnts>0], aes(label=paste0(percent,"%"), hjust=0.5, vjust=-0.2), color="#aaaaaa", size=3)
@@ -198,7 +200,7 @@ eventFreq <- function(d, topn) {
         geom_bar(data=chosen[!name %in% top], position="dodge", stat="identity", width=0.5, fill='steelblue1') +
         geom_bar(data=chosen[name %in% top], position="dodge", stat="identity", width=0.5, fill='olivedrab3') +
         ggtitle(paste("Groups With At Least Two Events Per Month.", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         coord_flip() +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee"),
@@ -217,7 +219,7 @@ eventFreq <- function(d, topn) {
         ggplot(top, aes(x=members, y=name)) +
         geom_point(data=top, aes(x=members, y=name, size=evtsPerMonth, colour=evtsPerMonth), alpha=.5) +
         ggtitle(paste("Events Per Month of Most Popular Groups (>=3000 members).", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee"),
               panel.grid.minor.x = element_line(colour = "#f5f5f5"),
@@ -245,7 +247,7 @@ eventFreq <- function(d, topn) {
         commonTheme() +
         scale_x_discrete(breaks=binNames) +
         ggtitle(paste("Histogram of Meetup Events", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         xlab("Frequency of Meetup Events") +
         ylab("Number of Groups") +
         geom_text(data=countGrps[cnts>0], aes(label=paste0(percent,"%"), hjust=0.5, vjust=-0.2), color="#aaaaaa", size=3)
@@ -264,7 +266,7 @@ dateCorrelation <- function(d) {
         geom_point(shape=3, size=2) +
         geom_smooth(method=lm, se=T) +
         ggtitle(paste("Correlating With Membership.", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         xlab("Number of Members") +
         ylab("") +
         commonTheme() +
@@ -284,7 +286,7 @@ topTopicsHistogram <- function(d) {
         ggplot(data=topicData, aes(x=x,y=y)) +
         geom_bar(position="dodge", stat="identity", width=0.5, fill='goldenrod2') +
         ggtitle(paste("Number of Bangalore Tech Groups For Popular Topics.", 
-                      "\nData Source: Meetup.com, 22 Feb 2018.", sep='')) +
+                      "\nData Source: Meetup.com, 04 May 2018.", sep='')) +
         coord_flip() +
         commonTheme() +
         theme(panel.grid.major.x = element_line(colour = "#eeeeee")) +
@@ -296,7 +298,7 @@ topTopicsHistogram <- function(d) {
 }
 
 main <- function() {
-    od <- getOverviewData('BangaloreTechMeetups.22Feb2018.htm')
+    od <- getOverviewData('BangaloreTechMeetups.04May2018.htm')
     all <- data.table(t(sapply(od, downloadGroupData, USE.NAMES=F)))
     colnames(all) <- c('members', 'reviews', 'upcoming', 'past', 'url', 'fname', 'name', 'created', 'salutation')
     all <- all[, c(lapply(.(members,reviews,upcoming,past), as.integer), .(url, fname, name, created, salutation))]
@@ -306,11 +308,11 @@ main <- function() {
     basicNumbers(all)
     topn <- membersPerTopGroups(all, 3000)
     mostPopular(all, topn)
-    membershipHistogram(all, seq(0,13500,500), 'images/4.membershipHistogram.png')
-    membershipHistogram(all, seq(0,500,50), 'images/5.lowMembershipHistogram.png')
+    membershipHistogram(all, seq(0,20000,1000), 'images/4.membershipHistogram.png')
+    membershipHistogram(all, seq(0,1000,100), 'images/5.lowMembershipHistogram.png')
     eventFreq(all, topn)
     dateCorrelation(all)
     topTopicsHistogram(all)
 }
 
-main()
+# main()

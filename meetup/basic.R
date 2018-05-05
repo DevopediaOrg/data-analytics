@@ -63,6 +63,8 @@ downloadGroupData <- function(od) {
     df <- data.frame(t(values))
     colnames(df) <- fields
     df$numOfMembers <- sub(",", "", df$numOfMembers)
+    df$numOfMembers <- as.integer(df$numOfMembers)
+    if (is.na(df$numOfMembers)) df$numOfMembers <- 0
 
     if (is.null(df$`Group reviews`)) df$`Group reviews`<- factor(0)
     if (is.null(df$`Upcoming Meetups`)) df$`Upcoming Meetups`<- factor(0)
@@ -298,6 +300,9 @@ topTopicsHistogram <- function(d) {
 }
 
 main <- function() {
+    dir.create('groups', showWarnings=F)
+    dir.create('images', showWarnings=F)
+    
     od <- getOverviewData('BangaloreTechMeetups.04May2018.htm')
     all <- data.table(t(sapply(od, downloadGroupData, USE.NAMES=F)))
     colnames(all) <- c('members', 'reviews', 'upcoming', 'past', 'url', 'fname', 'name', 'created', 'salutation')

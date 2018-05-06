@@ -144,9 +144,9 @@ if __name__ == '__main__':
     # Don't really match with ISO codes at https://countrycode.org/
     codes = read_country_codes('data/rio2016/allCountries.Guardian.csv')
 
-    # download_data_by_country(codes)
+    download_data_by_country(codes)
 
-    # download_data_by_date()
+    download_data_by_date()
 
     export_medals_by_country(codes)
 

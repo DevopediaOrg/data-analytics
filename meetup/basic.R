@@ -173,7 +173,7 @@ membersPerTopGroups <- function(d, cutoff) {
 
 membershipHistogram <- function(d, bins, fname) {
     snum <- sort(d$members)
-    cnts <- as.data.table(tapply(snum, cut(snum, breaks=bins), length))$V1
+    cnts <- matrix(tapply(snum, cut(snum, breaks=bins), length))[,1]
     cnts[is.na(cnts)] <- 0
     percent <- as.numeric(format(cnts*100/sum(cnts), digits=0))
     countGrps <- as.data.table(cbind(bins=bins[1:length(bins)-1]+(bins[2]-bins[1])/2, cnts, percent))
@@ -238,7 +238,7 @@ eventFreq <- function(d, topn) {
     bins <- c(-1, 0, 1/12, 2/12, 4/12, 6/12, 12/12, 24/12, 100)
     binNames <- c('==00/year', '>00/year -\n<=01/year', '>01/year -\n<=02/year', '>02/year -\n<=04/year', 
                   '>04/year -\n<=06/year', '>06/year -\n<=12/year', '>12/year -\n<=24/year', '>24/year')
-    cnts <- as.data.table(tapply(d$evtsPerMonth, cut(d$evtsPerMonth, breaks=bins), length))$V1
+    cnts <- matrix(tapply(d$evtsPerMonth, cut(d$evtsPerMonth, breaks=bins), length))[,1]
     cnts[is.na(cnts)] <- 0
     percent <- as.numeric(format(cnts*100/sum(cnts), digits=0))
     countGrps <- as.data.table(cbind(bins=bins[1:length(bins)-1]+(bins[2]-bins[1])/2, cnts, percent))
@@ -319,5 +319,3 @@ main <- function() {
     dateCorrelation(all)
     topTopicsHistogram(all)
 }
-
-# main()

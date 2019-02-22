@@ -37,7 +37,9 @@ readMedalsDataFile <- function() {
 
 readAthletesDataFile <- function() {
     a <- fread("data/rio2016/athletes.csv", sep = ",", header = TRUE, stringsAsFactors = TRUE, drop=c("info"))
-    a[, date_of_birth := as.POSIXct(strptime(as.character(date_of_birth), "%Y-%m-%d"))]
+    a$date_of_birth <- as.POSIXct(strptime(as.character(a$date_of_birth), "%Y-%m-%d"))
+    # data.table warning with following line
+    # a[, date_of_birth := as.POSIXct(strptime(as.character(date_of_birth), "%Y-%m-%d"))]
     return(a)
 }
 
@@ -236,7 +238,7 @@ indianSearchCompared <- function() {
         scale_fill_manual(values=c("orange","#eeeeee")) +
         scale_y_continuous(expand = c(0, 0)) +
         scale_x_discrete(labels=sub(" ", "\n", indianSports)) +
-        geom_text(aes(x=Sport, y=Interest, label=Country, hjust=1, vjust=-0.5, label.size=0.2), color = "#999999", data = all[all$Country!="India",])
+        geom_text(aes(x=Sport, y=Interest, label=Country, hjust=1, vjust=-0.5), size=3.5, color = "#999999", data = all[all$Country!="India",])
 
     ggsave("plots/indianSearchCompared.png", width=13, height=5, units="in", dpi=150)
 }
@@ -346,7 +348,7 @@ searchBasicStats <- function() {
         ggtitle("Country Showing Most Interest in a Sport\nData Source: Google Trends") +
         coord_flip() +
         commonTheme() +
-        geom_text(aes(x=Sport, y=Interest, label=Country, hjust=-0.05, vjust=0.2, label.size=0.05), color = "#999999", data = mostInterest)
+        geom_text(aes(x=Sport, y=Interest, label=Country, hjust=-0.05, vjust=0.2), size=3, color = "#999999", data = mostInterest)
     
     ggsave("plots/mostInterest.png", width=15, height=7, units="in", dpi=150)
 
